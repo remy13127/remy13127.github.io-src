@@ -1,12 +1,12 @@
 Title: Complex networks
-Date: 2010-12-03 10:20
-Category: Python
-Tags: pelican, publishing
+Date: 2019-12-10 10:20
+Category: Physics
+Tags: Complex networks
 Slug: complex-network
 Author: Rémy Torro
-Summary: Short version for index and feeds
+Summary: An investigation of complex system networks using the python package <code>networkx</code>.
 
-# Grosse bite 
+# Random graph
 
-<center>![pollen](images/graph.png)</center>
+<center>![Network](images/graph.png)</center>
 
