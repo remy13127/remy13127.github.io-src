@@ -1,10 +1,10 @@
 Title: Brownian motion 
-Date: 2010-12-03 10:20
-Category: Python
-Tags: brownian motion, einstein, langevin, gaussian, random 
+Date: 2019-12-10 10:20
+Category: Physics
+Tags: Diffusion, Stochastic
 Slug: brownian-motion
 Author: Rémy Torro
-Summary: Einstein's and Langevin's derivations of the Brownian motion.
+Summary: Einstein's and Langevin's respective derivations of the Brownian motion.
 
 > In 1827, botanist Robert Brown observed the jittery motion of pollen grains (*Clarkia pulchella*) suspended in water. He proved that this motion was not life-related but could not explain its origin. 
 
