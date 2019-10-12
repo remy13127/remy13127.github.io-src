@@ -8,8 +8,7 @@ Summary: Einstein's and Langevin's derivations of the Brownian motion.
 
 > In 1827, botanist Robert Brown observed the jittery motion of pollen grains (*Clarkia pulchella*) suspended in water. He proved that this motion was not life-related but could not explain its origin. 
 
-<center>![pollen](images/pollen_brown.gif)</center>
-
+<img class="image-process-large-photo" src="/images/pollen_brown.gif"/>
 
 # Einstein's derivation
 
