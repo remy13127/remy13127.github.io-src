@@ -109,7 +109,7 @@
 \\ = \frac{e}{2h}\left[|S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} - |S_{21}|^2 \underbrace{\int dE (f_2(E) - f_1(E))}_{-eV} \right]
 \\ = \frac{e^2}{2h}(|S_{12}|^2 + |S_{21}|^2) V
 \end{multline}$$</div>
-<p><center><img alt="Fermi distribution" src="images/fermi_difference.png"></center></p>
+<p><center><img alt="Fermi distribution" src="images/fermi_difference.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <p>where we have assumed that <span class="math">\(|S_{12}|^2\)</span> and <span class="math">\(|S_{21}|^2\)</span> do not depend on the energy <span class="math">\(E\)</span>. Let's call <span class="math">\(T\)</span> the transmission probability. <span class="math">\(T = |S_{12}|^2 = |S_{21}|^2\)</span> so:</p>
 <div class="math">$$ \langle I_{\textrm{2-lead}} \rangle = \underbrace{\frac{e^2}{h} T}_{\textrm{Landauer conductance}} V$$</div>
 <h1>4) Cross-correlation</h1>
@@ -147,12 +147,12 @@
 <div class="math">$$\begin{align} \mathcal{S_{11}} = \frac{8 e^2}{h} \int dE \left\{ |S_{12}|^4 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + |S_{12}|^2 (1 - |S_{12}|^2)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \\
 = \frac{8 e^2}{h} \int dE \left\{ T^2 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + T (1 - T)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \end{align}$$</div>
 <p>We can now compute the noise at thermal equilibrium (<span class="math">\(k_B T &gt;&gt; |\mu_1 - \mu_2|=eV\)</span>). Since the temperature is much larger than <span class="math">\(eV\)</span> we can safely set <span class="math">\(\mu_1 \approx \mu_2\)</span> which implies that <span class="math">\(f_1 \approx f_2 = f\)</span>. Substituting in the expression for <span class="math">\(\mathcal{S_{11}}\)</span>, we get:</p>
-<p><center><img alt="Fermi at high temperature" src="images/fermi_highT.png"></center></p>
+<p><center><img alt="Fermi at high temperature" src="images/fermi_highT.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <div class="math">$$\mathcal{S}_{11,\textrm{th}} = \frac{8 e^2}{h} \int dE (2 f \mp 2 f^2)(T^2 + T(1-T)) = \frac{16 e^2}{h} \int dE T(f \mp f^2) = \frac{16 e^2}{h} \int dE Tf(1 - f) $$</div>
 <p>where in the last line we have selected the upper sign <span class="math">\(-\)</span> for fermions. But <span class="math">\(f(1-f) = -k_B \Theta \frac{\partial f}{\partial E}\)</span>. So we have:</p>
 <div class="math">$$\mathcal{S}_{11,\textrm{th}} = \frac{16 e^2}{h} T (-k_B \Theta) \int dE \frac{\partial f}{\partial E} = -\frac{16 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = -\frac{16 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = \frac{16 e^2}{h} T k_B \Theta = 8 k_B \Theta \underbrace{\frac{2 e^2}{h} T}_{\textrm{Landauer conductance}} = 8 k_B \Theta G$$</div>
 <p>At low temperatures <span class="math">\(k_B \Theta &lt;&lt; |\mu_1 - \mu_2|\)</span>, the fermi functions tend to perfect step functions such that <span class="math">\(f \rightarrow f^2\)</span> and <span class="math">\(f(1 - f) \rightarrow 0\)</span> (see the graph below). If we substitute in our equation for the noise <span class="math">\(\mathcal{S}_{11}\)</span>, we get:</p>
-<p><center><img alt="Fermi at low temperature" src="images/fermi_lowT.png"></center></p>
+<p><center><img alt="Fermi at low temperature" src="images/fermi_lowT.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <div class="math">$$\mathcal{S}_{11,\textrm{gr}} = \frac{8e^2}{h} \int dE \left\{ T^2 [0 + 0] + T(1-T)[f_1 + f_2 - 2 f_1 f_2] \right\} = \frac{8e^2}{h} \int dE T(1-T)[f_1^2 + f_2^2 - 2 f_1 f_2] = \frac{8e^2}{h} T(1-T) \underbrace{\int dE (f_1 - f_2)^2}_{e V} = 4 e \left(\frac{2 e^2}{h}T V\right)(1-T) = 4 e \langle I \rangle(1-T)$$</div>
 <h1>7) 3-lead device</h1>
 <p>We are now interested in the 3-lead device at very low temperature (<span class="math">\(k_B \Theta = 0\)</span>). The scattering matrix is now a <span class="math">\(3 \times 3\)</span> matrix. We want to prove that when <span class="math">\(\mu_2 = \mu_3\)</span>, <span class="math">\(\mathcal{S}_{23} &lt; 0\)</span>. Since we only have two different chemical potentials, we can use once again the expression for the noise that we derived at the end of question 5. We can write:</p>
