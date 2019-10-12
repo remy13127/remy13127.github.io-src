@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['latex','pelican-cite','render_math','image-process']
+PLUGINS = ['latex','pelican-cite','render_math','image_process']
 THEME = "/home/remy13127/pelican-themes/html5-dopetrope"
 
 TIMEZONE = 'Europe/Paris'
