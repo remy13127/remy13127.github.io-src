@@ -6,7 +6,9 @@ Slug: complex-network
 Author: Rémy Torro
 Summary: An investigation of complex system networks using the python package <code>networkx</code>.
 
-# Random graph
+# Erds-Rényi model
 
-<center>![Network](images/graph.png)</center>
+An Erds-Rényi (or random) network is a network in which the probability for a link to exist is a constant $p$. 
+
+<center>![Network](images/erds_renyi.png)</center>
 
