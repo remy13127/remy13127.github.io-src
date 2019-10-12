@@ -1,5 +1,5 @@
 Title: Landauer transport
-Date: 2010-12-03 10:20
+Date: 2019-12-10 10:20
 Category: Physics
 Tags: Condensed matter, Quantum physics
 Slug: landauer-transport
