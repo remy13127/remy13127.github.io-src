@@ -38,9 +38,9 @@ $$ I_m(x_m) = \int \sum_{n,n'} \frac{dk dk'}{2\pi}\left[ \frac{\hbar e}{2 m}(k'+
 
 Assuming $E(k) = \frac{\hbar^2 k^2}{2 m}$, we have $dE = \frac{\hbar^2 k}{m} dk$, and as a result: $dk = \frac{m}{\hbar^2 k}dE$. We can substitute $dk dk' = \frac{m^2}{\hbar^4 k k'} dE dE'$:
 
-$$\begin{align} I_m(x_m) = \int \sum_{n,n'} dE dE' \left[ \underbrace{\frac{e m}{4\pi \hbar^3}(k'^{-1}+k^{-1}) \left(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}\right)}_{M_m^{\Delta k}(E,E',n,n')}
+$$I_m(x_m) = \int \sum_{n,n'} dE dE' \left[ \underbrace{\frac{e m}{4\pi \hbar^3}(k'^{-1}+k^{-1}) \left(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}\right)}_{M_m^{\Delta k}(E,E',n,n')}
 \\+ \underbrace{\frac{e m}{4\pi \hbar^3} (k^{-1}-k'^{-1})\left(S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-\delta_{mn}S_{mn'}e^{-i(k+k')x_m}\right)}_{M_m^{\sum k}(E,E',n,n')} \right]c_n^\dagger(E)c_{n'}(E') 
-\\ = \int dE \int dE' \sum_{n,n'} \underbrace{\left[ M_m^{\Delta k}(E,E',n,n')+M_m^{\sum k}(E,E',n,n')\right]}_{M_m(E,E',n,n')} c_n^\dagger(E)c_{n'}(E') \end{align}$$
+\\ = \int dE \int dE' \sum_{n,n'} \underbrace{\left[ M_m^{\Delta k}(E,E',n,n')+M_m^{\sum k}(E,E',n,n')\right]}_{M_m(E,E',n,n')} c_n^\dagger(E)c_{n'}(E')$$
 
 # 2) Average current
 
@@ -52,10 +52,9 @@ $$ M_m^{\Delta k} (E=E',n,n') = \frac{e m}{2 \pi \hbar^3} k^{-1} (\delta_{mn}\de
 
 We can write the expression for the average current as:
 
-$$\begin{multline} \langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'} \\ 
-= \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] \\ 
-= \frac{e}{h} \int dE \left[f_m(E) - \sum_n |S_{mn}|^2 f_n(E)\right]
-\end{multline}$$
+$$\langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'}  
+= \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] 
+= \frac{e}{h} \int dE \left[f_m(E) - \sum_n |S_{mn}|^2 f_n(E)\right]$$
 
 But since $\sum_n |S_{nm}|^2 = 1$, we can factorise:
 
@@ -65,12 +64,9 @@ We find that the average current does not depend on the position $x_m$ at which 
 
 # 3) Landauer conductance for a 2-lead device
 
-$$\begin{multline} \langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle) \\
-= \frac{1}{2}\left[\frac{e}{h}\int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) - \frac{2e}{h}\sum_n|S_{2n}|^2(f_2(E) - f_n(E)) \right]
-\\ = \frac{e}{2h}\int dE \left[|S_{12}|^2 (f_1(E)-f_2(E)) - |S_{21}|^2 (f_2(E) - f_1(E)) \right]
-\\ = \frac{e}{2h}\left[|S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} - |S_{21}|^2 \underbrace{\int dE (f_2(E) - f_1(E))}_{-eV} \right]
-\\ = \frac{e^2}{2h}(|S_{12}|^2 + |S_{21}|^2) V
-\end{multline}$$
+$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle)
+= \frac{1}{2}\left[\frac{e}{h}\int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) - \frac{2e}{h}\sum_n|S_{2n}|^2(f_2(E) - f_n(E)) \right] = \frac{e}{2h}\int dE \left[|S_{12}|^2 (f_1(E)-f_2(E)) - |S_{21}|^2 (f_2(E) - f_1(E)) \right]
+\\ = \frac{e}{2h}\left[|S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} - |S_{21}|^2 \underbrace{\int dE (f_2(E) - f_1(E))}_{-eV} \right] = \frac{e^2}{2h}(|S_{12}|^2 + |S_{21}|^2) V$$
 
 <center>![Fermi distribution](images/fermi_difference.png)</center>
 
@@ -86,15 +82,15 @@ $$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{2}{T}\int_{-T/2}^{T/2} d
 
 We have to compute $\textrm{Cov}[I_m,I_n] = \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle = \langle I_m(t)I_n(t+t') \rangle - \langle I_m \rangle \langle I_n \rangle$. Firstly let's evaluate $\langle I_m(t)I_n(t") \rangle$, where $t'' = t+ t'$. 
 
-$$\begin{multline} \langle I_m(t)I_n(t'') \rangle \propto \langle c_{p_1}^\dagger (k(E_1),t) c_{p_2} (k(E_2),t) c_{p_3}^\dagger (k(E_3),t'') c_{p_4} (k(E_4),t'') \rangle \\ = \langle c_{p_1}^\dagger (k(E_1)) c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) c_{p_4} (k(E_4)) \rangle e^{\frac{i}{\hbar}(E_1 - E_2)t} e^{\frac{i}{\hbar}(E_3 - E_4)t''} \end{multline}$$
+$$\langle I_m(t)I_n(t'') \rangle \propto \langle c_{p_1}^\dagger (k(E_1),t) c_{p_2} (k(E_2),t) c_{p_3}^\dagger (k(E_3),t'') c_{p_4} (k(E_4),t'') \rangle = \langle c_{p_1}^\dagger (k(E_1)) c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) c_{p_4} (k(E_4)) \rangle e^{\frac{i}{\hbar}(E_1 - E_2)t} e^{\frac{i}{\hbar}(E_3 - E_4)t''}$$
 
 We can apply Wick's theorem to the averaged term and obtain:
 
-$$\begin{align} \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_2}(k(E_2)) \rangle \langle c_{p_3}^\dagger (k(E_3)) c_{p_4}(k(E_4)) \rangle}_{\propto \langle I_m \rangle \langle I_n \rangle \qquad \textrm{(reducible contrib.)}} + \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_4} (k(E_4)) \rangle \langle c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) \rangle}_{\textrm{(irreducible contrib.)}}  \\ = \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1)\delta(E_1 - E_2)\delta_{p_1 p_2} k(E_3) f_{p_3}(E_3) \delta(E_3 - E_4) \delta_{p_3 p_4} \\ + \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1) \delta{E_1 - E_4} \delta_{p_1 p_4} k(E_2) (1 \mp f_{p_2}(E_2))\delta(E_2 - E_3) \delta_{p_2 p_3} \end{align}$$
+$$\underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_2}(k(E_2)) \rangle \langle c_{p_3}^\dagger (k(E_3)) c_{p_4}(k(E_4)) \rangle}_{\propto \langle I_m \rangle \langle I_n \rangle \qquad \textrm{(reducible contrib.)}} + \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_4} (k(E_4)) \rangle \langle c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) \rangle}_{\textrm{(irreducible contrib.)}} = \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1)\delta(E_1 - E_2)\delta_{p_1 p_2} k(E_3) f_{p_3}(E_3) \delta(E_3 - E_4) \delta_{p_3 p_4} + \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1) \delta{E_1 - E_4} \delta_{p_1 p_4} k(E_2) (1 \mp f_{p_2}(E_2))\delta(E_2 - E_3) \delta_{p_2 p_3}$$
 
 If we apply $E_1 = E_2$ and $E_3 = E_4$ to the time exponential we get zero for the first term of the sum, whereas with $E_1 = E_4$ and $E_2 = E_3$ we obtain $e^{\frac{i}{\hbar}(E_1 - E_2)(t - t'')}$. Eventually we can write:
 
-$$\begin{align} \langle I_m(t) I_n(t'') \rangle \propto \frac{\hbar^4}{m^2} \left[\underbrace{k(E_1) k(E_3) f_{p_1}(E_1) f_{p_3}(E_3) \delta_{p_1 p_2} \delta_{p_3 p_4} \delta(E_1 - E_2)\delta(E_3 - E_4)}_{\propto \langle I_m \rangle \langle I_n \rangle} \\ + k(E_1) k(E_2) f_{p_1}(E_1) (1 \mp f_{p_2}(E_2)) \delta_{p_1 p_4} \delta_{p_2 p_3} \delta(E_1 - E_4) \delta(E_2 - E_3) e^{\frac{i}{\hbar} (E_1 - E_2)(t - t'')} \right] \end{align}$$
+$$\langle I_m(t) I_n(t'') \rangle \propto \frac{\hbar^4}{m^2} \left[\underbrace{k(E_1) k(E_3) f_{p_1}(E_1) f_{p_3}(E_3) \delta_{p_1 p_2} \delta_{p_3 p_4} \delta(E_1 - E_2)\delta(E_3 - E_4)}_{\propto \langle I_m \rangle \langle I_n \rangle} + k(E_1) k(E_2) f_{p_1}(E_1) (1 \mp f_{p_2}(E_2)) \delta_{p_1 p_4} \delta_{p_2 p_3} \delta(E_1 - E_4) \delta(E_2 - E_3) e^{\frac{i}{\hbar} (E_1 - E_2)(t - t'')} \right] $$
 
 # 5) Noise
 
@@ -108,12 +104,12 @@ $$ \textrm{Cov}(I_m,I_n) = \int dE_1 \int dE_2 \sum_{p_1,p_2} M_m(E_1,E_2,p_1,p_
 
 Let's set $E_1 = E$, $E_2 = E'$, $p_1 = p$ and $p_2 = p'$:
 
-$$\begin{align} \textrm{Cov}(I_m,I_n) = \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) \tilde{C}(E,E',p,p') 
-= \frac{\hbar^4}{m^2} \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) k(E) k(E') f_p(E) (1 \mp f_{p'}(E')) e^{\frac{i}{\hbar}(E-E')(t-t'')}  \end{align}$$
+$$\textrm{Cov}(I_m,I_n) = \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) \tilde{C}(E,E',p,p') 
+= \frac{\hbar^4}{m^2} \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) k(E) k(E') f_p(E) (1 \mp f_{p'}(E')) e^{\frac{i}{\hbar}(E-E')(t-t'')}$$
 
 Substituting in the expression for $S_{mn}$ above, we have to integrate over $t'$ the exponential $\int dt' e^{\frac{i}{\hbar}(E-E')(t-t'')} = \int dt' e^{-\frac{i}{\hbar}(E-E')t'} = 2 \pi \hbar \delta(E-E')$. Applying the condition that $E = E'$ in the expression for the covariance of the current, we observe that the $M_i$ terms are greatly simplified. The $M_i^{\sum k} = 0$, once again, due to the $k^{-1} - k'^{-1}$ terms. We are left with the product: 
-$$\begin{align} M_m^{\Delta k}(E=E',p,p') M_n^{\Delta k}(E'=E,p',p)
-= \frac{e^2 m^2}{\pi^2 \hbar^6} \frac{1}{k^2} \left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right) \end{align}$$
+$$M_m^{\Delta k}(E=E',p,p') M_n^{\Delta k}(E'=E,p',p)
+= \frac{e^2 m^2}{\pi^2 \hbar^6} \frac{1}{k^2} \left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$
 
 Eventually we can substitute and write the following expression for the zero-frequency noise:
 

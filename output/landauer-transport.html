@@ -85,28 +85,24 @@
 <p>As a result we can write:</p>
 <div class="math">$$ I_m(x_m) = \int \sum_{n,n'} \frac{dk dk'}{2\pi}\left[ \frac{\hbar e}{2 m}(k'+k) \left(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}\right) \\ +  \frac{\hbar e}{2 m} (k'-k)\left(S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-\delta_{mn}S_{mn'}e^{-i(k+k')x_m}\right) \right]c_n^\dagger(k)c_{n'}(k')$$</div>
 <p>Assuming <span class="math">\(E(k) = \frac{\hbar^2 k^2}{2 m}\)</span>, we have <span class="math">\(dE = \frac{\hbar^2 k}{m} dk\)</span>, and as a result: <span class="math">\(dk = \frac{m}{\hbar^2 k}dE\)</span>. We can substitute <span class="math">\(dk dk' = \frac{m^2}{\hbar^4 k k'} dE dE'\)</span>:</p>
-<div class="math">$$\begin{align} I_m(x_m) = \int \sum_{n,n'} dE dE' \left[ \underbrace{\frac{e m}{4\pi \hbar^3}(k'^{-1}+k^{-1}) \left(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}\right)}_{M_m^{\Delta k}(E,E',n,n')}
+<div class="math">$$I_m(x_m) = \int \sum_{n,n'} dE dE' \left[ \underbrace{\frac{e m}{4\pi \hbar^3}(k'^{-1}+k^{-1}) \left(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}\right)}_{M_m^{\Delta k}(E,E',n,n')}
 \\+ \underbrace{\frac{e m}{4\pi \hbar^3} (k^{-1}-k'^{-1})\left(S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-\delta_{mn}S_{mn'}e^{-i(k+k')x_m}\right)}_{M_m^{\sum k}(E,E',n,n')} \right]c_n^\dagger(E)c_{n'}(E') 
-\\ = \int dE \int dE' \sum_{n,n'} \underbrace{\left[ M_m^{\Delta k}(E,E',n,n')+M_m^{\sum k}(E,E',n,n')\right]}_{M_m(E,E',n,n')} c_n^\dagger(E)c_{n'}(E') \end{align}$$</div>
+\\ = \int dE \int dE' \sum_{n,n'} \underbrace{\left[ M_m^{\Delta k}(E,E',n,n')+M_m^{\sum k}(E,E',n,n')\right]}_{M_m(E,E',n,n')} c_n^\dagger(E)c_{n'}(E')$$</div>
 <h1>2) Average current</h1>
 <div class="math">$$ \langle I_m(x_m) \rangle \propto \langle c_n^\dagger (E) c_{n'}(E') \rangle = \frac{\hbar^2 k(E)}{m} f_n(E) \delta(E-E') \delta_{nn'}$$</div>
 <p>If we set <span class="math">\(E = E'\)</span>, it implies that <span class="math">\(k^2 = k'^2\)</span> (since <span class="math">\(k\)</span> and <span class="math">\(k'\)</span> are positive, we have <span class="math">\(k = k'\)</span>). Plugging <span class="math">\(k=k'\)</span> in the expression for <span class="math">\(M_m^{\sum k}\)</span> gives zero because of the <span class="math">\((k^{-1} - k'^{-1})\)</span> term. We have:</p>
 <div class="math">$$ M_m^{\Delta k} (E=E',n,n') = \frac{e m}{2 \pi \hbar^3} k^{-1} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})$$</div>
 <p>We can write the expression for the average current as:</p>
-<div class="math">$$\begin{multline} \langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'} \\ 
-= \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] \\ 
-= \frac{e}{h} \int dE \left[f_m(E) - \sum_n |S_{mn}|^2 f_n(E)\right]
-\end{multline}$$</div>
+<div class="math">$$\langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'}  
+= \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] 
+= \frac{e}{h} \int dE \left[f_m(E) - \sum_n |S_{mn}|^2 f_n(E)\right]$$</div>
 <p>But since <span class="math">\(\sum_n |S_{nm}|^2 = 1\)</span>, we can factorise:</p>
 <div class="math">$$ \langle I_m \rangle = \frac{e}{h} \int dE \sum_n |S_{mn}|^2 (f_m(E)-f_n(E))$$</div>
 <p>We find that the average current does not depend on the position <span class="math">\(x_m\)</span> at which the current is measured. </p>
 <h1>3) Landauer conductance for a 2-lead device</h1>
-<div class="math">$$\begin{multline} \langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle) \\
-= \frac{1}{2}\left[\frac{e}{h}\int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) - \frac{2e}{h}\sum_n|S_{2n}|^2(f_2(E) - f_n(E)) \right]
-\\ = \frac{e}{2h}\int dE \left[|S_{12}|^2 (f_1(E)-f_2(E)) - |S_{21}|^2 (f_2(E) - f_1(E)) \right]
-\\ = \frac{e}{2h}\left[|S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} - |S_{21}|^2 \underbrace{\int dE (f_2(E) - f_1(E))}_{-eV} \right]
-\\ = \frac{e^2}{2h}(|S_{12}|^2 + |S_{21}|^2) V
-\end{multline}$$</div>
+<div class="math">$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle)
+= \frac{1}{2}\left[\frac{e}{h}\int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) - \frac{2e}{h}\sum_n|S_{2n}|^2(f_2(E) - f_n(E)) \right] = \frac{e}{2h}\int dE \left[|S_{12}|^2 (f_1(E)-f_2(E)) - |S_{21}|^2 (f_2(E) - f_1(E)) \right]
+\\ = \frac{e}{2h}\left[|S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} - |S_{21}|^2 \underbrace{\int dE (f_2(E) - f_1(E))}_{-eV} \right] = \frac{e^2}{2h}(|S_{12}|^2 + |S_{21}|^2) V$$</div>
 <p><center><img alt="Fermi distribution" src="images/fermi_difference.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <p>where we have assumed that <span class="math">\(|S_{12}|^2\)</span> and <span class="math">\(|S_{21}|^2\)</span> do not depend on the energy <span class="math">\(E\)</span>. Let's call <span class="math">\(T\)</span> the transmission probability. <span class="math">\(T = |S_{12}|^2 = |S_{21}|^2\)</span> so:</p>
 <div class="math">$$ \langle I_{\textrm{2-lead}} \rangle = \underbrace{\frac{e^2}{h} T}_{\textrm{Landauer conductance}} V$$</div>
@@ -114,23 +110,23 @@
 <p>The noise at zero-frequency can be expressed as:</p>
 <div class="math">$$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{2}{T}\int_{-T/2}^{T/2} dt \int_{-\infty}^\infty dt' \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle$$</div>
 <p>We have to compute <span class="math">\(\textrm{Cov}[I_m,I_n] = \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle = \langle I_m(t)I_n(t+t') \rangle - \langle I_m \rangle \langle I_n \rangle\)</span>. Firstly let's evaluate <span class="math">\(\langle I_m(t)I_n(t") \rangle\)</span>, where <span class="math">\(t'' = t+ t'\)</span>. </p>
-<div class="math">$$\begin{multline} \langle I_m(t)I_n(t'') \rangle \propto \langle c_{p_1}^\dagger (k(E_1),t) c_{p_2} (k(E_2),t) c_{p_3}^\dagger (k(E_3),t'') c_{p_4} (k(E_4),t'') \rangle \\ = \langle c_{p_1}^\dagger (k(E_1)) c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) c_{p_4} (k(E_4)) \rangle e^{\frac{i}{\hbar}(E_1 - E_2)t} e^{\frac{i}{\hbar}(E_3 - E_4)t''} \end{multline}$$</div>
+<div class="math">$$\langle I_m(t)I_n(t'') \rangle \propto \langle c_{p_1}^\dagger (k(E_1),t) c_{p_2} (k(E_2),t) c_{p_3}^\dagger (k(E_3),t'') c_{p_4} (k(E_4),t'') \rangle = \langle c_{p_1}^\dagger (k(E_1)) c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) c_{p_4} (k(E_4)) \rangle e^{\frac{i}{\hbar}(E_1 - E_2)t} e^{\frac{i}{\hbar}(E_3 - E_4)t''}$$</div>
 <p>We can apply Wick's theorem to the averaged term and obtain:</p>
-<div class="math">$$\begin{align} \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_2}(k(E_2)) \rangle \langle c_{p_3}^\dagger (k(E_3)) c_{p_4}(k(E_4)) \rangle}_{\propto \langle I_m \rangle \langle I_n \rangle \qquad \textrm{(reducible contrib.)}} + \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_4} (k(E_4)) \rangle \langle c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) \rangle}_{\textrm{(irreducible contrib.)}}  \\ = \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1)\delta(E_1 - E_2)\delta_{p_1 p_2} k(E_3) f_{p_3}(E_3) \delta(E_3 - E_4) \delta_{p_3 p_4} \\ + \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1) \delta{E_1 - E_4} \delta_{p_1 p_4} k(E_2) (1 \mp f_{p_2}(E_2))\delta(E_2 - E_3) \delta_{p_2 p_3} \end{align}$$</div>
+<div class="math">$$\underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_2}(k(E_2)) \rangle \langle c_{p_3}^\dagger (k(E_3)) c_{p_4}(k(E_4)) \rangle}_{\propto \langle I_m \rangle \langle I_n \rangle \qquad \textrm{(reducible contrib.)}} + \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_4} (k(E_4)) \rangle \langle c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) \rangle}_{\textrm{(irreducible contrib.)}} = \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1)\delta(E_1 - E_2)\delta_{p_1 p_2} k(E_3) f_{p_3}(E_3) \delta(E_3 - E_4) \delta_{p_3 p_4} + \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1) \delta{E_1 - E_4} \delta_{p_1 p_4} k(E_2) (1 \mp f_{p_2}(E_2))\delta(E_2 - E_3) \delta_{p_2 p_3}$$</div>
 <p>If we apply <span class="math">\(E_1 = E_2\)</span> and <span class="math">\(E_3 = E_4\)</span> to the time exponential we get zero for the first term of the sum, whereas with <span class="math">\(E_1 = E_4\)</span> and <span class="math">\(E_2 = E_3\)</span> we obtain <span class="math">\(e^{\frac{i}{\hbar}(E_1 - E_2)(t - t'')}\)</span>. Eventually we can write:</p>
-<div class="math">$$\begin{align} \langle I_m(t) I_n(t'') \rangle \propto \frac{\hbar^4}{m^2} \left[\underbrace{k(E_1) k(E_3) f_{p_1}(E_1) f_{p_3}(E_3) \delta_{p_1 p_2} \delta_{p_3 p_4} \delta(E_1 - E_2)\delta(E_3 - E_4)}_{\propto \langle I_m \rangle \langle I_n \rangle} \\ + k(E_1) k(E_2) f_{p_1}(E_1) (1 \mp f_{p_2}(E_2)) \delta_{p_1 p_4} \delta_{p_2 p_3} \delta(E_1 - E_4) \delta(E_2 - E_3) e^{\frac{i}{\hbar} (E_1 - E_2)(t - t'')} \right] \end{align}$$</div>
+<div class="math">$$\langle I_m(t) I_n(t'') \rangle \propto \frac{\hbar^4}{m^2} \left[\underbrace{k(E_1) k(E_3) f_{p_1}(E_1) f_{p_3}(E_3) \delta_{p_1 p_2} \delta_{p_3 p_4} \delta(E_1 - E_2)\delta(E_3 - E_4)}_{\propto \langle I_m \rangle \langle I_n \rangle} + k(E_1) k(E_2) f_{p_1}(E_1) (1 \mp f_{p_2}(E_2)) \delta_{p_1 p_4} \delta_{p_2 p_3} \delta(E_1 - E_4) \delta(E_2 - E_3) e^{\frac{i}{\hbar} (E_1 - E_2)(t - t'')} \right] $$</div>
 <h1>5) Noise</h1>
 <p>The reducible term is cancelled with <span class="math">\(\langle I_m \rangle \langle I_n \rangle\)</span> in <span class="math">\(\textrm{Cov}[I_m,I_n]\)</span>. As a result, the covariance is proportional to the irreducible term (let's call it <span class="math">\(\tilde{C}(E_1,E_2,p_1,p_2,p_3,p_4)\)</span>) in the 4-fermions correlator. In other words, we are left with the irreducible contribution under the integral sign (<span class="math">\(S_{mn}\)</span>), up to some factors. The covariance can be written as:</p>
 <div class="math">$$\textrm{Cov}(I_m,I_n) = \int \prod_{i=1}^4 dE_i \sum_{p_1,p_2,p_3,p_4} M_m(E_1,E_2,p_1,p_2)M_n(E_3,E_4,p_3,p_4) \tilde{C}(E_1,E_2,p_1,p_2,p_3,p_4)$$</div>
 <p><span class="math">\(\tilde{C}\)</span> contains <span class="math">\(\delta(E_1 - E_4)\)</span>, <span class="math">\(\delta(E_2 - E_3)\)</span>, <span class="math">\(\delta_{p_1 p_4}\)</span>, <span class="math">\(\delta_{p_2 p_3}\)</span>. So we can set <span class="math">\(E_1 = E_4\)</span>, <span class="math">\(E_2 = E_3\)</span>, <span class="math">\(p_1 = p_4\)</span> and <span class="math">\(p_2 = p_3\)</span>:</p>
 <div class="math">$$ \textrm{Cov}(I_m,I_n) = \int dE_1 \int dE_2 \sum_{p_1,p_2} M_m(E_1,E_2,p_1,p_2) M_n(E_2,E_1,p_2,p_1) \tilde{C}(E_1,E_2,p_1,p_2) $$</div>
 <p>Let's set <span class="math">\(E_1 = E\)</span>, <span class="math">\(E_2 = E'\)</span>, <span class="math">\(p_1 = p\)</span> and <span class="math">\(p_2 = p'\)</span>:</p>
-<div class="math">$$\begin{align} \textrm{Cov}(I_m,I_n) = \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) \tilde{C}(E,E',p,p') 
-= \frac{\hbar^4}{m^2} \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) k(E) k(E') f_p(E) (1 \mp f_{p'}(E')) e^{\frac{i}{\hbar}(E-E')(t-t'')}  \end{align}$$</div>
+<div class="math">$$\textrm{Cov}(I_m,I_n) = \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) \tilde{C}(E,E',p,p') 
+= \frac{\hbar^4}{m^2} \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) k(E) k(E') f_p(E) (1 \mp f_{p'}(E')) e^{\frac{i}{\hbar}(E-E')(t-t'')}$$</div>
 <p>Substituting in the expression for <span class="math">\(S_{mn}\)</span> above, we have to integrate over <span class="math">\(t'\)</span> the exponential <span class="math">\(\int dt' e^{\frac{i}{\hbar}(E-E')(t-t'')} = \int dt' e^{-\frac{i}{\hbar}(E-E')t'} = 2 \pi \hbar \delta(E-E')\)</span>. Applying the condition that <span class="math">\(E = E'\)</span> in the expression for the covariance of the current, we observe that the <span class="math">\(M_i\)</span> terms are greatly simplified. The <span class="math">\(M_i^{\sum k} = 0\)</span>, once again, due to the <span class="math">\(k^{-1} - k'^{-1}\)</span> terms. We are left with the product: 
 </p>
-<div class="math">$$\begin{align} M_m^{\Delta k}(E=E',p,p') M_n^{\Delta k}(E'=E,p',p)
-= \frac{e^2 m^2}{\pi^2 \hbar^6} \frac{1}{k^2} \left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right) \end{align}$$</div>
+<div class="math">$$M_m^{\Delta k}(E=E',p,p') M_n^{\Delta k}(E'=E,p',p)
+= \frac{e^2 m^2}{\pi^2 \hbar^6} \frac{1}{k^2} \left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$</div>
 <p>Eventually we can substitute and write the following expression for the zero-frequency noise:</p>
 <div class="math">$$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{8 e^2}{T h}\int_{-T/2}^{T/2} dt \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$</div>
 <p>Since nothing depends on time under the integral sign, we have <span class="math">\(\int_{-T/2}^{T/2} dt = T\)</span> and as a result:</p>

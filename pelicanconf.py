@@ -8,10 +8,17 @@ SITEURL = ''
 
 PATH = 'content'
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['latex','pelican-cite','render_math','better_figures_and_images']
+PLUGINS = ['latex','pelican-cite','render_math','better_figures_and_images','tag_cloud']
 THEME = "/home/remy13127/pelican-themes/html5-dopetrope"
-
+SHARE_BUTTONS = ('twitter', 'facebook', 'whatsapp', 'mail')
 TIMEZONE = 'Europe/Paris'
+
+TAG_CLOUD = True
+TAG_CLOUD_STEPS = 5
+TAG_CLOUD_MAX_ITEMS = 50
+TAG_CLOUD_BADGE = True
+TAG_CLOUD_SORTING = 'size'
+
 
 DEFAULT_LANG = 'en'
 
