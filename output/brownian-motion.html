@@ -1,82 +1,71 @@
 
 <!DOCTYPE HTML>
+
 <!--
 	Dopetrope 2.0 by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-			<title>Of physics and thoughts</title>
-			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-			<meta charset="utf-8" />
-			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
-				<link rel="stylesheet" href="/theme/css/pygment.css" />
-			<noscript>
-				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
-				<link rel="stylesheet" href="/theme/css/style.css" />
-				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
-			</noscript>
-	</head>
-	<body class="no-sidebar">
-		<!-- Header Wrapper -->
-			<div id="header-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="12u">
-						
-							<!-- Header -->
-								<section id="header">
-									
-									<!-- Logo -->
-									<h1><a href="/">Of physics and thoughts</a></h1>
-									
-									<!-- Nav -->
-										<nav id="nav">
-											<ul>
-											</ul>
-										</nav>
-
-								</section>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		
-		<!-- Main Wrapper -->
-			<div id="main-wrapper">
-				<div class="container">
+<head>
+<title>Of physics and thoughts</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta charset="utf-8"/>
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet"/>
+<link href="/theme/css/pygment.css" rel="stylesheet"/>
+<noscript>
+<link href="/theme/css/skel-noscript.css" rel="stylesheet"/>
+<link href="/theme/css/style.css" rel="stylesheet"/>
+<link href="/theme/css/style-desktop.css" rel="stylesheet"/>
+</noscript>
+</head>
+<body class="no-sidebar">
+<!-- Header Wrapper -->
+<div id="header-wrapper">
+<div class="container">
 <div class="row">
-	<div class="12u">
-			<section>
-				<div>
-					<div class="row">
-						<div class="12u skel-cell-mainContent">
-							<!-- Content -->
-								<article class="box is-post">
-									<div class="post-infos">
-										<ul class="tags">
-											<li><a class="button" href="category/python.html">Python</a></li>
-												<li><a class="button button-alt" href="tag/brownian-motion.html">Brownian motion</a></li>
-
-												<li><a class="button button-alt" href="tag/einstein.html">Einstein</a></li>
-
-												<li><a class="button button-alt" href="tag/langevin.html">Langevin</a></li>
-
-												<li><a class="button button-alt" href="tag/gaussian.html">Gaussian</a></li>
-
-												<li><a class="button button-alt" href="tag/random.html">Random</a></li>
-
-										</ul>
-									</div>
-
-									<div class="pennant pennant-alt date">2010-12-03</div>
-									<h2>Brownian motion</h2>
-									<blockquote>
+<div class="12u">
+<!-- Header -->
+<section id="header">
+<!-- Logo -->
+<h1><a href="/">Of physics and thoughts</a></h1>
+<!-- Nav -->
+<nav id="nav">
+<ul>
+</ul>
+</nav>
+</section>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Wrapper -->
+<div id="main-wrapper">
+<div class="container">
+<div class="row">
+<div class="12u">
+<section>
+<div>
+<div class="row">
+<div class="12u skel-cell-mainContent">
+<!-- Content -->
+<article class="box is-post">
+<div class="post-infos">
+<ul class="tags">
+<li><a class="button" href="category/python.html">Python</a></li>
+<li><a class="button button-alt" href="tag/brownian-motion.html">Brownian motion</a></li>
+<li><a class="button button-alt" href="tag/einstein.html">Einstein</a></li>
+<li><a class="button button-alt" href="tag/langevin.html">Langevin</a></li>
+<li><a class="button button-alt" href="tag/gaussian.html">Gaussian</a></li>
+<li><a class="button button-alt" href="tag/random.html">Random</a></li>
+</ul>
+</div>
+<div class="pennant pennant-alt date">2010-12-03</div>
+<h2>Brownian motion</h2>
+<blockquote>
 <p>In 1827, botanist Robert Brown observed the jittery motion of pollen grains (<em>Clarkia pulchella</em>) suspended in water. He proved that this motion was not life-related but could not explain its origin. </p>
 </blockquote>
-<p><center><img alt="pollen" src="images/pollen_brown.gif"></center></p>
+<p><center><img alt="pollen" src="images/pollen_brown.gif"/></center></p>
 <h1>Einstein's derivation</h1>
 <p>Eighty years later, Albert Einstein published a paper in which he inferred the motion of the pollen grains to collisions with individual water molecules. He had to make the following hypotheses:</p>
 <ul>
@@ -105,7 +94,7 @@
 <p>The solution to the problem is:</p>
 <div class="math">$$ f(x,t) = \frac{N}{\sqrt{4\pi D t}}e^{-\frac{x^2}{4 D t}} $$</div>
 <p>The probability distribution of the resulting displacements during an arbitrary time <span class="math">\(t\)</span> is the same as the distribution of random errors. </p>
-<p><center><img alt="graph" src="images/brownian_gaussian.png"></center></p>
+<p><center><img alt="graph" src="images/brownian_gaussian.png"/></center></p>
 <p>The mean quadratic displacement is <span class="math">\(\sigma^2 = \langle x^2 \rangle = 2 D t\)</span>. As a result, the mean displacement is proportional to the square root of time. </p>
 <h1>Langevin's derivation</h1>
 <p>Langevin introduced a stochastic differential equation:</p>
@@ -184,89 +173,86 @@
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
-								</article>
-						</div>
-					</div>
-				</div>
-			</section>
-	</div>
+</article>
 </div>
-
-				</div>
-			</div>
-
-		<!-- Footer Wrapper -->
-			<div id="footer-wrapper">
-				<!-- Footer -->
-					<section id="footer" class="container">
-						<div class="row">
-							<div class="8u">
-								<section>
-									<header>
-										<h2>Latest articles</h2>
-									</header>
-									<ul class="dates">
-										<li>
-											<span class="date">déc. <strong>03</strong></span>
-											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
-											<p><p>Einstein's and Langevin's derivations of the Brownian motion.</p></p>
-										</li>
-										<li>
-											<span class="date">déc. <strong>03</strong></span>
-											<h3><a href="complex-network.html">Complex networks</a></h3>
-											<p><p>Short version for index and feeds</p></p>
-										</li>
-										<li>
-											<span class="date">déc. <strong>03</strong></span>
-											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
-											<p><p>Computations related to Landauer transport.</p></p>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-						<div class="row">
-							<div class="4u">
-								<section>
-									<header>
-										<h2>Blogroll</h2>
-									</header>
-									<ul class="divided">
-											<li><a href="http://getpelican.com/">Pelican</a></li>
-											<li><a href="http://python.org/">Python.org</a></li>
-											<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-											<li><a href="#">You can modify those links in your config file</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="4u">
-								<section>
-									<header>
-										<h2>Categories</h2>
-									</header>
-									<ul class="divided">
-											<li><a href="/category/python.html">Python</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="4u">
-							
-								<section>
-									<header>
-										<h2>Contact</h2>
-									</header>
-									<ul class="social">
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
-			</div>
-		<script src="/theme/js/jquery.min.js"></script>
-		<script src="/theme/js/jquery.dropotron.js"></script>
-		<script src="/theme/js/config.js"></script>
-		<script src="/theme/js/skel.min.js"></script>
-		<script src="/theme/js/skel-panels.min.js"></script>
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
-	</body>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Wrapper -->
+<div id="footer-wrapper">
+<!-- Footer -->
+<section class="container" id="footer">
+<div class="row">
+<div class="8u">
+<section>
+<header>
+<h2>Latest articles</h2>
+</header>
+<ul class="dates">
+<li>
+<span class="date">déc. <strong>03</strong></span>
+<h3><a href="brownian-motion.html">Brownian motion</a></h3>
+<p><p>Einstein's and Langevin's derivations of the Brownian motion.</p></p>
+</li>
+<li>
+<span class="date">déc. <strong>03</strong></span>
+<h3><a href="complex-network.html">Complex networks</a></h3>
+<p><p>Short version for index and feeds</p></p>
+</li>
+<li>
+<span class="date">déc. <strong>03</strong></span>
+<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+<p><p>Computations related to Landauer transport.</p></p>
+</li>
+</ul>
+</section>
+</div>
+</div>
+<div class="row">
+<div class="4u">
+<section>
+<header>
+<h2>Blogroll</h2>
+</header>
+<ul class="divided">
+<li><a href="http://getpelican.com/">Pelican</a></li>
+<li><a href="http://python.org/">Python.org</a></li>
+<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+<li><a href="#">You can modify those links in your config file</a></li>
+</ul>
+</section>
+</div>
+<div class="4u">
+<section>
+<header>
+<h2>Categories</h2>
+</header>
+<ul class="divided">
+<li><a href="/category/python.html">Python</a></li>
+</ul>
+</section>
+</div>
+<div class="4u">
+<section>
+<header>
+<h2>Contact</h2>
+</header>
+<ul class="social">
+</ul>
+</section>
+</div>
+</div>
+</section>
+</div>
+<script src="/theme/js/jquery.min.js"></script>
+<script src="/theme/js/jquery.dropotron.js"></script>
+<script src="/theme/js/config.js"></script>
+<script src="/theme/js/skel.min.js"></script>
+<script src="/theme/js/skel-panels.min.js"></script>
+<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+</body>
 </html>
