@@ -57,14 +57,10 @@
 								<article class="box is-post">
 									<div class="post-infos">
 										<ul class="tags">
-											<li><a class="button" href="category/python.html">Python</a></li>
-												<li><a class="button button-alt" href="tag/landauer.html">Landauer</a></li>
+											<li><a class="button" href="category/physics.html">Physics</a></li>
+												<li><a class="button button-alt" href="tag/condensed-matter.html">Condensed matter</a></li>
 
-												<li><a class="button button-alt" href="tag/transport.html">Transport</a></li>
-
-												<li><a class="button button-alt" href="tag/fluctuations.html">Fluctuations</a></li>
-
-												<li><a class="button button-alt" href="tag/quantum.html">Quantum</a></li>
+												<li><a class="button button-alt" href="tag/quantum-physics.html">Quantum physics</a></li>
 
 										</ul>
 									</div>
@@ -138,6 +134,7 @@
 <p>Since nothing depends on time under the integral sign, we have <span class="math">\(\int_{-T/2}^{T/2} dt = T\)</span> and as a result:</p>
 <div class="math">$$ \mathcal{S}_{mn} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$</div>
 <h1>6) 2-terminal device</h1>
+<p><center><img alt="Two-lead device" src="images/landauer2lead.JPG" style="width: 632px; height: auto; max-width: 100%;"/></center></p>
 <p>Let's compute <span class="math">\(\mathcal{S}_{11}\)</span> for a two-terminal device:</p>
 <div class="math">$$ \mathcal{S}_{11} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'} - S_{1p}^* S_{1p'} \right)\left(\delta_{1p'}\delta_{1p} - S_{1p'}^* S_{1p} \right) $$</div>
 <p>Let's develop the integrand:</p>
@@ -155,6 +152,7 @@
 <p><center><img alt="Fermi at low temperature" src="images/fermi_lowT.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <div class="math">$$\mathcal{S}_{11,\textrm{gr}} = \frac{8e^2}{h} \int dE \left\{ T^2 [0 + 0] + T(1-T)[f_1 + f_2 - 2 f_1 f_2] \right\} = \frac{8e^2}{h} \int dE T(1-T)[f_1^2 + f_2^2 - 2 f_1 f_2] = \frac{8e^2}{h} T(1-T) \underbrace{\int dE (f_1 - f_2)^2}_{e V} = 4 e \left(\frac{2 e^2}{h}T V\right)(1-T) = 4 e \langle I \rangle(1-T)$$</div>
 <h1>7) 3-lead device</h1>
+<p><center><img alt="Three-lead device" src="images/landauer3lead.JPG" style="width: 588px; height: auto; max-width: 100%;"/></center></p>
 <p>We are now interested in the 3-lead device at very low temperature (<span class="math">\(k_B \Theta = 0\)</span>). The scattering matrix is now a <span class="math">\(3 \times 3\)</span> matrix. We want to prove that when <span class="math">\(\mu_2 = \mu_3\)</span>, <span class="math">\(\mathcal{S}_{23} &lt; 0\)</span>. Since we only have two different chemical potentials, we can use once again the expression for the noise that we derived at the end of question 5. We can write:</p>
 <div class="math">$$ \mathcal{S}_{23} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E))(\delta_{2p}\delta_{2p'}-S^*_{2p}S_{2p'})(\delta_{3p'}\delta_{3p}-S_{3p'}^* S_{3p}) = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E)) [\underbrace{\delta_{2p}\delta_{2p'}\delta_{3p'}\delta_{3p}}_{0}-\delta_{2p}\delta_{2p'}S_{3p'}^*S_{3p}-S^*_{2p}S_{2p'}\delta_{3p'}\delta_{3p}+S^*_{2p}S_{2p'}S_{3p'}^*S_{3p}] = \frac{8 e^2}{h} \int dE [-\underbrace{f_2(1-f_2)S_{32}^*S_{32}}_{\rightarrow 0}-\underbrace{f_3(1-f_3)S_{23}^*S_{23}}_{\rightarrow 0}+\sum_{p,p'} f_p(1-f_{p'})S_{2p}^* S_{2p'}S_{3p'}^* S_{3p}]$$</div>
 <p><span class="math">\(p\)</span> and <span class="math">\(p'\)</span> must take values <span class="math">\(1,2,3\)</span>. The terms <span class="math">\(f(1-f)\)</span> go to zero as before, because we are at <span class="math">\(\theta = 0\)</span> K. We can expand the sum as:</p>
@@ -268,7 +266,7 @@ URL: <a href="https://academic.oup.com/mnras/article/486/2/1953/5423328">https:/
 										<li>
 											<span class="date">déc. <strong>03</strong></span>
 											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
-											<p><p>Computations related to Landauer transport.</p></p>
+											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
 										</li>
 									</ul>
 								</section>

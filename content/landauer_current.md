@@ -1,10 +1,10 @@
 Title: Landauer transport
 Date: 2010-12-03 10:20
-Category: Python
-Tags: landauer, transport, fluctuations, quantum
+Category: Physics
+Tags: Condensed matter, Quantum physics
 Slug: landauer-transport
 Author: Rémy Torro
-Summary: Computations related to Landauer transport. 
+Summary: Landauer-Büttiker formalism for electronic transport in multiterminal devices. 
 
 # 1) Current in lead $m$
 The current operator is defined as: 
@@ -122,6 +122,8 @@ $$ \mathcal{S}_{mn} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E)
 
 # 6) 2-terminal device
 
+<center>![Two-lead device](images/landauer2lead.JPG)</center>
+
 Let's compute $\mathcal{S}_{11}$ for a two-terminal device:
 
 $$ \mathcal{S}_{11} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'} - S_{1p}^* S_{1p'} \right)\left(\delta_{1p'}\delta_{1p} - S_{1p'}^* S_{1p} \right) $$
@@ -153,6 +155,8 @@ At low temperatures $k_B \Theta << |\mu_1 - \mu_2|$, the fermi functions tend to
 $$\mathcal{S}_{11,\textrm{gr}} = \frac{8e^2}{h} \int dE \left\{ T^2 [0 + 0] + T(1-T)[f_1 + f_2 - 2 f_1 f_2] \right\} = \frac{8e^2}{h} \int dE T(1-T)[f_1^2 + f_2^2 - 2 f_1 f_2] = \frac{8e^2}{h} T(1-T) \underbrace{\int dE (f_1 - f_2)^2}_{e V} = 4 e \left(\frac{2 e^2}{h}T V\right)(1-T) = 4 e \langle I \rangle(1-T)$$
 
 # 7) 3-lead device
+
+<center>![Three-lead device](images/landauer3lead.JPG)</center>
 
 We are now interested in the 3-lead device at very low temperature ($k_B \Theta = 0$). The scattering matrix is now a $3 \times 3$ matrix. We want to prove that when $\mu_2 = \mu_3$, $\mathcal{S}_{23} < 0$. Since we only have two different chemical potentials, we can use once again the expression for the noise that we derived at the end of question 5. We can write:
 
