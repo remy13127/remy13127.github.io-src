@@ -49,6 +49,7 @@ $$ f(x,t) = \frac{N}{\sqrt{4\pi D t}}e^{-\frac{x^2}{4 D t}} $$
 
 The probability distribution of the resulting displacements during an arbitrary time $t$ is the same as the distribution of random errors. 
 
+<img class="image-process-large-photo" src="/images/brownian_gaussian.png"/>
 <center>![graph](images/brownian_gaussian.png)</center>
 
 The mean quadratic displacement is $\sigma^2 = \langle x^2 \rangle = 2 D t$. As a result, the mean displacement is proportional to the square root of time. 
