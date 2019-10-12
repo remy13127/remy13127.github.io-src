@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Of physics and thoughts - brownian motion</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Of physics and thoughts Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Of physics and thoughts </a></h1>
+                <nav><ul>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/brownian-motion.html">Brownian motion</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2010-12-03T10:20:00+01:00">
+                Published: ven. 03 décembre 2010
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/remy-torro.html">Rémy Torro</a>
+        </address>
+<p>In <a href="/category/python.html">Python</a>.</p>
+<p>tags: <a href="/tag/brownian-motion.html">brownian motion</a> <a href="/tag/einstein.html">einstein</a> <a href="/tag/langevin.html">langevin</a> <a href="/tag/gaussian.html">gaussian</a> <a href="/tag/random.html">random</a> </p>
+</footer><!-- /.post-info --><blockquote>
+<p>In 1827, botanist Robert Brown observed the jittery motion of pollen grains (<em>Clarkia pulchella</em>) suspended in water. He proved that this motion was not life-related but could not explain its origin. </p>
+</blockquote>
+<p><center><img alt="pollen" src="images/pollen_brown.gif"></center></p>
+<h1>Einstein's derivation</h1>
+<p>Eighty years later, Albert Einstein published a paper in which he inferred the motion of the pollen grains to collisions with individual water molecules. He had to make the following hypotheses:</p>
+<ul>
+<li>The motion of each individual particle is independent of the motion of all the other particles. They solely interact with the fluid. </li>
+<li>Suppose that we can define $\tau$ such that the motions of a same particle in different time intervals $\tau$ are independent processes. </li>
+<li>$\tau$ is large enough so that a particle is struck in every direction many times between $t$ and $t+\tau$. But $\tau$ is very small compared to macroscopic time scales.</li>
+</ul>
+<p>Suppose that a total of $N$ suspended particles is present in the liquid. In the time interval $\tau$ the spatial coordinate of the individual particles will increase by $\Delta$, with a certain probability distribution law $\Phi(\Delta)$. The number $d N$ of particles experiencing a displacement that lies between $\Delta$ and $\Delta + d\Delta$ in the time interval $\tau$ can be expressed as: 
+$$ dN = N \Phi(\Delta) d\Delta $$
+$\Phi$ is a probability characterized by:
+$$ \int_{-\infty}^\infty \Phi(\Delta) d\Delta = 1 \qquad \textrm{(normalization condition)}$$
+$$ \int_{-\infty}^\infty \Delta \Phi(\Delta) d\Delta = 0 \qquad \textrm{(isotropy of space)}$$</p>
+<p>Let $f(x,t)$ be the number of particles per unit volume. The distribution of particles at time $t+\tau$ from their distribution at $t$ can be written as:</p>
+<p>$$ f(x,t+\tau) = \int_{-\infty}^\infty f(x-\Delta, t) \Phi(\Delta) d\Delta $$</p>
+<p>On one hand, we can expand to first order in powers of $\tau$; $f(x,t+\tau) = f(x,t) + \tau \frac{\partial f}{\partial t}(x,t) + \mathcal{o}(\tau^2)$ and to second order in powers of $\Delta$; $f(x-\Delta,t)=f(x,t)-\Delta \frac{\partial f}{\partial x}(x,t)+\frac{\Delta^2}{2}\frac{\partial^2 f}{\partial x^2}(x,t)+\mathcal{o}(\Delta^3)$. Subtituting in the above equation yields:</p>
+<p>$$\begin{align}f(x,t)+\tau \frac{\partial f}{\partial t}(x,t) = \int_{-\infty}^\infty  \left[f(x,t)-\Delta \frac{\partial f}{\partial x}(x,t)+\frac{\Delta^2}{2}\frac{\partial^2 f}{\partial x^2}(x,t) \right] \Phi(\Delta) d\Delta \ =f(x,t) \underbrace{\int_{-\infty}^\infty \Phi(\Delta) d\Delta}<em -_infty="-\infty">{= 1}-\frac{\partial f}{\partial x}(x,t) \underbrace{\int</em>^\infty \Delta \Phi(\Delta) d\Delta}<em -_infty="-\infty">{= 0} + \int</em>^\infty \frac{\Delta^2}{2}\frac{\partial^2 f}{\partial x^2}(x,t) \Phi(\Delta) d\Delta\end{align}$$
+$$ \frac{\partial f}{\partial t}(x,t) = \frac{\partial^2 f}{\partial x^2}(x,t) \int_{-\infty}^\infty \frac{\Delta^2}{2\tau} \Phi(\Delta) d\Delta $$</p>
+<p>$$ \frac{\partial f}{\partial t}(x,t) = D  \frac{\partial^2 f}{\partial x^2}(x,t) $$</p>
+<p>where $D = 1/(2\tau) \int_{-\infty}^\infty \Delta^2 \Phi(\Delta) d\Delta$ is the diffusion coefficient. </p>
+<p>Since the motions of all the individual particles are independent, we can introduce a coordinate system whose origin coincides with the position of the center of gravity of the particle in question at time $t=0$, with the difference that $f(x,t)dx$ denotes the number of particles whose spatial coordinate has increased between the times $t=0$ and $t=t$ by a quantity that lies somewhere between $x$ and $x+dx$. We must have:</p>
+<p>$$f(x,t) = 0 $$
+$$ \int_{-\infty}^\infty f(x,t) dx = N $$</p>
+<p>The solution to the problem is:</p>
+<p>$$ f(x,t) = \frac{N}{\sqrt{4\pi D t}}e^{-\frac{x^2}{4 D t}} $$</p>
+<p>The probability distribution of the resulting displacements during an arbitrary time $t$ is the same as the distribution of random errors. </p>
+<p><center><img alt="graph" src="images/brownian_gaussian.png"></center></p>
+<p>The mean quadratic displacement is $\sigma^2 = \langle x^2 \rangle = 2 D t$. As a result, the mean displacement is proportional to the square root of time. </p>
+<h1>Langevin's derivation</h1>
+<p>Langevin introduced a stochastic differential equation:</p>
+<p>$$ m \frac{d^2 x}{dt^2} = -\lambda \frac{dx}{dt} + \xi(t) $$</p>
+<p>in which $-\lambda \dot{x}$ is some viscous resistance due to the motion of the particle in the water (Stokes law, $\lambda = 6 \pi \mu a$) and $\xi(t)$ some fluctuating force exerted by the water molecules on the Brownian particle. </p>
+<p>We can multiply on the right and left by $x$:</p>
+<p>$$ m x\frac{d^2 x}{dt^2} = -\lambda x \frac{dx}{dt} + x \xi(t) $$</p>
+<p>On one hand: $\frac{d^2(x^2)}{dt^2} = \frac{d}{dt}\left[\frac{d (x^2)}{dt}\right] = \frac{d}{dt}\left[2 x \frac{dx}{dt} \right] = 2 \left(\frac{dx}{dt}\right)^2 + 2 x \frac{d^2 x}{dt^2}$. On the other hand: $x\frac{dx}{dt} = \frac{1}{2}\frac{d(x^2)}{dt}$. Substituting in the above equation, we obtain:</p>
+<p>$$ \frac{m}{2} \frac{d^2(x^2)}{dt^2} - m \left(\frac{dx}{dt}\right)^2 = - \frac{\lambda}{2} \frac{d(x^2)}{dt}+x\xi(t)$$</p>
+<p>We can take the average over a large number of particles and get:</p>
+<p>$$ \frac{m}{2} \frac{d^2 \langle x^2 \rangle}{dt^2} + \frac{\lambda}{2} \frac{d\langle x^2 \rangle}{dt} = m \langle v^2 \rangle$$</p>
+<p>assuming that $\langle x \xi(t) \rangle = 0$ (because $\xi(t)$ can be equally positive or negative). Let's also assume that $m\langle v^2 \rangle = \frac{R T}{N_A} = k_B T$ (equipartition theorem). This second order differential equation can be solved as:</p>
+<p>$$ \frac{d \langle x^2 \rangle}{dt} = C e^{-\frac{\lambda}{m}}  + \frac{2 k_B T}{\lambda}$$  </p>
+<p>Since $m/\lambda \approx 10^{-8} s$, we can neglect the exponential term and end up with:</p>
+<p>$$ \langle x^2 \rangle = 2 \frac{k_B T}{\lambda} t  = 2 D t$$</p>
+<p>with $D = \frac{k_B T}{\lambda} = \frac{R T}{N_A}\frac{1}{6 \pi \mu a}$.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
