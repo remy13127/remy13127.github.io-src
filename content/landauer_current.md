@@ -6,6 +6,8 @@ Slug: landauer-transport
 Author: Rémy Torro
 Summary: Landauer-Büttiker formalism for electronic transport in multiterminal devices. 
 
+<center>![Two-lead device](images/landauer2lead.JPG)</center>
+
 # 1) Current in lead $m$
 The current operator is defined as: 
 
