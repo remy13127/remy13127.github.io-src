@@ -1,56 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-		<title>Of physics and thoughts &mdash; Landauer transport</title>
-		<meta charset="utf-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
-		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
-		<style type="text/css">
-			body.custom-background { background-color: #f5f5f5; }
-		</style>
-		<link rel="alternate" type="application/atom+xml"
-			title="Of physics and thoughts — Flux Atom"
-			href="/" /> 
-		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
-</head>
 
-<body class="home blog custom-background " >
-	<div id="container">
-		<div id="header">
-				<h1 id="site-title"><a href="">Of physics and thoughts</a></h1>
-		</div><!-- /#banner -->
+<!DOCTYPE HTML>
+<!--
+	Dopetrope 2.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>Of physics and thoughts</title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8" />
+			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
+				<link rel="stylesheet" href="/theme/css/pygment.css" />
+			<noscript>
+				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
+				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
+			</noscript>
+	</head>
+	<body class="no-sidebar">
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Header -->
+								<section id="header">
+									
+									<!-- Logo -->
+									<h1><a href="/">Of physics and thoughts</a></h1>
+									
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+											</ul>
+										</nav>
+
+								</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
 		
-		<div id="menu">
-			<div class="menu-navigation-container">
-				<ul id="menu-navigation" class="menu">
-						<li class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/category/python.html">Python</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">You can modify those links in your config file</a></li>
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="container">
+<div class="row">
+	<div class="12u">
+			<section>
+				<div>
+					<div class="row">
+						<div class="12u skel-cell-mainContent">
+							<!-- Content -->
+								<article class="box is-post">
+									<div class="post-infos">
+										<ul class="tags">
+											<li><a class="button" href="category/python.html">Python</a></li>
+												<li><a class="button button-alt" href="tag/landauer.html">Landauer</a></li>
 
-				</ul>
-			</div> <!--/#menu-navigation-container-->
-		</div><!-- /#menu -->
-		
-		<div class="page-title">
-		</div>
-	
-		<div id="contents">
+												<li><a class="button button-alt" href="tag/transport.html">Transport</a></li>
 
-<div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="/landauer-transport.html">ven. 03 décembre 2010</a></div>
-		<span class="byline">By <a href="/author/remy-torro.html">Rémy Torro</a></span>
-			<span class="cat-links"><a href="/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="/landauer-transport.html" title="Permalink to Landauer transport" rel="bookmark">Landauer transport</a>
-		</h2>
-		<div class="entry-content">
-			<h1>1) Current in lead <span class="math">\(m\)</span></h1>
+												<li><a class="button button-alt" href="tag/fluctuations.html">Fluctuations</a></li>
+
+												<li><a class="button button-alt" href="tag/quantum.html">Quantum</a></li>
+
+										</ul>
+									</div>
+
+									<div class="pennant pennant-alt date">2010-12-03</div>
+									<h2>Landauer transport</h2>
+									<h1>1) Current in lead <span class="math">\(m\)</span></h1>
 <p>The current operator is defined as: </p>
 <div class="math">$$ I_m(x_m) = \frac{\hbar e}{2 m i} \left(\psi_m^\dagger \frac{\partial \psi_m}{\partial x_m} - \frac{\partial \psi_m^\dagger}{\partial x_m}\psi_m \right)$$</div>
 <p>where <span class="math">\(\psi_m\)</span> is a wave function at "position" <span class="math">\(m\)</span> in the system (composed of some transmitted and reflected part on the sample):<a href='#butscher_radical-assisted_2019' id='ref-butscher_radical-assisted_2019-1'>Butscher et al. (2019)</a></p>
@@ -212,18 +233,89 @@ Radical-assisted polymerization in interstellar ice analogues: formyl radical an
 <em>Monthly Notices of the Royal Astronomical Society</em>, 486(2):1953–1963, June 2019.
 URL: <a href="https://academic.oup.com/mnras/article/486/2/1953/5423328">https://academic.oup.com/mnras/article/486/2/1953/5423328</a>, <a href="https://doi.org/10.1093/mnras/stz879">doi:10.1093/mnras/stz879</a>. <a class="cite-backref" href="#ref-butscher_radical-assisted_2019-1" title="Jump back to reference 1">↩</a></p>
 
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="/tag/fluctuations.html" rel="tag">fluctuations</a>,  <a href="/tag/landauer.html" rel="tag">landauer</a>,  <a href="/tag/quantum.html" rel="tag">quantum</a>,  <a href="/tag/transport.html" rel="tag">transport</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post-->
+								</article>
+						</div>
+					</div>
+				</div>
+			</section>
+	</div>
+</div>
 
-		</div>
-		
-		<div id="footer">
-			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
-		</div><!-- /#footer -->
-	</div><!-- /#container -->
-	<div style="display:none"></div>
-</body>
+				</div>
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<!-- Footer -->
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="8u">
+								<section>
+									<header>
+										<h2>Latest articles</h2>
+									</header>
+									<ul class="dates">
+										<li>
+											<span class="date">déc. <strong>03</strong></span>
+											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
+											<p><p>Einstein's and Langevin's derivations of the Brownian motion.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>03</strong></span>
+											<h3><a href="complex-network.html">Complex networks</a></h3>
+											<p><p>Short version for index and feeds</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>03</strong></span>
+											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+											<p><p>Computations related to Landauer transport.</p></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Blogroll</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="http://getpelican.com/">Pelican</a></li>
+											<li><a href="http://python.org/">Python.org</a></li>
+											<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+											<li><a href="#">You can modify those links in your config file</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Categories</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="/category/python.html">Python</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+							
+								<section>
+									<header>
+										<h2>Contact</h2>
+									</header>
+									<ul class="social">
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/jquery.dropotron.js"></script>
+		<script src="/theme/js/config.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-panels.min.js"></script>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+	</body>
 </html>

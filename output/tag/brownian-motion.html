@@ -1,180 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-		<title>Of physics and thoughts &mdash; Articles tagged brownian motion</title>
-		<meta charset="utf-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
-		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
-		<style type="text/css">
-			body.custom-background { background-color: #f5f5f5; }
-		</style>
-		<link rel="alternate" type="application/atom+xml"
-			title="Of physics and thoughts — Flux Atom"
-			href="/" /> 
-		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
-</head>
 
-<body class="home blog custom-background " >
-	<div id="container">
-		<div id="header">
-				<h1 id="site-title"><a href="">Of physics and thoughts</a></h1>
-		</div><!-- /#banner -->
-		
-		<div id="menu">
-			<div class="menu-navigation-container">
-				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/category/python.html">Python</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">You can modify those links in your config file</a></li>
+<!DOCTYPE HTML>
+<!--
+	Dopetrope 2.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>Of physics and thoughts - brownian motion</title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8" />
+			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
+				<link rel="stylesheet" href="/theme/css/pygment.css" />
+			<noscript>
+				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
+				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
+			</noscript>
+	</head>
+	<body class="no-sidebar">
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Header -->
+								<section id="header">
+									
+									<!-- Logo -->
+									<h1><a href="/">Of physics and thoughts</a></h1>
+									
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+											</ul>
+										</nav>
 
-				</ul>
-			</div> <!--/#menu-navigation-container-->
-		</div><!-- /#menu -->
+								</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
 		
-		<div class="page-title">
-<div class="page-title">
-	<h2>Tagged with <span>brownian motion</span> &hellip;</h2>
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="container">
+<div class="row">
+<div class="12u">
+    <section>
+            <div class="row">
+                <div class="4u">
+                    <section class="box">
+                        <header>
+                            <h3>Brownian motion</h3>
+                            <span class="byline">2010-12-03 10:20:00+01:00</span>
+                        </header>
+                        <p>Einstein's and Langevin's derivations of the Brownian motion.</p>
+                        <footer class="actions">
+                            <a href="/brownian-motion.html" class="button button-icon button-icon-1">Continue Reading</a>
+                        </footer>
+                    </section>
+                </div>
+    </section><!-- /#content -->
+            <p class="paginator">
+                Page 1 / 1
+            </p>
 </div>
-		</div>
-	
-		<div id="contents">
-<div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="/brownian-motion.html">ven. 03 décembre 2010</a></div>
-		<span class="byline">By <a href="/author/remy-torro.html">Rémy Torro</a></span>
-			<span class="cat-links"><a href="/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="/brownian-motion.html" title="Permalink to Brownian motion" rel="bookmark">Brownian motion</a>
-		</h2>
-		<div class="entry-content">
-			<blockquote>
-<p>In 1827, botanist Robert Brown observed the jittery motion of pollen grains (<em>Clarkia pulchella</em>) suspended in water. He proved that this motion was not life-related but could not explain its origin. </p>
-</blockquote>
-<p><center><img alt="Brownian motion" src="images/pollen_brown.gif" style="width: 445px; height: auto; max-width: 100%;"/></center></p>
-<h1>Einstein's derivation</h1>
-<p>Eighty years later, Albert Einstein published a paper in which he inferred the motion of the pollen grains to collisions with individual water molecules. He had to make the following hypotheses:</p>
-<ul>
-<li>The motion of each individual particle is independent of the motion of all the other particles. They solely interact with the fluid. </li>
-<li>Suppose that we can define <span class="math">\(\tau\)</span> such that the motions of a same particle in different time intervals <span class="math">\(\tau\)</span> are independent processes. </li>
-<li><span class="math">\(\tau\)</span> is large enough so that a particle is struck in every direction many times between <span class="math">\(t\)</span> and <span class="math">\(t+\tau\)</span>. But <span class="math">\(\tau\)</span> is very small compared to macroscopic time scales.</li>
-</ul>
-<p>Suppose that a total of <span class="math">\(N\)</span> suspended particles is present in the liquid. In the time interval <span class="math">\(\tau\)</span> the spatial coordinate of the individual particles will increase by <span class="math">\(\Delta\)</span>, with a certain probability distribution law <span class="math">\(\Phi(\Delta)\)</span>. The number <span class="math">\(d N\)</span> of particles experiencing a displacement that lies between <span class="math">\(\Delta\)</span> and <span class="math">\(\Delta + d\Delta\)</span> in the time interval <span class="math">\(\tau\)</span> can be expressed as: 
-</p>
-<div class="math">$$ dN = N \Phi(\Delta) d\Delta $$</div>
-<p>
-<span class="math">\(\Phi\)</span> is a probability characterized by:
-</p>
-<div class="math">$$ \int_{-\infty}^\infty \Phi(\Delta) d\Delta = 1 \qquad \textrm{(normalization condition)}$$</div>
-<div class="math">$$ \int_{-\infty}^\infty \Delta \Phi(\Delta) d\Delta = 0 \qquad \textrm{(isotropy of space)}$$</div>
-<p>Let <span class="math">\(f(x,t)\)</span> be the number of particles per unit volume. The distribution of particles at time <span class="math">\(t+\tau\)</span> from their distribution at <span class="math">\(t\)</span> can be written as:</p>
-<div class="math">$$ f(x,t+\tau) = \int_{-\infty}^\infty f(x-\Delta, t) \Phi(\Delta) d\Delta $$</div>
-<p>On one hand, we can expand to first order in powers of <span class="math">\(\tau\)</span>; <span class="math">\(f(x,t+\tau) = f(x,t) + \tau \frac{\partial f}{\partial t}(x,t) + \mathcal{o}(\tau^2)\)</span> and to second order in powers of <span class="math">\(\Delta\)</span>; <span class="math">\(f(x-\Delta,t)=f(x,t)-\Delta \frac{\partial f}{\partial x}(x,t)+\frac{\Delta^2}{2}\frac{\partial^2 f}{\partial x^2}(x,t)+\mathcal{o}(\Delta^3)\)</span>. Subtituting in the above equation yields:</p>
-<div class="math">$$\begin{align}f(x,t)+\tau \frac{\partial f}{\partial t}(x,t) = \int_{-\infty}^\infty  \left[f(x,t)-\Delta \frac{\partial f}{\partial x}(x,t)+\frac{\Delta^2}{2}\frac{\partial^2 f}{\partial x^2}(x,t) \right] \Phi(\Delta) d\Delta \\ =f(x,t) \underbrace{\int_{-\infty}^\infty \Phi(\Delta) d\Delta}_{= 1}-\frac{\partial f}{\partial x}(x,t) \underbrace{\int_{-\infty}^\infty \Delta \Phi(\Delta) d\Delta}_{= 0} + \int_{-\infty}^\infty \frac{\Delta^2}{2}\frac{\partial^2 f}{\partial x^2}(x,t) \Phi(\Delta) d\Delta\end{align}$$</div>
-<div class="math">$$ \frac{\partial f}{\partial t}(x,t) = \frac{\partial^2 f}{\partial x^2}(x,t) \int_{-\infty}^\infty \frac{\Delta^2}{2\tau} \Phi(\Delta) d\Delta $$</div>
-<div class="math">$$ \frac{\partial f}{\partial t}(x,t) = D  \frac{\partial^2 f}{\partial x^2}(x,t) $$</div>
-<p>where <span class="math">\(D = 1/(2\tau) \int_{-\infty}^\infty \Delta^2 \Phi(\Delta) d\Delta\)</span> is the diffusion coefficient. </p>
-<p>Since the motions of all the individual particles are independent, we can introduce a coordinate system whose origin coincides with the position of the center of gravity of the particle in question at time <span class="math">\(t=0\)</span>, with the difference that <span class="math">\(f(x,t)dx\)</span> denotes the number of particles whose spatial coordinate has increased between the times <span class="math">\(t=0\)</span> and <span class="math">\(t=t\)</span> by a quantity that lies somewhere between <span class="math">\(x\)</span> and <span class="math">\(x+dx\)</span>. We must have:</p>
-<div class="math">$$f(x,t) = 0 $$</div>
-<div class="math">$$ \int_{-\infty}^\infty f(x,t) dx = N $$</div>
-<p>The solution to the problem is:</p>
-<div class="math">$$ f(x,t) = \frac{N}{\sqrt{4\pi D t}}e^{-\frac{x^2}{4 D t}} $$</div>
-<p>The probability distribution of the resulting displacements during an arbitrary time <span class="math">\(t\)</span> is the same as the distribution of random errors. </p>
-<p><center><img alt="graph" src="images/brownian_gaussian.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
-<p>The mean quadratic displacement is <span class="math">\(\sigma^2 = \langle x^2 \rangle = 2 D t\)</span>. As a result, the mean displacement is proportional to the square root of time. </p>
-<h1>Langevin's derivation</h1>
-<p>Langevin introduced a stochastic differential equation:</p>
-<div class="math">$$ m \frac{d^2 x}{dt^2} = -\lambda \frac{dx}{dt} + \xi(t) $$</div>
-<p>in which <span class="math">\(-\lambda \dot{x}\)</span> is some viscous resistance due to the motion of the particle in the water (Stokes law, <span class="math">\(\lambda = 6 \pi \mu a\)</span>) and <span class="math">\(\xi(t)\)</span> some fluctuating force exerted by the water molecules on the Brownian particle. </p>
-<p>We can multiply on the right and left by <span class="math">\(x\)</span>:</p>
-<div class="math">$$ m x\frac{d^2 x}{dt^2} = -\lambda x \frac{dx}{dt} + x \xi(t) $$</div>
-<p>On one hand: <span class="math">\(\frac{d^2(x^2)}{dt^2} = \frac{d}{dt}\left[\frac{d (x^2)}{dt}\right] = \frac{d}{dt}\left[2 x \frac{dx}{dt} \right] = 2 \left(\frac{dx}{dt}\right)^2 + 2 x \frac{d^2 x}{dt^2}\)</span>. On the other hand: <span class="math">\(x\frac{dx}{dt} = \frac{1}{2}\frac{d(x^2)}{dt}\)</span>. Substituting in the above equation, we obtain:</p>
-<div class="math">$$ \frac{m}{2} \frac{d^2(x^2)}{dt^2} - m \left(\frac{dx}{dt}\right)^2 = - \frac{\lambda}{2} \frac{d(x^2)}{dt}+x\xi(t)$$</div>
-<p>We can take the average over a large number of particles and get:</p>
-<div class="math">$$ \frac{m}{2} \frac{d^2 \langle x^2 \rangle}{dt^2} + \frac{\lambda}{2} \frac{d\langle x^2 \rangle}{dt} = m \langle v^2 \rangle$$</div>
-<p>assuming that <span class="math">\(\langle x \xi(t) \rangle = 0\)</span> (because <span class="math">\(\xi(t)\)</span> can be equally positive or negative). Let's also assume that <span class="math">\(m\langle v^2 \rangle = \frac{R T}{N_A} = k_B T\)</span> (equipartition theorem). This second order differential equation can be solved as:</p>
-<div class="math">$$ \frac{d \langle x^2 \rangle}{dt} = C e^{-\frac{\lambda}{m}}  + \frac{2 k_B T}{\lambda}$$</div>
-<p>Since <span class="math">\(m/\lambda \approx 10^{-8} s\)</span>, we can neglect the exponential term and end up with:</p>
-<div class="math">$$ \langle x^2 \rangle = 2 \frac{k_B T}{\lambda} t  = 2 D t$$</div>
-<p>with <span class="math">\(D = \frac{k_B T}{\lambda} = \frac{R T}{N_A}\frac{1}{6 \pi \mu a}\)</span>.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "true";
-
-    if (true) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="/tag/brownian-motion.html" rel="tag">brownian motion</a>,  <a href="/tag/einstein.html" rel="tag">einstein</a>,  <a href="/tag/gaussian.html" rel="tag">gaussian</a>,  <a href="/tag/langevin.html" rel="tag">langevin</a>,  <a href="/tag/random.html" rel="tag">random</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="navigation">
 </div>
-		</div>
-		
-		<div id="footer">
-			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
-		</div><!-- /#footer -->
-	</div><!-- /#container -->
-	<div style="display:none"></div>
-</body>
+
+				</div>
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<!-- Footer -->
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="8u">
+								<section>
+									<header>
+										<h2>Latest articles</h2>
+									</header>
+									<ul class="dates">
+										<li>
+											<span class="date">déc. <strong>03</strong></span>
+											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
+											<p><p>Einstein's and Langevin's derivations of the Brownian motion.</p></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Blogroll</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="http://getpelican.com/">Pelican</a></li>
+											<li><a href="http://python.org/">Python.org</a></li>
+											<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+											<li><a href="#">You can modify those links in your config file</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Categories</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="/category/python.html">Python</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+							
+								<section>
+									<header>
+										<h2>Contact</h2>
+									</header>
+									<ul class="social">
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/jquery.dropotron.js"></script>
+		<script src="/theme/js/config.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-panels.min.js"></script>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+	</body>
 </html>

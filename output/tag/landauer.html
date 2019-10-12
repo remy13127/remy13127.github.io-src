@@ -1,231 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-		<title>Of physics and thoughts &mdash; Articles tagged landauer</title>
-		<meta charset="utf-8" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
-		<link rel='stylesheet' id='oswald-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=3.3.2' type='text/css' media='all' />
-		<style type="text/css">
-			body.custom-background { background-color: #f5f5f5; }
-		</style>
-		<link rel="alternate" type="application/atom+xml"
-			title="Of physics and thoughts — Flux Atom"
-			href="/" /> 
-		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
-</head>
 
-<body class="home blog custom-background " >
-	<div id="container">
-		<div id="header">
-				<h1 id="site-title"><a href="">Of physics and thoughts</a></h1>
-		</div><!-- /#banner -->
-		
-		<div id="menu">
-			<div class="menu-navigation-container">
-				<ul id="menu-navigation" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/category/python.html">Python</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://getpelican.com/">Pelican</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://python.org/">Python.org</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-						<li  class="active" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">You can modify those links in your config file</a></li>
+<!DOCTYPE HTML>
+<!--
+	Dopetrope 2.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>Of physics and thoughts - landauer</title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8" />
+			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
+				<link rel="stylesheet" href="/theme/css/pygment.css" />
+			<noscript>
+				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
+				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
+			</noscript>
+	</head>
+	<body class="no-sidebar">
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Header -->
+								<section id="header">
+									
+									<!-- Logo -->
+									<h1><a href="/">Of physics and thoughts</a></h1>
+									
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+											</ul>
+										</nav>
 
-				</ul>
-			</div> <!--/#menu-navigation-container-->
-		</div><!-- /#menu -->
+								</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
 		
-		<div class="page-title">
-<div class="page-title">
-	<h2>Tagged with <span>landauer</span> &hellip;</h2>
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="container">
+<div class="row">
+<div class="12u">
+    <section>
+            <div class="row">
+                <div class="4u">
+                    <section class="box">
+                        <header>
+                            <h3>Landauer transport</h3>
+                            <span class="byline">2010-12-03 10:20:00+01:00</span>
+                        </header>
+                        <p>Computations related to Landauer transport.</p>
+                        <footer class="actions">
+                            <a href="/landauer-transport.html" class="button button-icon button-icon-1">Continue Reading</a>
+                        </footer>
+                    </section>
+                </div>
+    </section><!-- /#content -->
+            <p class="paginator">
+                Page 1 / 1
+            </p>
 </div>
-		</div>
-	
-		<div id="contents">
-<div class="post type-post status-publish format-standard hentry category-general" id="post">
-	<div class="entry-meta">
-		<div class="date"><a href="/landauer-transport.html">ven. 03 décembre 2010</a></div>
-		<span class="byline">By <a href="/author/remy-torro.html">Rémy Torro</a></span>
-			<span class="cat-links"><a href="/category/python.html" title="View all posts in Python" rel="category tag">Python</a></span>
-	</div> <!-- /#entry-meta -->
-	<div class="main">
-		<h2 class="entry-title">
-			<a href="/landauer-transport.html" title="Permalink to Landauer transport" rel="bookmark">Landauer transport</a>
-		</h2>
-		<div class="entry-content">
-			<h1>1) Current in lead <span class="math">\(m\)</span></h1>
-<p>The current operator is defined as: </p>
-<div class="math">$$ I_m(x_m) = \frac{\hbar e}{2 m i} \left(\psi_m^\dagger \frac{\partial \psi_m}{\partial x_m} - \frac{\partial \psi_m^\dagger}{\partial x_m}\psi_m \right)$$</div>
-<p>where <span class="math">\(\psi_m\)</span> is a wave function at "position" <span class="math">\(m\)</span> in the system (composed of some transmitted and reflected part on the sample):<a href='#butscher_radical-assisted_2019' id='ref-butscher_radical-assisted_2019-1'>Butscher et al. (2019)</a></p>
-<div class="math">$$ \psi_m = \sum_n \int \frac{dk}{\sqrt{2\pi}} \left(\delta_{mn}e^{i k x_m}+ S_{mn}e^{-i k x_m} \right)c_n(k) $$</div>
-<p>where <span class="math">\(S_{mn}\)</span> are elements of the scattering matrix. Their modulus square gives some transmission and reflection probabilities. The derivative with respect to <span class="math">\(x_m\)</span> of <span class="math">\(\psi_m\)</span> can be expressed as:</p>
-<div class="math">$$ \frac{\partial \psi_m}{\partial x_m} = \sum_n \int \frac{dk}{\sqrt{2\pi}}(i k) \left(\delta_{mn}e^{i k x_m}- S_{mn}e^{-i k x_m} \right)c_n(k) $$</div>
-<p>We can now plug these two expressions back into the expression for <span class="math">\(I_m(x_m)\)</span>:</p>
-<div class="math">$$\begin{align}I_m(x_m) = \frac{\hbar e}{2 m i} \left\{  \sum_n \int \frac{dk}{\sqrt{2\pi}} \left(\delta_{mn}e^{-i k x_m}+ S_{mn}^* e^{i k x_m} \right)c_n^\dagger(k) \sum_{n'} \int \frac{dk'}{\sqrt{2\pi}}(i k') \left(\delta_{mn'}e^{i k' x_m}- S_{mn'}e^{-i k' x_m} \right)c_{n'}(k')
-- \sum_n \int \frac{dk}{\sqrt{2\pi}}(- i k) \left(\delta_{mn}e^{-i k x_m}- S_{mn}^*e^{i k x_m} \right)c_n^\dagger(k)
-\sum_{n'} \int \frac{dk'}{\sqrt{2\pi}} \left(\delta_{mn'}e^{i k' x_m}+ S_{mn'}e^{-i k' x_m} \right)c_{n'}(k') \right\} \\ = \frac{\hbar e}{2 m}\sum_{n,n'}\int \frac{dk dk'}{2 \pi}\left[ (\delta_{mn}e^{-i k x_m}+ S_{mn}^* e^{i k x_m})(k' \delta_{mn'}e^{ik'x_m}-k' S_{mn'}e^{-ik'x_m})- (-k\delta_{mn}e^{-i k x_m}+ k S_{mn}^* e^{i k x_m})(\delta_{mn'}e^{i k' x_m}+S_{mn'}e^{-ik' x_m}) \right]c_n^\dagger(k)c_{n'}(k')\end{align}$$</div>
-<p>We can rearange the products in the square brackets <span class="math">\([...]\)</span>:</p>
-<div class="math">$$ [...] = k' \delta_{mn'}\delta_{mn}e^{i(k'-k)x_m}-\delta_{mn}k' S_{mn'}e^{-i(k+k')x_m}+S_{mn}^* k' \delta_{mn'}e^{i(k+k')x_m}-k'S_{mn'}S_{mn}^* e^{-i(k'-k)x_m} + k \delta_{mn}\delta_{mn'}e^{-i(k-k')x_m}+k\delta_{mn}S_{mn'}e^{-i(k+k')x_m}-k S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-kS_{mn}^* S_{mn'}e^{i(k-k')x_m} = (k'+k)(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}) + (k'-k)(S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-\delta_{mn}S_{mn'}e^{-i(k+k')x_m})$$</div>
-<p>As a result we can write:</p>
-<div class="math">$$ I_m(x_m) = \int \sum_{n,n'} \frac{dk dk'}{2\pi}\left[ \frac{\hbar e}{2 m}(k'+k) \left(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}\right) \\ +  \frac{\hbar e}{2 m} (k'-k)\left(S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-\delta_{mn}S_{mn'}e^{-i(k+k')x_m}\right) \right]c_n^\dagger(k)c_{n'}(k')$$</div>
-<p>Assuming <span class="math">\(E(k) = \frac{\hbar^2 k^2}{2 m}\)</span>, we have <span class="math">\(dE = \frac{\hbar^2 k}{m} dk\)</span>, and as a result: <span class="math">\(dk = \frac{m}{\hbar^2 k}dE\)</span>. We can substitute <span class="math">\(dk dk' = \frac{m^2}{\hbar^4 k k'} dE dE'\)</span>:</p>
-<div class="math">$$\begin{align} I_m(x_m) = \int \sum_{n,n'} dE dE' \left[ \underbrace{\frac{e m}{4\pi \hbar^3}(k'^{-1}+k^{-1}) \left(\delta_{mn}\delta_{mn'}e^{-i(k-k')x_m} - S_{mn'}S_{mn}^* e^{i(k-k')x_m}\right)}_{M_m^{\Delta k}(E,E',n,n')}
-\\+ \underbrace{\frac{e m}{4\pi \hbar^3} (k^{-1}-k'^{-1})\left(S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-\delta_{mn}S_{mn'}e^{-i(k+k')x_m}\right)}_{M_m^{\sum k}(E,E',n,n')} \right]c_n^\dagger(E)c_{n'}(E') 
-\\ = \int dE \int dE' \sum_{n,n'} \underbrace{\left[ M_m^{\Delta k}(E,E',n,n')+M_m^{\sum k}(E,E',n,n')\right]}_{M_m(E,E',n,n')} c_n^\dagger(E)c_{n'}(E') \end{align}$$</div>
-<h1>2) Average current</h1>
-<div class="math">$$ \langle I_m(x_m) \rangle \propto \langle c_n^\dagger (E) c_{n'}(E') \rangle = \frac{\hbar^2 k(E)}{m} f_n(E) \delta(E-E') \delta_{nn'}$$</div>
-<p>If we set <span class="math">\(E = E'\)</span>, it implies that <span class="math">\(k^2 = k'^2\)</span> (since <span class="math">\(k\)</span> and <span class="math">\(k'\)</span> are positive, we have <span class="math">\(k = k'\)</span>). Plugging <span class="math">\(k=k'\)</span> in the expression for <span class="math">\(M_m^{\sum k}\)</span> gives zero because of the <span class="math">\((k^{-1} - k'^{-1})\)</span> term. We have:</p>
-<div class="math">$$ M_m^{\Delta k} (E=E',n,n') = \frac{e m}{2 \pi \hbar^3} k^{-1} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})$$</div>
-<p>We can write the expression for the average current as:</p>
-<div class="math">$$\begin{multline} \langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'} \\ 
-= \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] \\ 
-= \frac{e}{h} \int dE \left[f_m(E) - \sum_n |S_{mn}|^2 f_n(E)\right]
-\end{multline}$$</div>
-<p>But since <span class="math">\(\sum_n |S_{nm}|^2 = 1\)</span>, we can factorise:</p>
-<div class="math">$$ \langle I_m \rangle = \frac{e}{h} \int dE \sum_n |S_{mn}|^2 (f_m(E)-f_n(E))$$</div>
-<p>We find that the average current does not depend on the position <span class="math">\(x_m\)</span> at which the current is measured. </p>
-<h1>3) Landauer conductance for a 2-lead device</h1>
-<div class="math">$$\begin{multline} \langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle) \\
-= \frac{1}{2}\left[\frac{e}{h}\int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) - \frac{2e}{h}\sum_n|S_{2n}|^2(f_2(E) - f_n(E)) \right]
-\\ = \frac{e}{2h}\int dE \left[|S_{12}|^2 (f_1(E)-f_2(E)) - |S_{21}|^2 (f_2(E) - f_1(E)) \right]
-\\ = \frac{e}{2h}\left[|S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} - |S_{21}|^2 \underbrace{\int dE (f_2(E) - f_1(E))}_{-eV} \right]
-\\ = \frac{e^2}{2h}(|S_{12}|^2 + |S_{21}|^2) V
-\end{multline}$$</div>
-<p><center><img alt="Fermi distribution" src="images/fermi_difference.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
-<p>where we have assumed that <span class="math">\(|S_{12}|^2\)</span> and <span class="math">\(|S_{21}|^2\)</span> do not depend on the energy <span class="math">\(E\)</span>. Let's call <span class="math">\(T\)</span> the transmission probability. <span class="math">\(T = |S_{12}|^2 = |S_{21}|^2\)</span> so:</p>
-<div class="math">$$ \langle I_{\textrm{2-lead}} \rangle = \underbrace{\frac{e^2}{h} T}_{\textrm{Landauer conductance}} V$$</div>
-<h1>4) Cross-correlation</h1>
-<p>The noise at zero-frequency can be expressed as:</p>
-<div class="math">$$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{2}{T}\int_{-T/2}^{T/2} dt \int_{-\infty}^\infty dt' \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle$$</div>
-<p>We have to compute <span class="math">\(\textrm{Cov}[I_m,I_n] = \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle = \langle I_m(t)I_n(t+t') \rangle - \langle I_m \rangle \langle I_n \rangle\)</span>. Firstly let's evaluate <span class="math">\(\langle I_m(t)I_n(t") \rangle\)</span>, where <span class="math">\(t'' = t+ t'\)</span>. </p>
-<div class="math">$$\begin{multline} \langle I_m(t)I_n(t'') \rangle \propto \langle c_{p_1}^\dagger (k(E_1),t) c_{p_2} (k(E_2),t) c_{p_3}^\dagger (k(E_3),t'') c_{p_4} (k(E_4),t'') \rangle \\ = \langle c_{p_1}^\dagger (k(E_1)) c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) c_{p_4} (k(E_4)) \rangle e^{\frac{i}{\hbar}(E_1 - E_2)t} e^{\frac{i}{\hbar}(E_3 - E_4)t''} \end{multline}$$</div>
-<p>We can apply Wick's theorem to the averaged term and obtain:</p>
-<div class="math">$$\begin{align} \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_2}(k(E_2)) \rangle \langle c_{p_3}^\dagger (k(E_3)) c_{p_4}(k(E_4)) \rangle}_{\propto \langle I_m \rangle \langle I_n \rangle \qquad \textrm{(reducible contrib.)}} + \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_4} (k(E_4)) \rangle \langle c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) \rangle}_{\textrm{(irreducible contrib.)}}  \\ = \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1)\delta(E_1 - E_2)\delta_{p_1 p_2} k(E_3) f_{p_3}(E_3) \delta(E_3 - E_4) \delta_{p_3 p_4} \\ + \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1) \delta{E_1 - E_4} \delta_{p_1 p_4} k(E_2) (1 \mp f_{p_2}(E_2))\delta(E_2 - E_3) \delta_{p_2 p_3} \end{align}$$</div>
-<p>If we apply <span class="math">\(E_1 = E_2\)</span> and <span class="math">\(E_3 = E_4\)</span> to the time exponential we get zero for the first term of the sum, whereas with <span class="math">\(E_1 = E_4\)</span> and <span class="math">\(E_2 = E_3\)</span> we obtain <span class="math">\(e^{\frac{i}{\hbar}(E_1 - E_2)(t - t'')}\)</span>. Eventually we can write:</p>
-<div class="math">$$\begin{align} \langle I_m(t) I_n(t'') \rangle \propto \frac{\hbar^4}{m^2} \left[\underbrace{k(E_1) k(E_3) f_{p_1}(E_1) f_{p_3}(E_3) \delta_{p_1 p_2} \delta_{p_3 p_4} \delta(E_1 - E_2)\delta(E_3 - E_4)}_{\propto \langle I_m \rangle \langle I_n \rangle} \\ + k(E_1) k(E_2) f_{p_1}(E_1) (1 \mp f_{p_2}(E_2)) \delta_{p_1 p_4} \delta_{p_2 p_3} \delta(E_1 - E_4) \delta(E_2 - E_3) e^{\frac{i}{\hbar} (E_1 - E_2)(t - t'')} \right] \end{align}$$</div>
-<h1>5) Noise</h1>
-<p>The reducible term is cancelled with <span class="math">\(\langle I_m \rangle \langle I_n \rangle\)</span> in <span class="math">\(\textrm{Cov}[I_m,I_n]\)</span>. As a result, the covariance is proportional to the irreducible term (let's call it <span class="math">\(\tilde{C}(E_1,E_2,p_1,p_2,p_3,p_4)\)</span>) in the 4-fermions correlator. In other words, we are left with the irreducible contribution under the integral sign (<span class="math">\(S_{mn}\)</span>), up to some factors. The covariance can be written as:</p>
-<div class="math">$$\textrm{Cov}(I_m,I_n) = \int \prod_{i=1}^4 dE_i \sum_{p_1,p_2,p_3,p_4} M_m(E_1,E_2,p_1,p_2)M_n(E_3,E_4,p_3,p_4) \tilde{C}(E_1,E_2,p_1,p_2,p_3,p_4)$$</div>
-<p><span class="math">\(\tilde{C}\)</span> contains <span class="math">\(\delta(E_1 - E_4)\)</span>, <span class="math">\(\delta(E_2 - E_3)\)</span>, <span class="math">\(\delta_{p_1 p_4}\)</span>, <span class="math">\(\delta_{p_2 p_3}\)</span>. So we can set <span class="math">\(E_1 = E_4\)</span>, <span class="math">\(E_2 = E_3\)</span>, <span class="math">\(p_1 = p_4\)</span> and <span class="math">\(p_2 = p_3\)</span>:</p>
-<div class="math">$$ \textrm{Cov}(I_m,I_n) = \int dE_1 \int dE_2 \sum_{p_1,p_2} M_m(E_1,E_2,p_1,p_2) M_n(E_2,E_1,p_2,p_1) \tilde{C}(E_1,E_2,p_1,p_2) $$</div>
-<p>Let's set <span class="math">\(E_1 = E\)</span>, <span class="math">\(E_2 = E'\)</span>, <span class="math">\(p_1 = p\)</span> and <span class="math">\(p_2 = p'\)</span>:</p>
-<div class="math">$$\begin{align} \textrm{Cov}(I_m,I_n) = \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) \tilde{C}(E,E',p,p') 
-= \frac{\hbar^4}{m^2} \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p',p) k(E) k(E') f_p(E) (1 \mp f_{p'}(E')) e^{\frac{i}{\hbar}(E-E')(t-t'')}  \end{align}$$</div>
-<p>Substituting in the expression for <span class="math">\(S_{mn}\)</span> above, we have to integrate over <span class="math">\(t'\)</span> the exponential <span class="math">\(\int dt' e^{\frac{i}{\hbar}(E-E')(t-t'')} = \int dt' e^{-\frac{i}{\hbar}(E-E')t'} = 2 \pi \hbar \delta(E-E')\)</span>. Applying the condition that <span class="math">\(E = E'\)</span> in the expression for the covariance of the current, we observe that the <span class="math">\(M_i\)</span> terms are greatly simplified. The <span class="math">\(M_i^{\sum k} = 0\)</span>, once again, due to the <span class="math">\(k^{-1} - k'^{-1}\)</span> terms. We are left with the product: 
-</p>
-<div class="math">$$\begin{align} M_m^{\Delta k}(E=E',p,p') M_n^{\Delta k}(E'=E,p',p)
-= \frac{e^2 m^2}{\pi^2 \hbar^6} \frac{1}{k^2} \left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right) \end{align}$$</div>
-<p>Eventually we can substitute and write the following expression for the zero-frequency noise:</p>
-<div class="math">$$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{8 e^2}{T h}\int_{-T/2}^{T/2} dt \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$</div>
-<p>Since nothing depends on time under the integral sign, we have <span class="math">\(\int_{-T/2}^{T/2} dt = T\)</span> and as a result:</p>
-<div class="math">$$ \mathcal{S}_{mn} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$</div>
-<h1>6) 2-terminal device</h1>
-<p>Let's compute <span class="math">\(\mathcal{S}_{11}\)</span> for a two-terminal device:</p>
-<div class="math">$$ \mathcal{S}_{11} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'} - S_{1p}^* S_{1p'} \right)\left(\delta_{1p'}\delta_{1p} - S_{1p'}^* S_{1p} \right) $$</div>
-<p>Let's develop the integrand:</p>
-<div class="math">$$\begin{align} \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'} - S_{1p}^* S_{1p'} \right)\left(\delta_{1p'}\delta_{1p} - S_{1p'}^* S_{1p} \right) \\ = \left(f_1(1 \mp f_1) - |S_{11}|^2 f_1(1 \mp f_1) - |S_{11}|^2 f_1(1 \mp f_1) + \sum_{p,p'} |S_{1p}|^2 |S_{1p'}|^2 f_p(1\mp f_{p'}) \right) = \left(f_1(1 \mp f_1)(1 - 2|S_{11}|^2) + |S_{11}|^4 f_1(1 \mp f_1) + |S_{11}|^2|S_{12}|^2 f_1(1 \mp f_2) + |S_{12}|^2 |S_{11}|^2 f_2(1 \mp f_1) + |S_{12}|^4 f_2(1 \mp f_2) \right) \\ = f_1(1 \mp f_1)\left(1 - 2 |S_{11}|^2 \right) + |S_{11}|^2 |S_{12}|^2 \left(f_1(1 \mp f_2) + f_2(1 \mp f_1)\right) + |S_{11}|^4 f_1(1 \mp f_1) + |S_{12}|^4 f_2(1 \mp f_2)
-\end{align}$$</div>
-<p>We want to express everything as a function of <span class="math">\(|S_{12}|^2 = T\)</span>, the transmission probability. We can use the unitary property of the matrix <span class="math">\(S = (S_{ij}) \in \mathbb{R}^{2 \times 2}\)</span>: <span class="math">\(S S^\dagger = \mathbb{I}\)</span> and <span class="math">\(S^\dagger S = \mathbb{I}\)</span>. From the condition <span class="math">\(|S_{11}|^2 + |S_{12}|^2 = 1\)</span>, we have <span class="math">\(|S_{12}|^2 = 1 - |S_{11}|^2\)</span>, so <span class="math">\(|S_{12}|^4 = 1 - 2|S_{11}|^2 + |S_{11}|^4\)</span>, and we can substitute.   </p>
-<div class="math">$$\begin{align} \mathcal{S_{11}} = \frac{8 e^2}{h} \int dE \left\{ |S_{12}|^4 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + |S_{12}|^2 (1 - |S_{12}|^2)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \\
-= \frac{8 e^2}{h} \int dE \left\{ T^2 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + T (1 - T)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \end{align}$$</div>
-<p>We can now compute the noise at thermal equilibrium (<span class="math">\(k_B T &gt;&gt; |\mu_1 - \mu_2|=eV\)</span>). Since the temperature is much larger than <span class="math">\(eV\)</span> we can safely set <span class="math">\(\mu_1 \approx \mu_2\)</span> which implies that <span class="math">\(f_1 \approx f_2 = f\)</span>. Substituting in the expression for <span class="math">\(\mathcal{S_{11}}\)</span>, we get:</p>
-<p><center><img alt="Fermi at high temperature" src="images/fermi_highT.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
-<div class="math">$$\mathcal{S}_{11,\textrm{th}} = \frac{8 e^2}{h} \int dE (2 f \mp 2 f^2)(T^2 + T(1-T)) = \frac{16 e^2}{h} \int dE T(f \mp f^2) = \frac{16 e^2}{h} \int dE Tf(1 - f) $$</div>
-<p>where in the last line we have selected the upper sign <span class="math">\(-\)</span> for fermions. But <span class="math">\(f(1-f) = -k_B \Theta \frac{\partial f}{\partial E}\)</span>. So we have:</p>
-<div class="math">$$\mathcal{S}_{11,\textrm{th}} = \frac{16 e^2}{h} T (-k_B \Theta) \int dE \frac{\partial f}{\partial E} = -\frac{16 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = -\frac{16 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = \frac{16 e^2}{h} T k_B \Theta = 8 k_B \Theta \underbrace{\frac{2 e^2}{h} T}_{\textrm{Landauer conductance}} = 8 k_B \Theta G$$</div>
-<p>At low temperatures <span class="math">\(k_B \Theta &lt;&lt; |\mu_1 - \mu_2|\)</span>, the fermi functions tend to perfect step functions such that <span class="math">\(f \rightarrow f^2\)</span> and <span class="math">\(f(1 - f) \rightarrow 0\)</span> (see the graph below). If we substitute in our equation for the noise <span class="math">\(\mathcal{S}_{11}\)</span>, we get:</p>
-<p><center><img alt="Fermi at low temperature" src="images/fermi_lowT.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
-<div class="math">$$\mathcal{S}_{11,\textrm{gr}} = \frac{8e^2}{h} \int dE \left\{ T^2 [0 + 0] + T(1-T)[f_1 + f_2 - 2 f_1 f_2] \right\} = \frac{8e^2}{h} \int dE T(1-T)[f_1^2 + f_2^2 - 2 f_1 f_2] = \frac{8e^2}{h} T(1-T) \underbrace{\int dE (f_1 - f_2)^2}_{e V} = 4 e \left(\frac{2 e^2}{h}T V\right)(1-T) = 4 e \langle I \rangle(1-T)$$</div>
-<h1>7) 3-lead device</h1>
-<p>We are now interested in the 3-lead device at very low temperature (<span class="math">\(k_B \Theta = 0\)</span>). The scattering matrix is now a <span class="math">\(3 \times 3\)</span> matrix. We want to prove that when <span class="math">\(\mu_2 = \mu_3\)</span>, <span class="math">\(\mathcal{S}_{23} &lt; 0\)</span>. Since we only have two different chemical potentials, we can use once again the expression for the noise that we derived at the end of question 5. We can write:</p>
-<div class="math">$$ \mathcal{S}_{23} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E))(\delta_{2p}\delta_{2p'}-S^*_{2p}S_{2p'})(\delta_{3p'}\delta_{3p}-S_{3p'}^* S_{3p}) = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E)) [\underbrace{\delta_{2p}\delta_{2p'}\delta_{3p'}\delta_{3p}}_{0}-\delta_{2p}\delta_{2p'}S_{3p'}^*S_{3p}-S^*_{2p}S_{2p'}\delta_{3p'}\delta_{3p}+S^*_{2p}S_{2p'}S_{3p'}^*S_{3p}] = \frac{8 e^2}{h} \int dE [-\underbrace{f_2(1-f_2)S_{32}^*S_{32}}_{\rightarrow 0}-\underbrace{f_3(1-f_3)S_{23}^*S_{23}}_{\rightarrow 0}+\sum_{p,p'} f_p(1-f_{p'})S_{2p}^* S_{2p'}S_{3p'}^* S_{3p}]$$</div>
-<p><span class="math">\(p\)</span> and <span class="math">\(p'\)</span> must take values <span class="math">\(1,2,3\)</span>. The terms <span class="math">\(f(1-f)\)</span> go to zero as before, because we are at <span class="math">\(\theta = 0\)</span> K. We can expand the sum as:</p>
-<div class="math">$$ \sum_{p,p'} f_p(1-f_{p'})S_{2p}^* S_{2p'}S_{3p'}^* S_{3p} =  \underbrace{f_1(1-f_1)|S_{21}|^2|S_{31}|^2}_{\rightarrow 0} + f_1(1-f_2)S_{21}^* S_{22} S_{32}^* S_{31} + f_1(1-f_3)S_{21}^* S_{23} S_{33}^* S_{31} + f_2(1-f_1)S_{22}^* S_{21} S_{31}^* S_{32}+\underbrace{f_2(1-f_2)|S_{22}|^2 |S_{32}|^2}_{\rightarrow 0} + \underbrace{f_2(1-f_3)S_{22}^* S_{23}S_{33}^* S_{32}}_{\rightarrow 0}+f_3(1-f_1)S_{23}^* S_{21} S_{31}^* S_{33} + \underbrace{f_3(1-f_2)S_{23}^* S_{22}S_{32}^* S_{33}}_{\rightarrow 0} + \underbrace{f_3(1-f_3)|S_{23}|^2 |S_{33}|^2}_{\rightarrow 0} = f_1(1-f_2)S_{21}^* S_{22}S_{32}^* S_{31} + f_1(1-f_2)S_{21}^* S_{23}S_{33}^*S_{31}+f_2(1-f_1)S_{22}^* S_{21} S_{31}^* S_{32}+f_2(1-f_1)S_{23}^* S_{21} S_{31}^* S_{33} 
-= f_1 S_{21}^* S_{31}\underbrace{[S_{22}S_{32}^* + S_{23}S_{33}^*]}_{-S_{21}S_{31}^*}+f_2 S_{21}S_{31}^* \underbrace{[S_{22}^*S_{32}+S_{23}S_{33}]}_{-S_{21}^* S_{31}}-f_1 f_2 [S_{21}^*S_{31}\underbrace{(S_{22}S_{32}^*+S_{23}S_{33}^*)}_{-S_{21}S_{31}^*}+S_{21}S_{31}^*\underbrace{(S_{22}^*S_{32}+S_{23}^*S_{33})}_{-S_{21}^*S_{31}}] = -f_1|S_{21}|^2|S_{31}|^2 - f_2|S_{21}|^2|S_{31}|^2 + 2 f_1 f_2 |S_{21}|^2 |S_{31}|^2 = -|S_{21}|^2|S_{31}|^2(f_1 - f_2)^2 $$</div>
-<p>where we used <span class="math">\(f_2 = f_3\)</span> (from <span class="math">\(\mu_1 = \mu_2\)</span>), <span class="math">\(f_{0 \textrm{K}}\approx f^2_{0 \textrm{K}}\)</span> and equations derived from the unitary property of the scattering matrix: <span class="math">\(S S^\dagger = \mathbb{I}\)</span>, namely:</p>
-<div class="math">$$S_{21}S_{31}^* + S_{22}S_{32}^* + S_{23}S_{33}^* = 0 $$</div>
-<div class="math">$$S_{31}S_{21}^* + S_{32}S_{22}^* + S_{33}S_{23}^* = 0 $$</div>
-<p>Eventually we can write:</p>
-<div class="math">$$\mathcal{S}_{23} = -\frac{8 e^2}{h}|S_{21}|^2|S_{31}|^2 \underbrace{\int dE (f_1 - f_2)^2}_{|\mu_1 - \mu_2|} = - C^{st} |S_{21}|^2|S_{31}|^2 |\mu_1 - \mu_2| $$</div>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%&#64;#$&#64;#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "true";
-
-    if (true) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%&#64;#$&#64;#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script><hr>
-<h2>Bibliography</h2>
-<p id='butscher_radical-assisted_2019'>T.&nbsp;Butscher, F.&nbsp;Duvernay, G.&nbsp;Danger, R.&nbsp;Torro, G.&nbsp;Lucas, Y.&nbsp;Carissan, D.&nbsp;Hagebaum-Reignier, and T.&nbsp;Chiavassa.
-Radical-assisted polymerization in interstellar ice analogues: formyl radical and polyoxymethylene.
-<em>Monthly Notices of the Royal Astronomical Society</em>, 486(2):1953–1963, June 2019.
-URL: <a href="https://academic.oup.com/mnras/article/486/2/1953/5423328">https://academic.oup.com/mnras/article/486/2/1953/5423328</a>, <a href="https://doi.org/10.1093/mnras/stz879">doi:10.1093/mnras/stz879</a>. <a class="cite-backref" href="#ref-butscher_radical-assisted_2019-1" title="Jump back to reference 1">↩</a></p>
-
-		</div> <!--/#entry-content-->
-    		<span class="tag-links"><strong>Tagged</strong>
- <a href="/tag/fluctuations.html" rel="tag">fluctuations</a>,  <a href="/tag/landauer.html" rel="tag">landauer</a>,  <a href="/tag/quantum.html" rel="tag">quantum</a>,  <a href="/tag/transport.html" rel="tag">transport</a>    		</span>
-	</div> <!--/#main-->
-</div>  <!--/#post--><div class="navigation">
 </div>
-		</div>
-		
-		<div id="footer">
-			<p>Powered by <a href="http://getpelican.com">Pelican</a>, theme by <a href="http://bunnyman.info">tBunnyMan</a>.</p>
-		</div><!-- /#footer -->
-	</div><!-- /#container -->
-	<div style="display:none"></div>
-</body>
+
+				</div>
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<!-- Footer -->
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="8u">
+								<section>
+									<header>
+										<h2>Latest articles</h2>
+									</header>
+									<ul class="dates">
+										<li>
+											<span class="date">déc. <strong>03</strong></span>
+											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+											<p><p>Computations related to Landauer transport.</p></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Blogroll</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="http://getpelican.com/">Pelican</a></li>
+											<li><a href="http://python.org/">Python.org</a></li>
+											<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+											<li><a href="#">You can modify those links in your config file</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Categories</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="/category/python.html">Python</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+							
+								<section>
+									<header>
+										<h2>Contact</h2>
+									</header>
+									<ul class="social">
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/jquery.dropotron.js"></script>
+		<script src="/theme/js/config.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-panels.min.js"></script>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+	</body>
 </html>
