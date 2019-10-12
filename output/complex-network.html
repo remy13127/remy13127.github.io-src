@@ -65,9 +65,26 @@
 
 									<div class="pennant pennant-alt date">2019-12-10</div>
 									<h2>Complex networks</h2>
-									<h1>Erds-Rényi model</h1>
+									<p><br/></p>
+<h1>Erds-Rényi model</h1>
 <p>An Erds-Rényi (or random) network is a network in which the probability for a link to exist is a constant <span class="math">\(p\)</span>. </p>
 <p><center><img alt="Network" src="images/erds_renyi.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
+<div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="c1">#number of possible links</span>
+<span class="n">nE</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="n">E</span><span class="p">)</span> <span class="c1">#actual number of links in the network</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">lNodes</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nE</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="n">lNodes</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">G</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="n">lNodes</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_spring</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
