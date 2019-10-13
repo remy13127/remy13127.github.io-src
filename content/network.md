@@ -38,3 +38,34 @@ The average degree $k$ of a node is $\langle k \rangle = p(N-1)$ (there are $N-1
 <center>![Network](images/erds_renyi.png)</center>
 
 This program randomly chooses two nodes and creates a link if none existed before. Otherwise it moves on to another pair of nodes. It does this process $\langle L \rangle$ times.
+
+	::python
+	lK = list(dict(G.degree()).values())
+	plt.hist(lK,bins=range(0,max(lK)+2))
+
+
+<center>![Network](images/erds_renyi_hist.png)</center>
+
+	::python
+	dC = nx.clustering(G)
+	lC = list(dC.values())
+	h = plt.hist(lC,bins=10)
+
+The `nx.clustering()` function computes the clustering coefficient for a node $n$, i.e. the fraction of possible triangles through that node that exists:
+
+$$ c_n = \frac{2 T(n)}{k(n)(k(n)-1}$$
+
+where $T(n)$ is the number of triangle through node $n$ and $k(n)$ is the degree of $n$. 
+
+<center>![Network](images/erds_renyi_cluster.png)</center>
+
+	::python
+	x = 2.**np.arange(-12,2,0.5)
+	h = np.histogram(lC,bins=x,density=True)
+	plt.loglog(x[:-1],h[0],r"$\rho$")
+
+<center>![Network](images/erds_renyi_log.png)</center>
+
+# Barabási-Albert
+
+To be completed

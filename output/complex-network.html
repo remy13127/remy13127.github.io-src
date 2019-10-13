@@ -88,6 +88,25 @@
 </pre></div>
 <p><center><img alt="Network" src="images/erds_renyi.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <p>This program randomly chooses two nodes and creates a link if none existed before. Otherwise it moves on to another pair of nodes. It does this process <span class="math">\(\langle L \rangle\)</span> times.</p>
+<div class="highlight"><pre><span></span><span class="n">lK</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lK</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">lK</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+<p><center><img alt="Network" src="images/erds_renyi_hist.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
+<div class="highlight"><pre><span></span><span class="n">dC</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">lC</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dC</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lC</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+<p>The <code>nx.clustering()</code> function computes the clustering coefficient for a node <span class="math">\(n\)</span>, i.e. the fraction of possible triangles through that node that exists:</p>
+<div class="math">$$ c_n = \frac{2 T(n)}{k(n)(k(n)-1}$$</div>
+<p>where <span class="math">\(T(n)\)</span> is the number of triangle through node <span class="math">\(n\)</span> and <span class="math">\(k(n)\)</span> is the degree of <span class="math">\(n\)</span>. </p>
+<p><center><img alt="Network" src="images/erds_renyi_cluster.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">lC</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="sa">r</span><span class="s2">"$\rho$"</span><span class="p">)</span>
+</pre></div>
+<p><center><img alt="Network" src="images/erds_renyi_log.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
+<h1>Barabási-Albert</h1>
+<p>To be completed</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

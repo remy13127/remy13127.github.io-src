@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from random import sample
 
+#Erds-Renyi model
 
 N = 1000
 p = 0.01
@@ -20,5 +21,22 @@ for i in range(nE):
 
 nx.draw_spring(G,node_size=10,width=0.5)
 plt.savefig("/home/remy13127/Documents/ghpages/content/images/erds_renyi.png")
-
 plt.close()
+
+lK = list(dict(G.degree()).values())
+plt.hist(lK,bins=range(0,max(lK)+2))
+plt.savefig("/home/remy13127/Documents/ghpages/content/images/erds_renyi_hist.png")
+plt.close()
+
+dC = nx.clustering(G)
+lC = list(dC.values())
+h = plt.hist(lC,bins=10)
+plt.savefig("/home/remy13127/Documents/ghpages/content/images/erds_renyi_cluster.png")
+plt.close()
+
+x = 2.**np.arange(-12,2,0.5)
+h = np.histogram(lC,bins=x,density=True)
+plt.loglog(x[:-1],h[0],"ro")
+plt.savefig("/home/remy13127/Documents/ghpages/content/images/erds_renyi_log.png")
+plt.close()
+
