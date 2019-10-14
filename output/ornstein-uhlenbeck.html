@@ -66,7 +66,7 @@
 									</div>
 
 									<div class="pennant pennant-alt date">2019-12-10</div>
-									<h2>Stochastic differential equations</h2>
+									<h2>Ornstein–Uhlenbeck process</h2>
 									<blockquote>
 <p>How can we define stochastic differential equations? </p>
 </blockquote>
@@ -81,6 +81,12 @@ $$</div>
 <div class="math">$$dy = (x+dx)e^{\gamma(t+dt)} - xe^{\gamma t} = (x+dx)e^{\gamma t}(1+\gamma dt) - xe^{\gamma t} = (xe^{\gamma t}+e^{\gamma t}dx)(1+\gamma dt) - xe^{\gamma t} = \gamma x e^{\gamma t} dt + e^{\gamma t} dx + \underbrace{dx dt \gamma e^{\gamma t}}_{0} = \gamma x e^{\gamma t} + [-\gamma x dt + c dW]e^{\gamma t} = c e^{\gamma t} dW $$</div>
 <div class="math">$$ y(t) = y(0) + c\int_0^t e^{\gamma t'} dW(t') = y(0) + \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} c e^{\gamma n \Delta t}\Delta W_n$$</div>
 <div class="math">$$x(t) = x(0) e^{-\gamma t} + c\int_0^t e^{\gamma(t' -t)} dW(t) $$</div>
+<p>In the following, we will be interested in S.D.Es of the form:</p>
+<div class="math">$$ dx = \underbrace{- \frac{x-\mu}{\tau} dt}_{\textrm{deterministic term}} + \underbrace{\sigma \sqrt{\frac{2}{\tau}} dW}_{\textrm{stochastic term}}$$</div>
+<p>where <span class="math">\(x(t)\)</span> is the stochastic process, <span class="math">\(\mu\)</span> the mean, <span class="math">\(\sigma\)</span> the standard deviation and <span class="math">\(\tau\)</span> the time constant. <span class="math">\(W\)</span> is a Wiener process. Using the Euler-Maruyama method, we can discretize time and add infinitesimal steps to the process at every time step. For the following equation:</p>
+<div class="math">$$ dx = a(t,x) dt + b(t,x) dW$$</div>
+<p>We can apply the Euler-Maruyama discretization and get:</p>
+<div class="math">$$ x_{n+1} = x_n + dx = x_n + a(t,x_n)dt + b(t,x_n) \sqrt{dt}\xi \qquad \xi \approx \mathcal{N}(0,1)$$</div>
 <div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1">#standard deviation</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mf">10.</span> <span class="c1">#mean</span>
 <span class="n">tau</span> <span class="o">=</span> <span class="o">.</span><span class="mo">05</span> <span class="c1">#time constant</span>
@@ -121,6 +127,7 @@ $$</div>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 <p><center><img alt="Ornstein-Uhlenbeck distribution at given times" src="images/ornsteindistrib.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
+<p>The distribution of the process tends to a Gaussian distribution with mean <span class="math">\(\mu=10\)</span> and standard deviation <span class="math">\(\sigma = 1\)</span>.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -222,8 +229,8 @@ $$</div>
 										</li>
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="stochastic-differential-equations.html">Stochastic differential equations</a></h3>
-											<p><p>Properties of stochastic differential equations.</p></p>
+											<h3><a href="ornstein-uhlenbeck.html">Ornstein–Uhlenbeck process</a></h3>
+											<p><p>Properties of Ornstein-Uhlenbeck processes.</p></p>
 										</li>
 									</ul>
 								</section>
