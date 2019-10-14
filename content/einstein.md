@@ -13,7 +13,7 @@ Summary: Einstein's and Langevin's respective derivations of the Brownian motion
 
 # Einstein's derivation
 
-Eighty years later, Albert Einstein published a paper in which he inferred the motion of the pollen grains to collisions with individual water molecules. He had to make the following hypotheses:
+Eighty years later, Albert Einstein published a paper ([@einstein_motion_nodate]) in which he inferred the motion of the pollen grains to collisions with individual water molecules. He had to make the following hypotheses:
 
 * The motion of each individual particle is independent of the motion of all the other particles. They solely interact with the fluid. 
 * Suppose that we can define $\tau$ such that the motions of a same particle in different time intervals $\tau$ are independent processes. 

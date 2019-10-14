@@ -7,14 +7,22 @@ Author: Rémy Torro
 Summary: Landauer-Büttiker formalism for electronic transport in multiterminal devices. 
 <br>
 
-<center>![Two-lead device](images/landauer2lead.JPG)</center>
+Transport phenomena in a mesoscopic conducting system can be described with a quantum mechanical scattering problem approach ([@moskalets_scattering_2011]). Consider a mesoscopic sample connected to $N_r$ macroscopic reservoirs of electrons (the leads). If we apply some voltage or if the leads are characterized by different chemical potentials $\mu_r$, there will be a flow of electrons. Electrons coming from the different leads enter the sample, are scattered inside of it before leaving and returning to either the source reservoir (reflected) or another reservoir (transmitted). All the information about the transport properties of the sample will be encoded in the scattering matrix $S$, such that:
+
+$$\psi^{(\textrm{out})} = S \psi^{(\textrm{in})}$$
+
+where $\psi^{(\textrm{out})}$ and $\psi^{(\textrm{in})}$ are respectively scattered and incoming waves. The elements of matrix $S$ are transmission amplitudes. By definition:
+
+$$ S S^\dagger = S^\dagger S = \mathbb{I}$$
+
+The current flowing between the sample and the reservoirs can be computed without knowing what happens to each electron inside the sample. It is sufficient to study the flow of electrons across the interfaces between the sample and the reservoirs. 
 
 # 1) Current in lead $m$
 The current operator is defined as: 
 
 $$ I_m(x_m) = \frac{\hbar e}{2 m i} \left(\psi_m^\dagger \frac{\partial \psi_m}{\partial x_m} - \frac{\partial \psi_m^\dagger}{\partial x_m}\psi_m \right)$$
 
-where $\psi_m$ is a wave function at "position" $m$ in the system (composed of some transmitted and reflected part on the sample):[@butscher_radical-assisted_2019]
+where $\psi_m$ is a wave function at "position" $m$ in the system (composed of some transmitted and reflected part on the sample):
 
 $$ \psi_m = \sum_n \int \frac{dk}{\sqrt{2\pi}} \left(\delta_{mn}e^{i k x_m}+ S_{mn}e^{-i k x_m} \right)c_n(k) $$
 
@@ -64,9 +72,11 @@ We find that the average current does not depend on the position $x_m$ at which 
 
 # 3) Landauer conductance for a 2-lead device
 
-$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle)
-= \frac{1}{2}\left[\frac{e}{h}\int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) - \frac{2e}{h}\sum_n|S_{2n}|^2(f_2(E) - f_n(E)) \right] = \frac{e}{2h}\int dE \left[|S_{12}|^2 (f_1(E)-f_2(E)) - |S_{21}|^2 (f_2(E) - f_1(E)) \right]
-\\ = \frac{e}{2h}\left[|S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} - |S_{21}|^2 \underbrace{\int dE (f_2(E) - f_1(E))}_{-eV} \right] = \frac{e^2}{2h}(|S_{12}|^2 + |S_{21}|^2) V$$
+$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle + \langle I_2 \rangle)$$
+
+If we define the average current this way we obtain $0$ as the currents in both lead are equal in magnitude but opposite in direction. We are thus interested in $\langle I_1 \rangle$ only:
+
+$$\langle I_1 \rangle = \frac{e}{h} \int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) = \frac{e}{h}\int dE |S_{12}|^2 (f_1(E)-f_2(E)) = \frac{e}{h} |S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} = \frac{e^2}{h} |S_{12}|^2 V$$
 
 <center>![Fermi distribution](images/fermi_difference.png)</center>
 
@@ -80,7 +90,7 @@ The noise at zero-frequency can be expressed as:
 
 $$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{2}{T}\int_{-T/2}^{T/2} dt \int_{-\infty}^\infty dt' \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle$$
 
-We have to compute $\textrm{Cov}[I_m,I_n] = \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle = \langle I_m(t)I_n(t+t') \rangle - \langle I_m \rangle \langle I_n \rangle$. Firstly let's evaluate $\langle I_m(t)I_n(t") \rangle$, where $t'' = t+ t'$. 
+We have to compute $\textrm{Cov}[I_m,I_n] = \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle = \langle I_m(t)I_n(t+t') \rangle - \langle I_m \rangle \langle I_n \rangle$. Firstly let's evaluate $\langle I_m(t)I_n(t'') \rangle$, where $t'' = t+ t'$. 
 
 $$\langle I_m(t)I_n(t'') \rangle \propto \langle c_{p_1}^\dagger (k(E_1),t) c_{p_2} (k(E_2),t) c_{p_3}^\dagger (k(E_3),t'') c_{p_4} (k(E_4),t'') \rangle = \langle c_{p_1}^\dagger (k(E_1)) c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) c_{p_4} (k(E_4)) \rangle e^{\frac{i}{\hbar}(E_1 - E_2)t} e^{\frac{i}{\hbar}(E_3 - E_4)t''}$$
 
@@ -109,15 +119,15 @@ $$\textrm{Cov}(I_m,I_n) = \int dE \int dE' \sum_{p,p'} M_m(E,E',p,p') M_n(E',E,p
 
 Substituting in the expression for $S_{mn}$ above, we have to integrate over $t'$ the exponential $\int dt' e^{\frac{i}{\hbar}(E-E')(t-t'')} = \int dt' e^{-\frac{i}{\hbar}(E-E')t'} = 2 \pi \hbar \delta(E-E')$. Applying the condition that $E = E'$ in the expression for the covariance of the current, we observe that the $M_i$ terms are greatly simplified. The $M_i^{\sum k} = 0$, once again, due to the $k^{-1} - k'^{-1}$ terms. We are left with the product: 
 $$M_m^{\Delta k}(E=E',p,p') M_n^{\Delta k}(E'=E,p',p)
-= \frac{e^2 m^2}{\pi^2 \hbar^6} \frac{1}{k^2} \left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$
+= \frac{e^2 m^2}{4 \pi^2 \hbar^6} \frac{1}{k^2} \left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$
 
 Eventually we can substitute and write the following expression for the zero-frequency noise:
 
-$$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{8 e^2}{T h}\int_{-T/2}^{T/2} dt \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$
+$$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{2 e^2}{T h}\int_{-T/2}^{T/2} dt \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$
 
 Since nothing depends on time under the integral sign, we have $\int_{-T/2}^{T/2} dt = T$ and as a result:
 
-$$ \mathcal{S}_{mn} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$
+$$ \mathcal{S}_{mn} = \frac{2 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$
 
 # 6) 2-terminal device
 
@@ -125,7 +135,7 @@ $$ \mathcal{S}_{mn} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E)
 
 Let's compute $\mathcal{S}_{11}$ for a two-terminal device:
 
-$$ \mathcal{S}_{11} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'} - S_{1p}^* S_{1p'} \right)\left(\delta_{1p'}\delta_{1p} - S_{1p'}^* S_{1p} \right) $$
+$$ \mathcal{S}_{11} = \frac{2 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'} - S_{1p}^* S_{1p'} \right)\left(\delta_{1p'}\delta_{1p} - S_{1p'}^* S_{1p} \right) $$
 
 Let's develop the integrand:
 
@@ -134,24 +144,24 @@ $$\begin{align} \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'
 
 We want to express everything as a function of $|S_{12}|^2 = T$, the transmission probability. We can use the unitary property of the matrix $S = (S_{ij}) \in \mathbb{R}^{2 \times 2}$: $S S^\dagger = \mathbb{I}$ and $S^\dagger S = \mathbb{I}$. From the condition $|S_{11}|^2 + |S_{12}|^2 = 1$, we have $|S_{12}|^2 = 1 - |S_{11}|^2$, so $|S_{12}|^4 = 1 - 2|S_{11}|^2 + |S_{11}|^4$, and we can substitute.   
 
-$$\begin{align} \mathcal{S_{11}} = \frac{8 e^2}{h} \int dE \left\{ |S_{12}|^4 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + |S_{12}|^2 (1 - |S_{12}|^2)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \\
-= \frac{8 e^2}{h} \int dE \left\{ T^2 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + T (1 - T)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \end{align}$$
+$$\begin{align} \mathcal{S_{11}} = \frac{2 e^2}{h} \int dE \left\{ |S_{12}|^4 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + |S_{12}|^2 (1 - |S_{12}|^2)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \\
+= \frac{2 e^2}{h} \int dE \left\{ T^2 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + T (1 - T)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \end{align}$$
 
 We can now compute the noise at thermal equilibrium ($k_B T >> |\mu_1 - \mu_2|=eV$). Since the temperature is much larger than $eV$ we can safely set $\mu_1 \approx \mu_2$ which implies that $f_1 \approx f_2 = f$. Substituting in the expression for $\mathcal{S_{11}}$, we get:
 
 <center>![Fermi at high temperature](images/fermi_highT.png)</center>
 
-$$\mathcal{S}_{11,\textrm{th}} = \frac{8 e^2}{h} \int dE (2 f \mp 2 f^2)(T^2 + T(1-T)) = \frac{16 e^2}{h} \int dE T(f \mp f^2) = \frac{16 e^2}{h} \int dE Tf(1 - f) $$
+$$\mathcal{S}_{11,\textrm{th}} = \frac{2 e^2}{h} \int dE (2 f \mp 2 f^2)(T^2 + T(1-T)) = \frac{4 e^2}{h} \int dE T(f \mp f^2) = \frac{4 e^2}{h} \int dE Tf(1 - f) $$
 
 where in the last line we have selected the upper sign $-$ for fermions. But $f(1-f) = -k_B \Theta \frac{\partial f}{\partial E}$. So we have:
 
-$$\mathcal{S}_{11,\textrm{th}} = \frac{16 e^2}{h} T (-k_B \Theta) \int dE \frac{\partial f}{\partial E} = -\frac{16 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = -\frac{16 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = \frac{16 e^2}{h} T k_B \Theta = 8 k_B \Theta \underbrace{\frac{2 e^2}{h} T}_{\textrm{Landauer conductance}} = 8 k_B \Theta G$$
+$$\mathcal{S}_{11,\textrm{th}} = \frac{4 e^2}{h} T (-k_B \Theta) \int dE \frac{\partial f}{\partial E} = -\frac{4 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = -\frac{4 e^2}{h} T k_B \Theta f(E)|^{\infty}_0 = \frac{4 e^2}{h} T k_B \Theta = 4 k_B \Theta \underbrace{\frac{e^2}{h} T}_{\textrm{Landauer conductance}} = 4 k_B \Theta G$$
 
 At low temperatures $k_B \Theta << |\mu_1 - \mu_2|$, the fermi functions tend to perfect step functions such that $f \rightarrow f^2$ and $f(1 - f) \rightarrow 0$ (see the graph below). If we substitute in our equation for the noise $\mathcal{S}_{11}$, we get:
 
 <center>![Fermi at low temperature](images/fermi_lowT.png)</center>
 
-$$\mathcal{S}_{11,\textrm{gr}} = \frac{8e^2}{h} \int dE \left\{ T^2 [0 + 0] + T(1-T)[f_1 + f_2 - 2 f_1 f_2] \right\} = \frac{8e^2}{h} \int dE T(1-T)[f_1^2 + f_2^2 - 2 f_1 f_2] = \frac{8e^2}{h} T(1-T) \underbrace{\int dE (f_1 - f_2)^2}_{e V} = 4 e \left(\frac{2 e^2}{h}T V\right)(1-T) = 4 e \langle I \rangle(1-T)$$
+$$\mathcal{S}_{11,\textrm{gr}} = \frac{2 e^2}{h} \int dE \left\{ T^2 [0 + 0] + T(1-T)[f_1 + f_2 - 2 f_1 f_2] \right\} = \frac{2 e^2}{h} \int dE T(1-T)[f_1^2 + f_2^2 - 2 f_1 f_2] = \frac{2 e^2}{h} T(1-T) \underbrace{\int dE (f_1 - f_2)^2}_{e V} = 2 e \left(\frac{e^2}{h}T V\right)(1-T) = 2 e \langle I \rangle(1-T)$$
 
 # 7) 3-lead device
 
@@ -159,7 +169,7 @@ $$\mathcal{S}_{11,\textrm{gr}} = \frac{8e^2}{h} \int dE \left\{ T^2 [0 + 0] + T(
 
 We are now interested in the 3-lead device at very low temperature ($k_B \Theta = 0$). The scattering matrix is now a $3 \times 3$ matrix. We want to prove that when $\mu_2 = \mu_3$, $\mathcal{S}_{23} < 0$. Since we only have two different chemical potentials, we can use once again the expression for the noise that we derived at the end of question 5. We can write:
 
-$$ \mathcal{S}_{23} = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E))(\delta_{2p}\delta_{2p'}-S^*_{2p}S_{2p'})(\delta_{3p'}\delta_{3p}-S_{3p'}^* S_{3p}) = \frac{8 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E)) [\underbrace{\delta_{2p}\delta_{2p'}\delta_{3p'}\delta_{3p}}_{0}-\delta_{2p}\delta_{2p'}S_{3p'}^*S_{3p}-S^*_{2p}S_{2p'}\delta_{3p'}\delta_{3p}+S^*_{2p}S_{2p'}S_{3p'}^*S_{3p}] = \frac{8 e^2}{h} \int dE [-\underbrace{f_2(1-f_2)S_{32}^*S_{32}}_{\rightarrow 0}-\underbrace{f_3(1-f_3)S_{23}^*S_{23}}_{\rightarrow 0}+\sum_{p,p'} f_p(1-f_{p'})S_{2p}^* S_{2p'}S_{3p'}^* S_{3p}]$$
+$$ \mathcal{S}_{23} = \frac{2 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E))(\delta_{2p}\delta_{2p'}-S^*_{2p}S_{2p'})(\delta_{3p'}\delta_{3p}-S_{3p'}^* S_{3p}) = \frac{2 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1-f_{p'}(E)) [\underbrace{\delta_{2p}\delta_{2p'}\delta_{3p'}\delta_{3p}}_{0}-\delta_{2p}\delta_{2p'}S_{3p'}^*S_{3p}-S^*_{2p}S_{2p'}\delta_{3p'}\delta_{3p}+S^*_{2p}S_{2p'}S_{3p'}^*S_{3p}] = \frac{2 e^2}{h} \int dE [-\underbrace{f_2(1-f_2)S_{32}^*S_{32}}_{\rightarrow 0}-\underbrace{f_3(1-f_3)S_{23}^*S_{23}}_{\rightarrow 0}+\sum_{p,p'} f_p(1-f_{p'})S_{2p}^* S_{2p'}S_{3p'}^* S_{3p}]$$
 
 $p$ and $p'$ must take values $1,2,3$. The terms $f(1-f)$ go to zero as before, because we are at $\theta = 0$ K. We can expand the sum as:
 
@@ -173,4 +183,6 @@ $$S_{31}S_{21}^* + S_{32}S_{22}^* + S_{33}S_{23}^* = 0 $$
 
 Eventually we can write:
 
-$$\mathcal{S}_{23} = -\frac{8 e^2}{h}|S_{21}|^2|S_{31}|^2 \underbrace{\int dE (f_1 - f_2)^2}_{|\mu_1 - \mu_2|} = - C^{st} |S_{21}|^2|S_{31}|^2 |\mu_1 - \mu_2| $$
+$$\mathcal{S}_{23} = -\frac{2 e^2}{h}|S_{21}|^2|S_{31}|^2 \underbrace{\int dE (f_1 - f_2)^2}_{|\mu_1 - \mu_2|} = - C^{st} |S_{21}|^2|S_{31}|^2 |\mu_1 - \mu_2| $$
+
+The current fluctuations between lead 2 and 3 are anticorrelated ([@martin_wave-packet_1992]). 

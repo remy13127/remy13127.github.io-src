@@ -69,3 +69,4 @@ where $T(n)$ is the number of triangle through node $n$ and $k(n)$ is the degree
 # Barabási-Albert
 
 To be completed
+
