@@ -77,6 +77,12 @@
 $$</div>
 <p>The Ornstein–Uhlenbeck process is an exactly soluble S.D.E, the equivalent to the original <a href="https://remy13127.github.io/brownian-motion.html">Langevin</a> equation. </p>
 <div class="math">$$ dx = - \gamma x dt + c dW$$</div>
+<p>This S.D.E. can be solved by variation of parameters. Let's set <span class="math">\(y = x e^{\gamma t}\)</span>:</p>
+<div class="math">$$dy = (x+dx)e^{\gamma(t+dt)} - xe^{\gamma t} = (x+dx)e^{\gamma t}(1+\gamma dt) - xe^{\gamma t} = (xe^{\gamma t}+e^{\gamma t}dx)(1+\gamma dt) - xe^{\gamma t} = \gamma x e^{\gamma t} dt + e^{\gamma t} dx + \underbrace{dx dt \gamma e^{\gamma t}}_{0} = \gamma x e^{\gamma t} + [-\gamma x dt + c dW]e^{\gamma t} = c e^{\gamma t} dW $$</div>
+<div class="math">$$ y(t) = y(0) + c\int_0^t e^{\gamma t'} dW(t') = y(0) + \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} c e^{\gamma n \Delta t}\Delta W_n$$</div>
+<div class="math">$$x(t) = x(0) e^{-\gamma t} + c\int_0^t e^{\gamma(t' -t)} dW(t) $$</div>
+<p><center><img alt="Ornstein-Uhlenbeck process" src="images/ornsteinprocess.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
+<p><center><img alt="Ornstein-Uhlenbeck distribution at given times" src="images/ornsteindistrib.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

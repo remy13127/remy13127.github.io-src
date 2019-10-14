@@ -27,7 +27,7 @@ plt.xticks([2.05],[r"$\mu_2 \approx \mu_1$"])
 plt.xlabel(r"$\epsilon$")
 plt.ylabel("$\overline{n}$")
 plt.title(r"$k\Theta >> |\mu_1 - \mu_2|$")
-plt.savefig("/home/remy13127/Desktop/Website/content/images/fermi_highT.png")
+plt.savefig("/home/remy13127/Documents/ghpages/content/images/fermi_highT.png")
 plt.close()
 
 mu = 2.0
@@ -43,6 +43,6 @@ plt.xlabel(r"$\epsilon$")
 plt.ylabel("$\overline{n}$")
 plt.legend()
 plt.title(r"$k\Theta << |\mu_1 - \mu_2|$")
-plt.savefig("/home/remy13127/Desktop/Website/content/images/fermi_lowT.png")
+plt.savefig("/home/remy13127/Documents/ghpages/content/images/fermi_lowT.png")
 plt.close()
 
