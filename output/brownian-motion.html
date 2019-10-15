@@ -112,7 +112,7 @@
 <p>We can take the average over a large number of particles and get:</p>
 <div class="math">$$ \frac{m}{2} \frac{d^2 \langle x^2 \rangle}{dt^2} + \frac{\lambda}{2} \frac{d\langle x^2 \rangle}{dt} = m \langle v^2 \rangle$$</div>
 <p>assuming that <span class="math">\(\langle x \xi(t) \rangle = 0\)</span> (because <span class="math">\(\xi(t)\)</span> can be equally positive or negative). Let's also assume that <span class="math">\(m\langle v^2 \rangle = \frac{R T}{N_A} = k_B T\)</span> (equipartition theorem). This second order differential equation can be solved as:</p>
-<div class="math">$$ \frac{d \langle x^2 \rangle}{dt} = C e^{-\frac{\lambda}{m}}  + \frac{2 k_B T}{\lambda}$$</div>
+<div class="math">$$ \frac{d \langle x^2 \rangle}{dt} = C e^{-\frac{\lambda t}{m}}  + \frac{2 k_B T}{\lambda}$$</div>
 <p>Since <span class="math">\(m/\lambda \approx 10^{-8} s\)</span>, we can neglect the exponential term and end up with:</p>
 <div class="math">$$ \langle x^2 \rangle = 2 \frac{k_B T}{\lambda} t  = 2 D t$$</div>
 <p>with <span class="math">\(D = \frac{k_B T}{\lambda} = \frac{R T}{N_A}\frac{1}{6 \pi \mu a}\)</span>.</p>

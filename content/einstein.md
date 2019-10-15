@@ -76,7 +76,7 @@ $$ \frac{m}{2} \frac{d^2 \langle x^2 \rangle}{dt^2} + \frac{\lambda}{2} \frac{d\
 
 assuming that $\langle x \xi(t) \rangle = 0$ (because $\xi(t)$ can be equally positive or negative). Let's also assume that $m\langle v^2 \rangle = \frac{R T}{N_A} = k_B T$ (equipartition theorem). This second order differential equation can be solved as:
 
-$$ \frac{d \langle x^2 \rangle}{dt} = C e^{-\frac{\lambda}{m}}  + \frac{2 k_B T}{\lambda}$$  
+$$ \frac{d \langle x^2 \rangle}{dt} = C e^{-\frac{\lambda t}{m}}  + \frac{2 k_B T}{\lambda}$$  
 
 Since $m/\lambda \approx 10^{-8} s$, we can neglect the exponential term and end up with:
 
