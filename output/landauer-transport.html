@@ -70,7 +70,9 @@
 									<p><br/></p>
 <p>Transport phenomena in a mesoscopic conducting system can be described with a quantum mechanical scattering problem approach (<a href='#moskalets_scattering_2011' id='ref-moskalets_scattering_2011-1'>Moskalets (2011)</a>). Consider a mesoscopic sample connected to <span class="math">\(N_r\)</span> macroscopic reservoirs of electrons (the leads). If we apply some voltage or if the leads are characterized by different chemical potentials <span class="math">\(\mu_r\)</span>, there will be a flow of electrons. Electrons coming from the different leads enter the sample, are scattered inside of it before leaving and returning to either the source reservoir (reflected) or another reservoir (transmitted). All the information about the transport properties of the sample will be encoded in the scattering matrix <span class="math">\(S\)</span>, such that:</p>
 <div class="math">$$\psi^{(\textrm{out})} = S \psi^{(\textrm{in})}$$</div>
-<p>where <span class="math">\(\psi^{(\textrm{out})}\)</span> and <span class="math">\(\psi^{(\textrm{in})}\)</span> are respectively scattered and incoming waves. The elements of matrix <span class="math">\(S\)</span> are transmission amplitudes. By definition:</p>
+<div class="math">$$ $$</div>
+<p>
+where <span class="math">\(\psi^{(\textrm{out})}\)</span> and <span class="math">\(\psi^{(\textrm{in})}\)</span> are respectively scattered and incoming waves. The elements of matrix <span class="math">\(S\)</span> are transmission amplitudes. By definition:</p>
 <div class="math">$$ S S^\dagger = S^\dagger S = \mathbb{I}$$</div>
 <p>The current flowing between the sample and the reservoirs can be computed without knowing what happens to each electron inside the sample. It is sufficient to study the flow of electrons across the interfaces between the sample and the reservoirs. </p>
 <h1>1) Current in lead <span class="math">\(m\)</span></h1>
@@ -93,23 +95,33 @@
 \\+ \underbrace{\frac{e m}{4\pi \hbar^3} (k^{-1}-k'^{-1})\left(S_{mn}^* \delta_{mn'}e^{i(k+k')x_m}-\delta_{mn}S_{mn'}e^{-i(k+k')x_m}\right)}_{M_m^{\sum k}(E,E',n,n')} \right]c_n^\dagger(E)c_{n'}(E') 
 \\ = \int dE \int dE' \sum_{n,n'} \underbrace{\left[ M_m^{\Delta k}(E,E',n,n')+M_m^{\sum k}(E,E',n,n')\right]}_{M_m(E,E',n,n')} c_n^\dagger(E)c_{n'}(E')$$</div>
 <h1>2) Average current</h1>
+<p>At thermal equilibrium, the quantum statistical average of the product of a fermionic creation and annihilation operator is:</p>
+<div class="math">$$ \langle c_n^\dagger(k) c_{n'}(k') \rangle \sim \delta_{n,n'}\delta(k-k') \quad \textrm{(using a bracket representation for the average)}$$</div>
+<div class="math">$$ \langle c_n^\dagger c_n \rangle_{GC} = Z^{-1} \textrm{Tr} \ e^{-\sum_{p}\beta(E_{p}-\mu)c_{p}^\dagger c_{p}}c_n^\dagger c_n$$</div>
+<p>where <span class="math">\(GC\)</span> means that the average is taken in the grand-canonical ensemble. On one hand <span class="math">\(Z = \textrm{Tr } e^{-\beta \sum_p (E_p - \mu) c_p^\dagger c_p}\)</span>. So we can recognize that:</p>
+<div class="math">$$ \langle c_n^\dagger c_n \rangle_{GC} = -\frac{1}{\beta}\frac{\partial \ln Z}{\partial (E_n - \mu)}$$</div>
+<p>On the other hand, for fermions, the only occupation numbers <span class="math">\(c_n^\dagger c_n\)</span> are <span class="math">\(0\)</span> or <span class="math">\(1\)</span> (Pauli's exclusion principle). So we can rewrite <span class="math">\(Z\)</span> as:</p>
+<div class="math">$$ Z = \prod_{p} \left( 1 + e^{-\beta(E_{p} - \mu)}\right)$$</div>
+<p>As a result:</p>
+<div class="math">$$ \langle c_n^\dagger c_n \rangle_{GC} = -\frac{1}{\beta} \frac{\partial}{\partial (E_n - \mu)} \sum_{p} \ln \left(1+e^{-\beta(E_{p}-\mu)}\right) = \frac{e^{-\beta(E_n - \mu)}}{1+e^{-\beta(E_n - \mu)}} = \frac{1}{e^{\beta(E_n - \mu)}+1} = f_n(E_n)$$</div>
+<p>where <span class="math">\(f_n(E_n)\)</span> is a Fermi-Dirac distribution in reservoir <span class="math">\(n\)</span>. Eventually we have the following expression for <span class="math">\(\langle c_n^\dagger (E) c_{n'}(E') \rangle\)</span>:</p>
 <div class="math">$$ \langle I_m(x_m) \rangle \propto \langle c_n^\dagger (E) c_{n'}(E') \rangle = \frac{\hbar^2 k(E)}{m} f_n(E) \delta(E-E') \delta_{nn'}$$</div>
 <p>If we set <span class="math">\(E = E'\)</span>, it implies that <span class="math">\(k^2 = k'^2\)</span> (since <span class="math">\(k\)</span> and <span class="math">\(k'\)</span> are positive, we have <span class="math">\(k = k'\)</span>). Plugging <span class="math">\(k=k'\)</span> in the expression for <span class="math">\(M_m^{\sum k}\)</span> gives zero because of the <span class="math">\((k^{-1} - k'^{-1})\)</span> term. We have:</p>
 <div class="math">$$ M_m^{\Delta k} (E=E',n,n') = \frac{e m}{2 \pi \hbar^3} k^{-1} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})$$</div>
 <p>We can write the expression for the average current as:</p>
-<div class="math">$$\langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'}  
-= \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] 
+<div class="math">$$\langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'} = \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] 
 = \frac{e}{h} \int dE \left[f_m(E) - \sum_n |S_{mn}|^2 f_n(E)\right]$$</div>
 <p>But since <span class="math">\(\sum_n |S_{nm}|^2 = 1\)</span>, we can factorise:</p>
-<div class="math">$$ \langle I_m \rangle = \frac{e}{h} \int dE \sum_n |S_{mn}|^2 (f_m(E)-f_n(E))$$</div>
+<div class="math">$$ \langle I_m \rangle =  \frac{e}{h} \int dE \sum_n |S_{mn}|^2 (f_m(E)-f_n(E))$$</div>
 <p>We find that the average current does not depend on the position <span class="math">\(x_m\)</span> at which the current is measured. </p>
 <h1>3) Landauer conductance for a 2-lead device</h1>
-<div class="math">$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle + \langle I_2 \rangle)$$</div>
-<p>If we define the average current this way we obtain <span class="math">\(0\)</span> as the currents in both lead are equal in magnitude but opposite in direction. We are thus interested in <span class="math">\(\langle I_1 \rangle\)</span> only:</p>
-<div class="math">$$\langle I_1 \rangle = \frac{e}{h} \int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) = \frac{e}{h}\int dE |S_{12}|^2 (f_1(E)-f_2(E)) = \frac{e}{h} |S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} = \frac{e^2}{h} |S_{12}|^2 V$$</div>
+<div class="math">$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle) = \frac{e}{2h} \int dE \left[\sum_n |S_{1n}|^2 (f_1(E) - f_n(E))-\sum_p |S_{2p}|^2 (f_2(E) - f_p(E)) \right] = \frac{e}{2h} \int dE \left[|S_{12}|^2(f_1(E)-f_2(E))-|S_{21}|^2 (f_2(E)-f_1(E))\right] = \frac{e}{h} |S_{12}|^2 \underbrace{\int dE (f_1(E) - f_2(E))}_{eV} = \frac{e^2}{h} |S_{12}|^2 V$$</div>
 <p><center><img alt="Fermi distribution" src="images/fermi_difference.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <p>where we have assumed that <span class="math">\(|S_{12}|^2\)</span> and <span class="math">\(|S_{21}|^2\)</span> do not depend on the energy <span class="math">\(E\)</span>. Let's call <span class="math">\(T\)</span> the transmission probability. <span class="math">\(T = |S_{12}|^2 = |S_{21}|^2\)</span> so:</p>
 <div class="math">$$ \langle I_{\textrm{2-lead}} \rangle = \underbrace{\frac{e^2}{h} T}_{\textrm{Landauer conductance}} V$$</div>
+<p>If we consider electron's spin-degeneracy <span class="math">\(g_i = 2\)</span> that could be introduced in the Fermi-Dirac distributions, we can write:</p>
+<div class="math">$$ \langle I_{\textrm{2-lead}} \rangle = \underbrace{\frac{2 e^2}{h} T}_{\textrm{Landauer conductance }(g_i=2)} V$$</div>
+<p>In the following, the spin degeneracy factor will be neglected, in order to simplify computations, as in Büttiker's derivation (<a href='#blanter_shot_2000' id='ref-blanter_shot_2000-1'>Blanter and Buttiker (2000)</a>). </p>
 <h1>4) Cross-correlation</h1>
 <p>The noise at zero-frequency can be expressed as:</p>
 <div class="math">$$ \mathcal{S}_{mn} = \lim_{T \rightarrow \infty} \frac{2}{T}\int_{-T/2}^{T/2} dt \int_{-\infty}^\infty dt' \langle (I_m(t) - \langle I_m \rangle)(I_n(t+t')-\langle I_n \rangle) \rangle$$</div>
@@ -137,6 +149,12 @@
 <div class="math">$$ \mathcal{S}_{mn} = \frac{2 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{mp} \delta_{mp'} - S_{mp}^* S_{mp'} \right)\left(\delta_{np'}\delta_{np} - S_{n p'}^* S_{n p} \right)$$</div>
 <h1>6) 2-terminal device</h1>
 <p><center><img alt="Two-lead device" src="images/landauer2lead.JPG" style="width: 506px; height: auto; max-width: 100%;"/></center></p>
+<p>For a two-terminal device, the scattering matrix can be expressed as:</p>
+<div class="math">$$S = \begin{pmatrix} 
+r &amp; t' \\
+t &amp; r'
+\end{pmatrix}$$</div>
+<p>where <span class="math">\(r^{(i)}\)</span> and <span class="math">\(t^{(i)}\)</span> are reflection and transmission amplitudes. </p>
 <p>Let's compute <span class="math">\(\mathcal{S}_{11}\)</span> for a two-terminal device:</p>
 <div class="math">$$ \mathcal{S}_{11} = \frac{2 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'} - S_{1p}^* S_{1p'} \right)\left(\delta_{1p'}\delta_{1p} - S_{1p'}^* S_{1p} \right) $$</div>
 <p>Let's develop the integrand:</p>
@@ -229,6 +247,11 @@
 }
 </script><hr>
 <h2>Bibliography</h2>
+<p id='blanter_shot_2000'>Ya&nbsp;M. Blanter and M.&nbsp;Buttiker.
+Shot <span class="bibtex-protected">Noise</span> in <span class="bibtex-protected">Mesoscopic</span> <span class="bibtex-protected">Conductors</span>.
+<em>Physics Reports</em>, 336(1-2):1–166, September 2000.
+arXiv: cond-mat/9910158.
+URL: <a href="http://arxiv.org/abs/cond-mat/9910158">http://arxiv.org/abs/cond-mat/9910158</a>, <a href="https://doi.org/10.1016/S0370-1573(99)00123-4">doi:10.1016/S0370-1573(99)00123-4</a>. <a class="cite-backref" href="#ref-blanter_shot_2000-1" title="Jump back to reference 1">↩</a></p>
 <p id='martin_wave-packet_1992'>Th. Martin and R.&nbsp;Landauer.
 Wave-packet approach to noise in multichannel mesoscopic systems.
 <em>Physical Review B</em>, 45(4):1742–1755, January 1992.
@@ -263,6 +286,11 @@ ISBN 978-1-84816-834-3.
 									<ul class="dates">
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="bifurcations.html">Bifurcations</a></h3>
+											<p><p>Basics of bifurcation theory.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
 											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
 											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
 										</li>
@@ -276,14 +304,23 @@ ISBN 978-1-84816-834-3.
 											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
 											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
 										</li>
-										<li>
-											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="ornstein-uhlenbeck.html">Ornstein–Uhlenbeck process</a></h3>
-											<p><p>Properties of Ornstein-Uhlenbeck processes.</p></p>
-										</li>
 									</ul>
 								</section>
 							</div>
+								<div class="4u">
+									<section>
+										<header>
+											<h2 style="display: flex;
+  align-items: center;">Good news, everyone &emsp; <img src="https://findicons.com/files/icons/1316/futurama_vol_1/128/farnsworth.png" alt="Farnsworth" width="60px align="center" /></h2>
+										</header>
+											<img src="https://photorro.files.wordpress.com/2018/08/p1440336-01.jpeg?w=700&h=" class="image image-full" alt="" />
+										<p>
+										This website is a collection of notes from my various courses as a student in Physics at Aix-Marseille university.
+										</p>
+										<footer>
+										</footer>
+									</section>
+								</div>
 						</div>
 						<div class="row">
 							<div class="4u">
@@ -292,6 +329,7 @@ ISBN 978-1-84816-834-3.
 										<h2>Blogroll</h2>
 									</header>
 									<ul class="divided">
+											<li><a href="http://photorro.wordpress.com">Photorro</a></li>
 									</ul>
 								</section>
 							</div>
@@ -312,6 +350,17 @@ ISBN 978-1-84816-834-3.
 										<h2>Contact</h2>
 									</header>
 									<ul class="social">
+										<li class="linkedin"><a href="https://fr.linkedin.com/in/rémy-torro-607a50112/en" class="icon48 icon48-4">LinkedIn</a></li>
+
+
+										<li class="linkedin"><a href="https://www.researchgate.net/profile/Remy_Torro" class="icon48 icon48-3">ResearchGate</a></li>
+
+									</ul>
+									<ul class="contact">
+											<li>
+												<h3>Mail</h3>
+												<p><a href="mailto:remy13127@gmail.com">remy13127@gmail.com</a></p>
+											</li>
 									</ul>
 								</section>
 							</div>

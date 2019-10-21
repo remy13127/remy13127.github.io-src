@@ -67,7 +67,10 @@
 									<h2>Complex networks</h2>
 									<p><br/></p>
 <h1>Erds-Rényi model</h1>
-<p>The Erds-Rényi (or random) model might be the simplest way to create a graph. You must set the number of nodes <span class="math">\(N\)</span> and a probability <span class="math">\(p\)</span> to put a link between any pair of nodes. The total number of pairs of nodes is <span class="math">\(\frac{N(N-1)}{2}\)</span> and the average number of links is naturally:</p>
+<blockquote>
+<p>The Erds-Rényi (or random) model might be the simplest way to create a graph. </p>
+</blockquote>
+<p>You must set the number of nodes <span class="math">\(N\)</span> and a probability <span class="math">\(p\)</span> to put a link between any pair of nodes. The total number of pairs of nodes is <span class="math">\(\frac{N(N-1)}{2}\)</span> and the average number of links is naturally:</p>
 <div class="math">$$ \langle L \rangle = p \frac{N(N-1)}{2}$$</div>
 <p>The average degree <span class="math">\(k\)</span> of a node is <span class="math">\(\langle k \rangle = p(N-1)\)</span> (there are <span class="math">\(N-1\)</span> neighbors for which the probability to have a link is always <span class="math">\(p\)</span>).   </p>
 <div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -106,7 +109,19 @@
 </pre></div>
 <p><center><img alt="Network" src="images/erds_renyi_log.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
 <h1>Barabási-Albert</h1>
-<p>To be completed</p>
+<blockquote>
+<p>The Barabási-Albert model allows to generate scale-free (<span class="math">\(P(k) \sim k^{-\gamma}\)</span>) networks, according to some preferential attachment mechanism. Good examples include the world wide web, citation networks and social networks, containing some nodes with a very high degree <span class="math">\(k\)</span>, compared to the other nodes in the network,called hubs.</p>
+</blockquote>
+<p>One must start with an initial connected network of <span class="math">\(m_0\)</span> nodes. New nodes are added to the network one at a time. Each new node is connected to <span class="math">\(m \leq m_0\)</span> existing nodes with a probability proportional to the number of links that the existing nodes have. The probability <span class="math">\(p(n \rightarrow i)\)</span> that the new node <span class="math">\(n\)</span> is connected to node <span class="math">\(i\)</span> is:</p>
+<div class="math">$$ p(n \rightarrow i) = \frac{k_i(t-1)}{\sum_j k_j(t-1)}$$</div>
+<p>Thus, the new nodes are more likely to attach themselves to the heavily linked nodes. The probability that a node has degree <span class="math">\(k\)</span> at time <span class="math">\(t\)</span> is:</p>
+<div class="math">$$ p(k,t) = \frac{1}{t+1} \sum_{s=0}^t p(k,s,t)$$</div>
+<p>Some useful equations that I still have to derive:</p>
+<div class="math">$$ p(k) = \frac{A}{k(k+1)(k+2)} \ \sim \ \sqrt{\frac{t}{s}}$$</div>
+<div class="math">$$ \langle k_s(t) \rangle = \sum_k k p(k,s,t) \ \sim \ \sqrt{\frac{t}{s}}$$</div>
+<p>A node that arrives later is automatically disadvantaged. </p>
+<div class="math">$$ \frac{d k_s(t)}{dt} = \frac{k_s(t)}{\sum_j k_j(t)} = \frac{k_s(t)}{2 t}$$</div>
+<div class="math">$$ k_s(t) = \sqrt{\frac{t}{s}}$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -193,6 +208,11 @@
 									<ul class="dates">
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="bifurcations.html">Bifurcations</a></h3>
+											<p><p>Basics of bifurcation theory.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
 											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
 											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
 										</li>
@@ -206,14 +226,23 @@
 											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
 											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
 										</li>
-										<li>
-											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="ornstein-uhlenbeck.html">Ornstein–Uhlenbeck process</a></h3>
-											<p><p>Properties of Ornstein-Uhlenbeck processes.</p></p>
-										</li>
 									</ul>
 								</section>
 							</div>
+								<div class="4u">
+									<section>
+										<header>
+											<h2 style="display: flex;
+  align-items: center;">Good news, everyone &emsp; <img src="https://findicons.com/files/icons/1316/futurama_vol_1/128/farnsworth.png" alt="Farnsworth" width="60px align="center" /></h2>
+										</header>
+											<img src="https://photorro.files.wordpress.com/2018/08/p1440336-01.jpeg?w=700&h=" class="image image-full" alt="" />
+										<p>
+										This website is a collection of notes from my various courses as a student in Physics at Aix-Marseille university.
+										</p>
+										<footer>
+										</footer>
+									</section>
+								</div>
 						</div>
 						<div class="row">
 							<div class="4u">
@@ -222,6 +251,7 @@
 										<h2>Blogroll</h2>
 									</header>
 									<ul class="divided">
+											<li><a href="http://photorro.wordpress.com">Photorro</a></li>
 									</ul>
 								</section>
 							</div>
@@ -242,6 +272,17 @@
 										<h2>Contact</h2>
 									</header>
 									<ul class="social">
+										<li class="linkedin"><a href="https://fr.linkedin.com/in/rémy-torro-607a50112/en" class="icon48 icon48-4">LinkedIn</a></li>
+
+
+										<li class="linkedin"><a href="https://www.researchgate.net/profile/Remy_Torro" class="icon48 icon48-3">ResearchGate</a></li>
+
+									</ul>
+									<ul class="contact">
+											<li>
+												<h3>Mail</h3>
+												<p><a href="mailto:remy13127@gmail.com">remy13127@gmail.com</a></p>
+											</li>
 									</ul>
 								</section>
 							</div>

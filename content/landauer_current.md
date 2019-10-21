@@ -10,7 +10,7 @@ Summary: Landauer-Büttiker formalism for electronic transport in multiterminal 
 Transport phenomena in a mesoscopic conducting system can be described with a quantum mechanical scattering problem approach ([@moskalets_scattering_2011]). Consider a mesoscopic sample connected to $N_r$ macroscopic reservoirs of electrons (the leads). If we apply some voltage or if the leads are characterized by different chemical potentials $\mu_r$, there will be a flow of electrons. Electrons coming from the different leads enter the sample, are scattered inside of it before leaving and returning to either the source reservoir (reflected) or another reservoir (transmitted). All the information about the transport properties of the sample will be encoded in the scattering matrix $S$, such that:
 
 $$\psi^{(\textrm{out})} = S \psi^{(\textrm{in})}$$
-
+$$ $$
 where $\psi^{(\textrm{out})}$ and $\psi^{(\textrm{in})}$ are respectively scattered and incoming waves. The elements of matrix $S$ are transmission amplitudes. By definition:
 
 $$ S S^\dagger = S^\dagger S = \mathbb{I}$$
@@ -51,6 +51,25 @@ $$I_m(x_m) = \int \sum_{n,n'} dE dE' \left[ \underbrace{\frac{e m}{4\pi \hbar^3}
 \\ = \int dE \int dE' \sum_{n,n'} \underbrace{\left[ M_m^{\Delta k}(E,E',n,n')+M_m^{\sum k}(E,E',n,n')\right]}_{M_m(E,E',n,n')} c_n^\dagger(E)c_{n'}(E')$$
 
 # 2) Average current
+At thermal equilibrium, the quantum statistical average of the product of a fermionic creation and annihilation operator is:
+
+$$ \langle c_n^\dagger(k) c_{n'}(k') \rangle \sim \delta_{n,n'}\delta(k-k') \quad \textrm{(using a bracket representation for the average)}$$ 
+
+$$ \langle c_n^\dagger c_n \rangle_{GC} = Z^{-1} \textrm{Tr} \ e^{-\sum_{p}\beta(E_{p}-\mu)c_{p}^\dagger c_{p}}c_n^\dagger c_n$$
+
+where $GC$ means that the average is taken in the grand-canonical ensemble. On one hand $Z = \textrm{Tr } e^{-\beta \sum_p (E_p - \mu) c_p^\dagger c_p}$. So we can recognize that:
+
+$$ \langle c_n^\dagger c_n \rangle_{GC} = -\frac{1}{\beta}\frac{\partial \ln Z}{\partial (E_n - \mu)}$$
+
+On the other hand, for fermions, the only occupation numbers $c_n^\dagger c_n$ are $0$ or $1$ (Pauli's exclusion principle). So we can rewrite $Z$ as:
+
+$$ Z = \prod_{p} \left( 1 + e^{-\beta(E_{p} - \mu)}\right)$$
+
+As a result:
+
+$$ \langle c_n^\dagger c_n \rangle_{GC} = -\frac{1}{\beta} \frac{\partial}{\partial (E_n - \mu)} \sum_{p} \ln \left(1+e^{-\beta(E_{p}-\mu)}\right) = \frac{e^{-\beta(E_n - \mu)}}{1+e^{-\beta(E_n - \mu)}} = \frac{1}{e^{\beta(E_n - \mu)}+1} = f_n(E_n)$$
+
+where $f_n(E_n)$ is a Fermi-Dirac distribution in reservoir $n$. Eventually we have the following expression for $\langle c_n^\dagger (E) c_{n'}(E') \rangle$:
 
 $$ \langle I_m(x_m) \rangle \propto \langle c_n^\dagger (E) c_{n'}(E') \rangle = \frac{\hbar^2 k(E)}{m} f_n(E) \delta(E-E') \delta_{nn'}$$
 
@@ -60,29 +79,30 @@ $$ M_m^{\Delta k} (E=E',n,n') = \frac{e m}{2 \pi \hbar^3} k^{-1} (\delta_{mn}\de
 
 We can write the expression for the average current as:
 
-$$\langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'}  
-= \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] 
+$$\langle I_m(x_m) \rangle = \int dE \sum_n \frac{e}{2 \pi \hbar} (\delta_{mn}\delta_{mn'} - S_{mn}^* S_{mn'})f_n(E)\delta_{nn'} = \int dE \frac{e}{2 \pi \hbar} \left[\sum_n \delta_{mn}f_n(E) - \sum_n |S_{mn}|^2 f_n(E)\right] 
 = \frac{e}{h} \int dE \left[f_m(E) - \sum_n |S_{mn}|^2 f_n(E)\right]$$
 
 But since $\sum_n |S_{nm}|^2 = 1$, we can factorise:
 
-$$ \langle I_m \rangle = \frac{e}{h} \int dE \sum_n |S_{mn}|^2 (f_m(E)-f_n(E))$$
+$$ \langle I_m \rangle =  \frac{e}{h} \int dE \sum_n |S_{mn}|^2 (f_m(E)-f_n(E))$$
 
 We find that the average current does not depend on the position $x_m$ at which the current is measured. 
 
 # 3) Landauer conductance for a 2-lead device
 
-$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle + \langle I_2 \rangle)$$
-
-If we define the average current this way we obtain $0$ as the currents in both lead are equal in magnitude but opposite in direction. We are thus interested in $\langle I_1 \rangle$ only:
-
-$$\langle I_1 \rangle = \frac{e}{h} \int dE \sum_n |S_{1n}|^2 (f_1(E) - f_n(E)) = \frac{e}{h}\int dE |S_{12}|^2 (f_1(E)-f_2(E)) = \frac{e}{h} |S_{12}|^2  \underbrace{\int dE (f_1(E)-f_2(E))}_{e V} = \frac{e^2}{h} |S_{12}|^2 V$$
+$$\langle I \rangle = \frac{1}{2}(\langle I_1 \rangle - \langle I_2 \rangle) = \frac{e}{2h} \int dE \left[\sum_n |S_{1n}|^2 (f_1(E) - f_n(E))-\sum_p |S_{2p}|^2 (f_2(E) - f_p(E)) \right] = \frac{e}{2h} \int dE \left[|S_{12}|^2(f_1(E)-f_2(E))-|S_{21}|^2 (f_2(E)-f_1(E))\right] = \frac{e}{h} |S_{12}|^2 \underbrace{\int dE (f_1(E) - f_2(E))}_{eV} = \frac{e^2}{h} |S_{12}|^2 V$$
 
 <center>![Fermi distribution](images/fermi_difference.png)</center>
 
 where we have assumed that $|S_{12}|^2$ and $|S_{21}|^2$ do not depend on the energy $E$. Let's call $T$ the transmission probability. $T = |S_{12}|^2 = |S_{21}|^2$ so:
 
 $$ \langle I_{\textrm{2-lead}} \rangle = \underbrace{\frac{e^2}{h} T}_{\textrm{Landauer conductance}} V$$
+
+If we consider electron's spin-degeneracy $g_i = 2$ that could be introduced in the Fermi-Dirac distributions, we can write:
+
+$$ \langle I_{\textrm{2-lead}} \rangle = \underbrace{\frac{2 e^2}{h} T}_{\textrm{Landauer conductance }(g_i=2)} V$$
+
+In the following, the spin degeneracy factor will be neglected, in order to simplify computations, as in Büttiker's derivation ([@blanter_shot_2000]). 
 
 # 4) Cross-correlation
 
@@ -132,6 +152,15 @@ $$ \mathcal{S}_{mn} = \frac{2 e^2}{h} \int dE \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E)
 # 6) 2-terminal device
 
 <center>![Two-lead device](images/landauer2lead.JPG)</center>
+
+For a two-terminal device, the scattering matrix can be expressed as:
+
+$$S = \begin{pmatrix} 
+r & t' \\
+t & r'
+\end{pmatrix}$$
+
+where $r^{(i)}$ and $t^{(i)}$ are reflection and transmission amplitudes. 
 
 Let's compute $\mathcal{S}_{11}$ for a two-terminal device:
 

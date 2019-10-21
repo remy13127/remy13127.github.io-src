@@ -10,7 +10,9 @@ Summary: An investigation of complex system networks using the python package <c
 
 # Erds-Rényi model
 
-The Erds-Rényi (or random) model might be the simplest way to create a graph. You must set the number of nodes $N$ and a probability $p$ to put a link between any pair of nodes. The total number of pairs of nodes is $\frac{N(N-1)}{2}$ and the average number of links is naturally:
+> The Erds-Rényi (or random) model might be the simplest way to create a graph. 
+
+You must set the number of nodes $N$ and a probability $p$ to put a link between any pair of nodes. The total number of pairs of nodes is $\frac{N(N-1)}{2}$ and the average number of links is naturally:
 
 $$ \langle L \rangle = p \frac{N(N-1)}{2}$$
 
@@ -68,5 +70,29 @@ where $T(n)$ is the number of triangle through node $n$ and $k(n)$ is the degree
 
 # Barabási-Albert
 
-To be completed
+> The Barabási-Albert model allows to generate scale-free ($P(k) \sim k^{-\gamma}$) networks, according to some preferential attachment mechanism. Good examples include the world wide web, citation networks and social networks, containing some nodes with a very high degree $k$, compared to the other nodes in the network,called hubs.
+
+One must start with an initial connected network of $m_0$ nodes. New nodes are added to the network one at a time. Each new node is connected to $m \leq m_0$ existing nodes with a probability proportional to the number of links that the existing nodes have. The probability $p(n \rightarrow i)$ that the new node $n$ is connected to node $i$ is:
+
+$$ p(n \rightarrow i) = \frac{k_i(t-1)}{\sum_j k_j(t-1)}$$
+
+Thus, the new nodes are more likely to attach themselves to the heavily linked nodes. The probability that a node has degree $k$ at time $t$ is:
+
+$$ p(k,t) = \frac{1}{t+1} \sum_{s=0}^t p(k,s,t)$$
+
+Some useful equations that I still have to derive:
+
+$$ p(k) = \frac{A}{k(k+1)(k+2)} \ \sim \ \sqrt{\frac{t}{s}}$$
+
+$$ \langle k_s(t) \rangle = \sum_k k p(k,s,t) \ \sim \ \sqrt{\frac{t}{s}}$$
+
+A node that arrives later is automatically disadvantaged. 
+
+$$ \frac{d k_s(t)}{dt} = \frac{k_s(t)}{\sum_j k_j(t)} = \frac{k_s(t)}{2 t}$$
+
+$$ k_s(t) = \sqrt{\frac{t}{s}}$$
+
+ 
+
+
 

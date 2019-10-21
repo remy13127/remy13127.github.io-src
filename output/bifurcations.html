@@ -1,0 +1,250 @@
+
+<!DOCTYPE HTML>
+<!--
+	Dopetrope 2.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>Of physics and thoughts</title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8" />
+			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
+				<link rel="stylesheet" href="/theme/css/pygment.css" />
+			<noscript>
+				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
+				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
+			</noscript>
+	</head>
+	<body class="no-sidebar">
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Header -->
+								<section id="header">
+									
+									<!-- Logo -->
+									<h1><a href="/">Of physics and thoughts</a></h1>
+									
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+											</ul>
+										</nav>
+
+								</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="container">
+<div class="row">
+	<div class="12u">
+			<section>
+				<div>
+					<div class="row">
+						<div class="12u skel-cell-mainContent">
+							<!-- Content -->
+								<article class="box is-post">
+									<div class="post-infos">
+										<ul class="tags">
+											<li><a class="button" href="category/physics.html">Physics</a></li>
+												<li><a class="button button-alt" href="tag/dynamical-systems.html">Dynamical systems</a></li>
+
+										</ul>
+									</div>
+
+									<div class="pennant pennant-alt date">2019-12-10</div>
+									<h2>Bifurcations</h2>
+									<p><br/></p>
+<h1>Saddle-node bifurcation</h1>
+<p>Consider the following dynamics:</p>
+<div class="math">$$ \dot{x} = f_\mu(x) = \mu + x^2$$</div>
+<p>At the fixed points, we have <span class="math">\(\dot{x}=0\)</span>, so:</p>
+<div class="math">$$ 0 = \mu + (x^*)^2$$</div>
+<p>So <span class="math">\(x^*_\pm = \pm \sqrt{-\mu}\)</span>, for <span class="math">\(\mu &lt; 0\)</span>. We can study the stability of each fixed point: <span class="math">\(\frac{\partial f}{\partial x} = 2 x^*\)</span>. For <span class="math">\(x^* = \sqrt{-\mu} &gt; 0\)</span>, the solution is unstable, whereas for <span class="math">\(x^* = -\sqrt{-\mu}\)</span>, the solution is stable. For <span class="math">\(\mu = 0\)</span>, both solutions annihilate each other. </p>
+<p><center><img alt="Saddle-node bifurcation" src="images/saddle_node_birfurcation.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "true";
+
+    if (true) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+								</article>
+						</div>
+					</div>
+				</div>
+			</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<!-- Footer -->
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="8u">
+								<section>
+									<header>
+										<h2>Latest articles</h2>
+									</header>
+									<ul class="dates">
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="bifurcations.html">Bifurcations</a></h3>
+											<p><p>Basics of bifurcation theory.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
+											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="complex-network.html">Complex networks</a></h3>
+											<p><p>An investigation of complex system networks using the python package <code>networkx</code>.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+								<div class="4u">
+									<section>
+										<header>
+											<h2 style="display: flex;
+  align-items: center;">Good news, everyone &emsp; <img src="https://findicons.com/files/icons/1316/futurama_vol_1/128/farnsworth.png" alt="Farnsworth" width="60px align="center" /></h2>
+										</header>
+											<img src="https://photorro.files.wordpress.com/2018/08/p1440336-01.jpeg?w=700&h=" class="image image-full" alt="" />
+										<p>
+										This website is a collection of notes from my various courses as a student in Physics at Aix-Marseille university.
+										</p>
+										<footer>
+										</footer>
+									</section>
+								</div>
+						</div>
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Blogroll</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="http://photorro.wordpress.com">Photorro</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Categories</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="/category/physics.html">Physics</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+							
+								<section>
+									<header>
+										<h2>Contact</h2>
+									</header>
+									<ul class="social">
+										<li class="linkedin"><a href="https://fr.linkedin.com/in/rémy-torro-607a50112/en" class="icon48 icon48-4">LinkedIn</a></li>
+
+
+										<li class="linkedin"><a href="https://www.researchgate.net/profile/Remy_Torro" class="icon48 icon48-3">ResearchGate</a></li>
+
+									</ul>
+									<ul class="contact">
+											<li>
+												<h3>Mail</h3>
+												<p><a href="mailto:remy13127@gmail.com">remy13127@gmail.com</a></p>
+											</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/jquery.dropotron.js"></script>
+		<script src="/theme/js/config.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-panels.min.js"></script>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+	</body>
+</html>
