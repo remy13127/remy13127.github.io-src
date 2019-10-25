@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['latex','pelican-cite','render_math','better_figures_and_images']
+PLUGINS = ['latex','pelican-cite','better_figures_and_images','pelican_jsmath']
 THEME = "/home/remy13127/pelican-themes/html5-dopetrope"
 LINKS = (('Photorro','http://photorro.wordpress.com'),)
 
