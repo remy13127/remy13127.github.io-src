@@ -214,4 +214,4 @@ Eventually we can write:
 
 $$\mathcal{S}_{23} = -\frac{2 e^2}{h}|S_{21}|^2|S_{31}|^2 \underbrace{\int dE (f_1 - f_2)^2}_{|\mu_1 - \mu_2|} = - C^{st} |S_{21}|^2|S_{31}|^2 |\mu_1 - \mu_2| $$
 
-The current fluctuations between lead 2 and 3 are anticorrelated ([@martin_wave-packet_1992]). 
+The current fluctuations between lead 2 and 3 are anticorrelated ([@martin_wave-packet_1992]), *i.e.* one increases when the other decreases.  

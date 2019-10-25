@@ -45,10 +45,6 @@ This program randomly chooses two nodes and creates a link if none existed befor
 	lK = list(dict(G.degree()).values())
 	plt.hist(lK,bins=range(0,max(lK)+2))
 
-
-<center>![Network](images/erds_renyi_hist.png)</center>
-
-	::python
 	dC = nx.clustering(G)
 	lC = list(dC.values())
 	h = plt.hist(lC,bins=10)
@@ -59,14 +55,11 @@ $$ c_n = \frac{2 T(n)}{k(n)(k(n)-1}$$
 
 where $T(n)$ is the number of triangle through node $n$ and $k(n)$ is the degree of $n$. 
 
-<center>![Network](images/erds_renyi_cluster.png)</center>
 
 	::python
 	x = 2.**np.arange(-12,2,0.5)
 	h = np.histogram(lC,bins=x,density=True)
 	plt.loglog(x[:-1],h[0],r"$\rho$")
-
-<center>![Network](images/erds_renyi_log.png)</center>
 
 # Barabási-Albert
 
@@ -92,7 +85,22 @@ $$ \frac{d k_s(t)}{dt} = \frac{k_s(t)}{\sum_j k_j(t)} = \frac{k_s(t)}{2 t}$$
 
 $$ k_s(t) = \sqrt{\frac{t}{s}}$$
 
- 
+	::python
+	N=1000
+	m=2
 
+	G = nx.Graph()
+	G.add_edge(0,1)
 
+	for n in range(2,N):
+		dK = dict(G.degree())
+		lN = G.nodes()
+		lK = np.array([dK[p] for p in lN])
+		lK = lK/sum(lK)
+		lN = list(dK.keys())
+		a,b = np.random.choice(lN,size=2,p=lK)
+		G.add_edge(n,a)
+		G.add_edge(n,b)
+
+<center>![Network](images/barabasi_albert.png)</center>
 

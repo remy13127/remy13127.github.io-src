@@ -6,32 +6,41 @@ Slug: ornstein-uhlenbeck
 Author: Rémy Torro
 Summary: Properties of Ornstein-Uhlenbeck processes.
 
+<br>
+
 > How can we define stochastic differential equations? 
 
-We are interested in solving the following stochastic differential equation: 
+We are interested in solving stochastic differential equations of this kind: 
 
 $$ dx = a(x,t) dt + b(x,t) dW$$
 
-# Ito's lemma
+## Itô's lemma
+Itô's lemma is an identity used to find the differential of a time-dependent function of a stochastic process. It is the stochastic calculus counterpart of the chain rule. One can Taylor-expand a function up to its second derivatives and keep only terms up to first order in time ($dt$) and second order in the Wiener process increment $dW$. Let's consider $y = g(x)$. 
 
-Firstly, we must introduce rules for changing variables in a S.D.E. Assume $y = g(x)$. In the limit $dt \rightarrow 0$, the terms $dt^2$ and $dt dW$ go to zero faster than $dW^2$, which is $O(dt)$. We can set $dt^2$ and $dtdW$ to zero and substitute $dW^2$ for $dt$:
-
-$$dy = y(t+dt) - y(t) = g(x(t+dt))-g(t) = g(x+dx)-g(x) = g(x) + g'(x)dx + \frac{1}{2}g''(x) (dx)^2 - g(x) = g'(x)[a(x,t) dt + b(x,t) dW] + \frac{1}{2}g''(x) [a^2(x,t)(dt)^2 + b^2(x,t)(dW)^2 + 2 a(x,t) b(x,t) dt dW] = [g'(x) a(x,t) + \underbrace{\frac{1}{2}g''(x)b^2(x,t)}_{\textrm{additional term}}]dt + g'(x)b(x,t)dW
+$$dy = y(t+dt) - y(t) = g(x(t+dt))-g(t) = g(x+dx)-g(x) = g(x) + g'(x)dx + \frac{1}{2}g''(x) (dx)^2 - g(x) = g'(x)[a(x,t) dt + b(x,t) dW] + \frac{1}{2}g''(x) [a^2(x,t)(dt)^2 + b^2(x,t)\underbrace{(dW)^2}_{dt} + 2 a(x,t) b(x,t) dt dW] = [g'(x) a(x,t) + \underbrace{\frac{1}{2}g''(x)b^2(x,t)}_{\textrm{additional term}}]dt + g'(x)b(x,t)dW
 $$
 
-These approximations constitute Ito's lemma and allow us to perform chain rules in a stochastic setting. 
+In the limit $dt \rightarrow 0$, the terms $dt^2$ and $dt dW$ go to zero faster than $dW^2$, which is $O(dt)$. We can set $dt^2$ and $dtdW$ to zero and substitute $dW^2$ for $dt$.
+
+$$ dy = \left[g'(x) a(x,t) + \frac{1}{2}g''(x)b^2(x,t)\right]dt + g'(x)b(x,t)dW $$
+
+<hr>
 
 # Problem
 
-For $I(T)=\int_0^T (dW)^2$, evalluate the mean and variance:
+For $I(T)=\int_0^T (dW)^2= \lim_{N \rightarrow \infty} \sum_{n=1}^{N-1} (\Delta W_n)^2$, evaluate the mean and variance:
 
 $$\langle I(T) \rangle = \int_0^T \langle (dW)^2 \rangle = \int_0^T dt = T$$
 
 $$V[I(T)] = \lim_{N \rightarrow \infty} V\left[\sum_{n=0}^{N-1} (\Delta W_n)^2 \right] = \lim_{N\rightarrow \infty} \sum_{n=0}^{N-1} V[(\Delta W_n)^2]$$
 
-$$ V[(\Delta W_n)^2] = \langle (\Delta W_n)^4 \rangle - \langle (\Delta W_n)^2 \rangle^2 = \langle (\Delta W_n)^4 \rangle - (\Delta t)^2 = 2 (\Delta t)^2$$
+We can express the variance of $(\Delta W)^2$ as:
 
-$$ \langle (\Delta W)^4 \rangle = \int_{-\infty}^{\infty} \frac{(\Delta W)^4}{\sqrt{2 \pi \Delta t}} e^{-\frac{(\Delta W)^2}{2\Delta t}} = 3 (\Delta t)^2$$
+$$ V[(\Delta W_n)^2] = \langle (\Delta W_n)^4 \rangle - \langle (\Delta W_n)^2 \rangle^2 = \int_{-\infty}^{\infty} \frac{(\Delta W)^4}{\sqrt{2 \pi \Delta t}} e^{-\frac{(\Delta W)^2}{2\Delta t}} = 3 (\Delta t)^2 - \underbrace{(\Delta t)^2}_{\langle (\Delta W)^2 \rangle = \Delta t} = 3 (\Delta t)^2 - (\Delta t)^2 = 2 (\Delta t)^2$$
+
+<hr>
+
+##Ornstein-Ulhenbeck process
 
 The Ornstein–Uhlenbeck process is an exactly soluble S.D.E, the equivalent to the original [Langevin](https://remy13127.github.io/brownian-motion.html) equation. 
 
@@ -41,9 +50,20 @@ This S.D.E. can be solved by variation of parameters. Let's set $y = x e^{\gamma
 
 $$dy = (x+dx)e^{\gamma(t+dt)} - xe^{\gamma t} = (x+dx)e^{\gamma t}(1+\gamma dt) - xe^{\gamma t} = (xe^{\gamma t}+e^{\gamma t}dx)(1+\gamma dt) - xe^{\gamma t} = \gamma x e^{\gamma t} dt + e^{\gamma t} dx + \underbrace{dx dt \gamma e^{\gamma t}}_{0} = \gamma x e^{\gamma t} + [-\gamma x dt + c dW]e^{\gamma t} = c e^{\gamma t} dW $$
 
-$$ y(t) = y(0) + c\int_0^t e^{\gamma t'} dW(t') = y(0) + \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} c e^{\gamma n \Delta t}\Delta W_n$$
+As a result:
+
+$$ y(t) = y(0) + c\int_0^t e^{\gamma t'} dW(t') $$
+
+But since $x=ye^{-\gamma t}$, we have:
 
 $$x(t) = x(0) e^{-\gamma t} + c\int_0^t e^{\gamma(t' -t)} dW(t) $$
+
+Since $x(t)$ is the sum of Gaussian random variables, it is itself Gaussian and its distribution is completely determined by the mean and variance. 
+
+$$ \langle x(t) \rangle = x(0) e^{-\gamma t}$$
+$$ V[x(t)] = \langle x^2(t) \rangle = \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} V[c e^{-\gamma n \Delta t}\Delta W_n] = \lim_{N\rightarrow \infty} \sum_{n=0}^{N-1} c^2 e^{-2\gamma n\Delta t}\Delta t = \int_0^t c^2 e^{-2\gamma t}dt$$
+
+# Numerical implementation
 
 In the following, we will be interested in S.D.Es of the form:
 
@@ -106,7 +126,16 @@ $$ x_{n+1} = x_n + dx = x_n + a(t,x_n)dt + b(t,x_n) \sqrt{dt}\xi \qquad \xi \app
 
 The distribution of the process tends to a Gaussian distribution with mean $\mu=10$ and standard deviation $\sigma = 1$.
 
-#Stratonovich definition
+<hr>
+
+##Stratonovich definition
+Itô's integral can be defined as:
+
+$$ \int_0^t f(x(t'),t') dW(t') = \lim_{N\rightarrow \infty}\sum_{n=0}^{N-1} f(x(n\Delta t),n\Delta t)\Delta W_n$$
+
+Using Stratonovich's definition, we will displace the time increments to be in the middle of an interval such that:
+
+$$ \int_0^t f(x(t'),t')dW(t') = \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} f\left(\frac{x((n+1)\Delta t)+x(n\Delta t)}{2},n\Delta t\right)\Delta W_n $$
 
 $$ x(N\Delta t) = x(0) + \sum_{n=0}^{N-1} a \left(\frac{x((n+1)\Delta t)+x(n\Delta t)}{2},n\Delta t \right)\Delta t+\sum_{n=0}^{N-1} b \left(\frac{x((n+1)\Delta t)+x(n\Delta t)}{2},n\Delta t \right)\Delta W_n$$
 
@@ -121,3 +150,7 @@ $$ x(N\Delta t) = x(0) + \sum_{n=0}^{N-1} a \left(x(n\Delta t) + \frac{\Delta x_
 $$a \left(x_n + \frac{\Delta x_n}{2},n\Delta t \right)\Delta t \approx a_n \Delta t + \underbrace{\frac{\partial a_n}{\partial x}\frac{\Delta x_n}{2} \Delta t}_{\Delta x \Delta t = 0}+\underbrace{\frac{1}{2}\frac{\partial^2 a_n}{\partial x^2}\left(\frac{\Delta x_n}{2}\right)^2 \Delta t}_{(\Delta x)^2 \Delta t = 0} + ... \approx a_n \Delta t$$
 
 $$b \left(x_n + \frac{\Delta x_n}{2},n\Delta t \right)\Delta W_n \approx b_n \Delta W_n + \underbrace{\frac{\partial b_n}{\partial x}\frac{\Delta x_n}{2} \Delta W_n}_{\Delta x_n \Delta W_n = a_n \Delta t \Delta W + b_n (\Delta W_n)^2}+\underbrace{\frac{1}{2}\frac{\partial^2 b_n}{\partial x^2}\left(\frac{\Delta x_n}{2}\right)^2 \Delta t}_{(\Delta x)^2 \Delta W_n = 0} + ... \approx b_n \Delta W_n + \frac{1}{2}\frac{\partial b_n}{\partial x} b_n \Delta t$$
+
+As a result:
+
+$$ x(N\Delta t) = x(0) + \sum_{n=0}^{N-1} \left[a(x(n\Delta t),n\Delta t)+\frac{1}{2}\frac{\partial b}{\partial x}b(x(n\Delta t),n\Delta t)\right] \Delta t + b(x(n\Delta t,n\Delta t))\Delta W_n$$

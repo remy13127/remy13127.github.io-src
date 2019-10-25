@@ -67,28 +67,39 @@
 
 									<div class="pennant pennant-alt date">2019-12-10</div>
 									<h2>Ornstein–Uhlenbeck process</h2>
-									<blockquote>
+									<p><br/></p>
+<blockquote>
 <p>How can we define stochastic differential equations? </p>
 </blockquote>
-<p>We are interested in solving the following stochastic differential equation: </p>
+<p>We are interested in solving stochastic differential equations of this kind: </p>
 <div class="math">$$ dx = a(x,t) dt + b(x,t) dW$$</div>
-<h1>Ito's lemma</h1>
-<p>Firstly, we must introduce rules for changing variables in a S.D.E. Assume <span class="math">\(y = g(x)\)</span>. In the limit <span class="math">\(dt \rightarrow 0\)</span>, the terms <span class="math">\(dt^2\)</span> and <span class="math">\(dt dW\)</span> go to zero faster than <span class="math">\(dW^2\)</span>, which is <span class="math">\(O(dt)\)</span>. We can set <span class="math">\(dt^2\)</span> and <span class="math">\(dtdW\)</span> to zero and substitute <span class="math">\(dW^2\)</span> for <span class="math">\(dt\)</span>:</p>
-<div class="math">$$dy = y(t+dt) - y(t) = g(x(t+dt))-g(t) = g(x+dx)-g(x) = g(x) + g'(x)dx + \frac{1}{2}g''(x) (dx)^2 - g(x) = g'(x)[a(x,t) dt + b(x,t) dW] + \frac{1}{2}g''(x) [a^2(x,t)(dt)^2 + b^2(x,t)(dW)^2 + 2 a(x,t) b(x,t) dt dW] = [g'(x) a(x,t) + \underbrace{\frac{1}{2}g''(x)b^2(x,t)}_{\textrm{additional term}}]dt + g'(x)b(x,t)dW
+<h2>Itô's lemma</h2>
+<p>Itô's lemma is an identity used to find the differential of a time-dependent function of a stochastic process. It is the stochastic calculus counterpart of the chain rule. One can Taylor-expand a function up to its second derivatives and keep only terms up to first order in time (<span class="math">\(dt\)</span>) and second order in the Wiener process increment <span class="math">\(dW\)</span>. Let's consider <span class="math">\(y = g(x)\)</span>. </p>
+<div class="math">$$dy = y(t+dt) - y(t) = g(x(t+dt))-g(t) = g(x+dx)-g(x) = g(x) + g'(x)dx + \frac{1}{2}g''(x) (dx)^2 - g(x) = g'(x)[a(x,t) dt + b(x,t) dW] + \frac{1}{2}g''(x) [a^2(x,t)(dt)^2 + b^2(x,t)\underbrace{(dW)^2}_{dt} + 2 a(x,t) b(x,t) dt dW] = [g'(x) a(x,t) + \underbrace{\frac{1}{2}g''(x)b^2(x,t)}_{\textrm{additional term}}]dt + g'(x)b(x,t)dW
 $$</div>
-<p>These approximations constitute Ito's lemma and allow us to perform chain rules in a stochastic setting. </p>
+<p>In the limit <span class="math">\(dt \rightarrow 0\)</span>, the terms <span class="math">\(dt^2\)</span> and <span class="math">\(dt dW\)</span> go to zero faster than <span class="math">\(dW^2\)</span>, which is <span class="math">\(O(dt)\)</span>. We can set <span class="math">\(dt^2\)</span> and <span class="math">\(dtdW\)</span> to zero and substitute <span class="math">\(dW^2\)</span> for <span class="math">\(dt\)</span>.</p>
+<div class="math">$$ dy = \left[g'(x) a(x,t) + \frac{1}{2}g''(x)b^2(x,t)\right]dt + g'(x)b(x,t)dW $$</div>
+<hr/>
 <h1>Problem</h1>
-<p>For <span class="math">\(I(T)=\int_0^T (dW)^2\)</span>, evalluate the mean and variance:</p>
+<p>For <span class="math">\(I(T)=\int_0^T (dW)^2= \lim_{N \rightarrow \infty} \sum_{n=1}^{N-1} (\Delta W_n)^2\)</span>, evaluate the mean and variance:</p>
 <div class="math">$$\langle I(T) \rangle = \int_0^T \langle (dW)^2 \rangle = \int_0^T dt = T$$</div>
 <div class="math">$$V[I(T)] = \lim_{N \rightarrow \infty} V\left[\sum_{n=0}^{N-1} (\Delta W_n)^2 \right] = \lim_{N\rightarrow \infty} \sum_{n=0}^{N-1} V[(\Delta W_n)^2]$$</div>
-<div class="math">$$ V[(\Delta W_n)^2] = \langle (\Delta W_n)^4 \rangle - \langle (\Delta W_n)^2 \rangle^2 = \langle (\Delta W_n)^4 \rangle - (\Delta t)^2 = 2 (\Delta t)^2$$</div>
-<div class="math">$$ \langle (\Delta W)^4 \rangle = \int_{-\infty}^{\infty} \frac{(\Delta W)^4}{\sqrt{2 \pi \Delta t}} e^{-\frac{(\Delta W)^2}{2\Delta t}} = 3 (\Delta t)^2$$</div>
+<p>We can express the variance of <span class="math">\((\Delta W)^2\)</span> as:</p>
+<div class="math">$$ V[(\Delta W_n)^2] = \langle (\Delta W_n)^4 \rangle - \langle (\Delta W_n)^2 \rangle^2 = \int_{-\infty}^{\infty} \frac{(\Delta W)^4}{\sqrt{2 \pi \Delta t}} e^{-\frac{(\Delta W)^2}{2\Delta t}} = 3 (\Delta t)^2 - \underbrace{(\Delta t)^2}_{\langle (\Delta W)^2 \rangle = \Delta t} = 3 (\Delta t)^2 - (\Delta t)^2 = 2 (\Delta t)^2$$</div>
+<hr/>
+<h2>Ornstein-Ulhenbeck process</h2>
 <p>The Ornstein–Uhlenbeck process is an exactly soluble S.D.E, the equivalent to the original <a href="https://remy13127.github.io/brownian-motion.html">Langevin</a> equation. </p>
 <div class="math">$$ dx = - \gamma x dt + c dW$$</div>
 <p>This S.D.E. can be solved by variation of parameters. Let's set <span class="math">\(y = x e^{\gamma t}\)</span>:</p>
 <div class="math">$$dy = (x+dx)e^{\gamma(t+dt)} - xe^{\gamma t} = (x+dx)e^{\gamma t}(1+\gamma dt) - xe^{\gamma t} = (xe^{\gamma t}+e^{\gamma t}dx)(1+\gamma dt) - xe^{\gamma t} = \gamma x e^{\gamma t} dt + e^{\gamma t} dx + \underbrace{dx dt \gamma e^{\gamma t}}_{0} = \gamma x e^{\gamma t} + [-\gamma x dt + c dW]e^{\gamma t} = c e^{\gamma t} dW $$</div>
-<div class="math">$$ y(t) = y(0) + c\int_0^t e^{\gamma t'} dW(t') = y(0) + \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} c e^{\gamma n \Delta t}\Delta W_n$$</div>
+<p>As a result:</p>
+<div class="math">$$ y(t) = y(0) + c\int_0^t e^{\gamma t'} dW(t') $$</div>
+<p>But since <span class="math">\(x=ye^{-\gamma t}\)</span>, we have:</p>
 <div class="math">$$x(t) = x(0) e^{-\gamma t} + c\int_0^t e^{\gamma(t' -t)} dW(t) $$</div>
+<p>Since <span class="math">\(x(t)\)</span> is the sum of Gaussian random variables, it is itself Gaussian and its distribution is completely determined by the mean and variance. </p>
+<div class="math">$$ \langle x(t) \rangle = x(0) e^{-\gamma t}$$</div>
+<div class="math">$$ V[x(t)] = \langle x^2(t) \rangle = \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} V[c e^{-\gamma n \Delta t}\Delta W_n] = \lim_{N\rightarrow \infty} \sum_{n=0}^{N-1} c^2 e^{-2\gamma n\Delta t}\Delta t = \int_0^t c^2 e^{-2\gamma t}dt$$</div>
+<h1>Numerical implementation</h1>
 <p>In the following, we will be interested in S.D.Es of the form:</p>
 <div class="math">$$ dx = \underbrace{- \frac{x-\mu}{\tau} dt}_{\textrm{deterministic term}} + \underbrace{\sigma \sqrt{\frac{2}{\tau}} dW}_{\textrm{stochastic term}}$$</div>
 <p>where <span class="math">\(x(t)\)</span> is the stochastic process, <span class="math">\(\mu\)</span> the mean, <span class="math">\(\sigma\)</span> the standard deviation and <span class="math">\(\tau\)</span> the time constant. <span class="math">\(W\)</span> is a Wiener process. Using the Euler-Maruyama method, we can discretize time and add infinitesimal steps to the process at every time step. For the following equation:</p>
@@ -136,7 +147,12 @@ $$</div>
 </pre></div>
 <p><center><img alt="Ornstein-Uhlenbeck distribution at given times" src="images/ornsteindistrib.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
 <p>The distribution of the process tends to a Gaussian distribution with mean <span class="math">\(\mu=10\)</span> and standard deviation <span class="math">\(\sigma = 1\)</span>.</p>
-<h1>Stratonovich definition</h1>
+<hr/>
+<h2>Stratonovich definition</h2>
+<p>Itô's integral can be defined as:</p>
+<div class="math">$$ \int_0^t f(x(t'),t') dW(t') = \lim_{N\rightarrow \infty}\sum_{n=0}^{N-1} f(x(n\Delta t),n\Delta t)\Delta W_n$$</div>
+<p>Using Stratonovich's definition, we will displace the time increments to be in the middle of an interval such that:</p>
+<div class="math">$$ \int_0^t f(x(t'),t')dW(t') = \lim_{N \rightarrow \infty} \sum_{n=0}^{N-1} f\left(\frac{x((n+1)\Delta t)+x(n\Delta t)}{2},n\Delta t\right)\Delta W_n $$</div>
 <div class="math">$$ x(N\Delta t) = x(0) + \sum_{n=0}^{N-1} a \left(\frac{x((n+1)\Delta t)+x(n\Delta t)}{2},n\Delta t \right)\Delta t+\sum_{n=0}^{N-1} b \left(\frac{x((n+1)\Delta t)+x(n\Delta t)}{2},n\Delta t \right)\Delta W_n$$</div>
 <p>We have:</p>
 <div class="math">$$\frac{x((n+1)\Delta t)+x(n\Delta t)}{2} = \frac{2x(n\Delta t)+\Delta x_n}{2} = x(n\Delta t) + \frac{\Delta x_n}{2} $$</div>
@@ -144,6 +160,8 @@ $$</div>
 <div class="math">$$ x(N\Delta t) = x(0) + \sum_{n=0}^{N-1} a \left(x(n\Delta t) + \frac{\Delta x_n}{2},n\Delta t \right)\Delta t+\sum_{n=0}^{N-1} b \left(x(n\Delta t) + \frac{\Delta x_n}{2},n\Delta t \right)\Delta W_n$$</div>
 <div class="math">$$a \left(x_n + \frac{\Delta x_n}{2},n\Delta t \right)\Delta t \approx a_n \Delta t + \underbrace{\frac{\partial a_n}{\partial x}\frac{\Delta x_n}{2} \Delta t}_{\Delta x \Delta t = 0}+\underbrace{\frac{1}{2}\frac{\partial^2 a_n}{\partial x^2}\left(\frac{\Delta x_n}{2}\right)^2 \Delta t}_{(\Delta x)^2 \Delta t = 0} + ... \approx a_n \Delta t$$</div>
 <div class="math">$$b \left(x_n + \frac{\Delta x_n}{2},n\Delta t \right)\Delta W_n \approx b_n \Delta W_n + \underbrace{\frac{\partial b_n}{\partial x}\frac{\Delta x_n}{2} \Delta W_n}_{\Delta x_n \Delta W_n = a_n \Delta t \Delta W + b_n (\Delta W_n)^2}+\underbrace{\frac{1}{2}\frac{\partial^2 b_n}{\partial x^2}\left(\frac{\Delta x_n}{2}\right)^2 \Delta t}_{(\Delta x)^2 \Delta W_n = 0} + ... \approx b_n \Delta W_n + \frac{1}{2}\frac{\partial b_n}{\partial x} b_n \Delta t$$</div>
+<p>As a result:</p>
+<div class="math">$$ x(N\Delta t) = x(0) + \sum_{n=0}^{N-1} \left[a(x(n\Delta t),n\Delta t)+\frac{1}{2}\frac{\partial b}{\partial x}b(x(n\Delta t),n\Delta t)\right] \Delta t + b(x(n\Delta t,n\Delta t))\Delta W_n$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -255,7 +273,7 @@ $$</div>
 									<section>
 										<header>
 											<h2 style="display: flex;
-  align-items: center;">Good news, everyone &emsp; <img src="https://findicons.com/files/icons/1316/futurama_vol_1/128/farnsworth.png" alt="Farnsworth" width="60px align="center" /></h2>
+  align-items: center;">Good news, everyone! &emsp; <img src="https://findicons.com/files/icons/1316/futurama_vol_1/128/farnsworth.png" alt="Farnsworth" width="60px align="center" /></h2>
 										</header>
 											<img src="https://photorro.files.wordpress.com/2018/08/p1440336-01.jpeg?w=700&h=" class="image image-full" alt="" />
 										<p>
