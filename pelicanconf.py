@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['latex','pelican-cite','better_figures_and_images','pelican_jsmath']
+PLUGINS = ['latex','pelican-cite',"render_math",'better_figures_and_images','pelican_jsmath']
 THEME = "/home/remy13127/pelican-themes/html5-dopetrope"
 LINKS = (('Photorro','http://photorro.wordpress.com'),)
 
@@ -29,7 +29,7 @@ AUTHOR_FEED_RSS = None
 
 DEFAULT_PAGINATION = 10
 PUBLICATIONS_SRC = 'content/zotero.bib'
-MATH_JAX = {'linebreak_automatic':True,'responsive':True}
+MATH_JAX = {'align':'center','linebreak_automatic':True,'responsive':True}
 RESPONSIVE_IMAGES = True
 ABOUT_TEXT = 'This website is a collection of notes from my various courses as a student in Physics at Aix-Marseille university.'
 ABOUT_IMAGE = 'https://photorro.files.wordpress.com/2018/08/p1440336-01.jpeg?w=700&h='
