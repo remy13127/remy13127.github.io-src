@@ -128,6 +128,7 @@
 <div class="math">$$ p(m,n) = \frac{n!}{a!(n-a)!}\frac{1}{2^n}$$</div>
 <p>If we let <span class="math">\(n\)</span> to be very large so that <span class="math">\(n \pm m\)</span> is also very large, we have asymptotically, </p>
 <div class="math">$$ n! \sim (2\pi n)^{1/2}n^n e^{-n}, \qquad n\rightarrow \infty$$</div>
+<p><center><img alt="'Stirling approximation'" class="img-fluid" src="images/stirling_approximation.png" style="width: 432px; height: auto; max-width: 100%;"/></center></p>
 <p>which is Stirling's formula. We can apply this to the expression for <span class="math">\(p(m,n)\)</span> and derive the Gaussian probability distribution for the particle:</p>
 <div class="math">$$ p(m,n) \sim \left[\frac{2}{\pi n}\right]^{1/2}\exp \left[\frac{-m^2}{2n} \right]$$</div>
 <p>Remark: <span class="math">\(m\)</span> and <span class="math">\(n\)</span> need not be very large for the approximation to be accurate. We can take <span class="math">\(m\Delta x = x\)</span> and <span class="math">\(n \Delta t = t\)</span>. Since <span class="math">\(\Delta x\)</span> and <span class="math">\(\Delta t\)</span> must go to zero in the continuum limit, <span class="math">\(m\)</span> and <span class="math">\(n\)</span> will go to infinity in order to keep <span class="math">\(x\)</span> and <span class="math">\(t\)</span> finite. In this limit, the probability <span class="math">\(p(m,n)\)</span> diverges so instead one must consider <span class="math">\(u = p/(2\Delta x)\)</span></p>

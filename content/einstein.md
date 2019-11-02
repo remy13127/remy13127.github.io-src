@@ -108,6 +108,8 @@ If we let $n$ to be very large so that $n \pm m$ is also very large, we have asy
 
 $$ n! \sim (2\pi n)^{1/2}n^n e^{-n}, \qquad n\rightarrow \infty$$
 
+<center>!['Stirling approximation'](images/stirling_approximation.png)</center>
+
 which is Stirling's formula. We can apply this to the expression for $p(m,n)$ and derive the Gaussian probability distribution for the particle:
 
 $$ p(m,n) \sim \left[\frac{2}{\pi n}\right]^{1/2}\exp \left[\frac{-m^2}{2n} \right]$$
