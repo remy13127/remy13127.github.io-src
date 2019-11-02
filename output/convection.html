@@ -60,19 +60,28 @@
 											<li><a class="button" href="category/physics.html">Physics</a></li>
 												<li><a class="button button-alt" href="tag/dynamical-systems.html">Dynamical systems</a></li>
 
+												<li><a class="button button-alt" href="tag/instabilities.html">Instabilities</a></li>
+
 										</ul>
 									</div>
 
 									<div class="pennant pennant-alt date">2019-12-10</div>
-									<h2>Bifurcations</h2>
+									<h2>Rayleigh-Benard convection</h2>
 									<p><br/></p>
-<h1>Saddle-node bifurcation</h1>
-<p>Consider the following dynamics:</p>
-<div class="math">$$ \dot{x} = f_\mu(x) = \mu + x^2$$</div>
-<p>At the fixed points, we have <span class="math">\(\dot{x}=0\)</span>, so:</p>
-<div class="math">$$ 0 = \mu + (x^*)^2$$</div>
-<p>So <span class="math">\(x^*_\pm = \pm \sqrt{-\mu}\)</span>, for <span class="math">\(\mu &lt; 0\)</span>. We can study the stability of each fixed point: <span class="math">\(\frac{\partial f}{\partial x} = 2 x^*\)</span>. For <span class="math">\(x^* = \sqrt{-\mu} &gt; 0\)</span>, the solution is unstable, whereas for <span class="math">\(x^* = -\sqrt{-\mu}\)</span>, the solution is stable. For <span class="math">\(\mu = 0\)</span>, both solutions annihilate each other. </p>
-<p><center><img alt="Saddle-node bifurcation" class="img-fluid" src="images/saddle_node_birfurcation.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
+<p>The Rayleigh-Bénard convection is a convection phenomenon occuring when a fluid between two horizontal plates is heated from below. The fluid organizes itself into a regular pattern known as Bénard cells, showcasing the self-organizing of a nonlinear system. </p>
+<h2>Dynamical equations</h2>
+<p>Fourier's equation:</p>
+<div class="math">$$ \frac{D T}{D t} = K \Delta T $$</div>
+<div class="math">$$ \rho \frac{D \vec{v}}{D t} = - \nabla p + \rho \vec{g}+ \mu \Delta \vec{v}$$</div>
+<div class="math">$$ \frac{D \rho}{D t} + \rho \nabla \vec{v} = 0$$</div>
+<div class="math">$$ \rho(T) = \rho_0 [1 - \alpha (T - T_0)]$$</div>
+<p>where <span class="math">\(\alpha = \frac{\partial \rho}{\partial T}|_p\)</span>, <span class="math">\(\frac{\partial \rho}{\partial p}|_T\)</span> is neglected. We end up with six scalar equations for six variables (<span class="math">\(v_x,v_y,v_z,\rho,p,T\)</span>). </p>
+<div class="math">$$ \frac{D \vec{v}}{D t} = -\frac{\nabla p}{\rho_0}+ \frac{\rho}{\rho_0} \vec{g} + \nu \Delta \vec{v} $$</div>
+<div class="math">$$ \nabla \vec{v} = 0 $$</div>
+<div class="math">$$ \rho(T) = \rho_0 [1 - \alpha(T - T_0)]$$</div>
+<div class="math">$$ \frac{D T}{D t} = \kappa \Delta T$$</div>
+<h1>Stationary states</h1>
+<p><span class="math">\(D(.)/Dt = 0\)</span>, which implies that <span class="math">\(\vec{v} = \vec{0}\)</span>. <span class="math">\(\Delta T = 0\)</span>, <span class="math">\(\nabla p = \rho \vec{g}\)</span>, so <span class="math">\(\frac{\nabla p}{\rho} = \vec{g}\)</span>. </p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -164,11 +173,6 @@
 										</li>
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="bifurcations.html">Bifurcations</a></h3>
-											<p><p>Basics of bifurcation theory.</p></p>
-										</li>
-										<li>
-											<span class="date">déc. <strong>10</strong></span>
 											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
 											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
 										</li>
@@ -176,6 +180,11 @@
 											<span class="date">déc. <strong>10</strong></span>
 											<h3><a href="complex-network.html">Complex networks</a></h3>
 											<p><p>An investigation of complex system networks using the python package <code>networkx</code>.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="convection.html">Rayleigh-Benard convection</a></h3>
+											<p><p>A study of the Rayleigh-Benard convection phenomenon.</p></p>
 										</li>
 									</ul>
 								</section>

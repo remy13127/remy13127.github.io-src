@@ -128,7 +128,7 @@ $$</div>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
-<p><center><img alt="Ornstein-Uhlenbeck process" src="images/ornsteinprocess.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
+<p><center><img alt="Ornstein-Uhlenbeck process" class="img-fluid" src="images/ornsteinprocess.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
 <div class="highlight"><pre><span></span><span class="n">ntrials</span> <span class="o">=</span> <span class="mi">100000</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ntrials</span><span class="p">)</span>
 
@@ -145,7 +145,7 @@ $$</div>
         <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="p">{</span><span class="mi">5</span><span class="p">:</span> <span class="s1">'-'</span><span class="p">,</span> <span class="mi">50</span><span class="p">:</span> <span class="s1">'.'</span><span class="p">,</span> <span class="mi">900</span><span class="p">:</span> <span class="s1">'-.'</span><span class="p">,</span> <span class="p">}[</span><span class="n">i</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">f</span><span class="s1">'t={i * dt:.2f}'</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
-<p><center><img alt="Ornstein-Uhlenbeck distribution at given times" src="images/ornsteindistrib.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
+<p><center><img alt="Ornstein-Uhlenbeck distribution at given times" class="img-fluid" src="images/ornsteindistrib.png" style="width: 800px; height: auto; max-width: 100%;"/></center></p>
 <p>The distribution of the process tends to a Gaussian distribution with mean <span class="math">\(\mu=10\)</span> and standard deviation <span class="math">\(\sigma = 1\)</span>.</p>
 <hr/>
 <h2>Stratonovich definition</h2>
@@ -248,23 +248,18 @@ $$</div>
 									<ul class="dates">
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="bifurcations.html">Bifurcations</a></h3>
-											<p><p>Basics of bifurcation theory.</p></p>
-										</li>
-										<li>
-											<span class="date">déc. <strong>10</strong></span>
 											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
 											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
 										</li>
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="complex-network.html">Complex networks</a></h3>
-											<p><p>An investigation of complex system networks using the python package <code>networkx</code>.</p></p>
+											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
 										</li>
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
-											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
+											<h3><a href="ornstein-uhlenbeck.html">Ornstein–Uhlenbeck process</a></h3>
+											<p><p>Properties of Ornstein-Uhlenbeck processes.</p></p>
 										</li>
 									</ul>
 								</section>

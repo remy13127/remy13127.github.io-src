@@ -4,6 +4,7 @@ Category: Physics
 Tags: Dynamical systems
 Slug: bifurcations
 Author: Rémy Torro
+Status: draft
 Summary: Basics of bifurcation theory.
 
 <br>

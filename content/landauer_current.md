@@ -173,10 +173,10 @@ $$\begin{align} \sum_{p,p'} f_p(E)(1 \mp f_{p'}(E))\left(\delta_{1p} \delta_{1p'
 
 We want to express everything as a function of $|S_{12}|^2 = T$, the transmission probability. We can use the unitary property of the matrix $S = (S_{ij}) \in \mathbb{R}^{2 \times 2}$: $S S^\dagger = \mathbb{I}$ and $S^\dagger S = \mathbb{I}$. From the condition $|S_{11}|^2 + |S_{12}|^2 = 1$, we have $|S_{12}|^2 = 1 - |S_{11}|^2$, so $|S_{12}|^4 = 1 - 2|S_{11}|^2 + |S_{11}|^4$, and we can substitute.   
 
-$$\begin{align} \mathcal{S_{11}} = \frac{2 e^2}{h} \int dE \left\{ |S_{12}|^4 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + |S_{12}|^2 (1 - |S_{12}|^2)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \\
+$$\begin{align} \mathcal{S}_{11} = \frac{2 e^2}{h} \int dE \left\{ |S_{12}|^4 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + |S_{12}|^2 (1 - |S_{12}|^2)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \\
 = \frac{2 e^2}{h} \int dE \left\{ T^2 [f_1(1 \mp f_1)+f_2(1 \mp f_2)] + T (1 - T)[f_1(1 \mp f_2) + f_2 (1 \mp f_1)] \right\} \end{align}$$
 
-We can now compute the noise at thermal equilibrium ($k_B T >> |\mu_1 - \mu_2|=eV$). Since the temperature is much larger than $eV$ we can safely set $\mu_1 \approx \mu_2$ which implies that $f_1 \approx f_2 = f$. Substituting in the expression for $\mathcal{S_{11}}$, we get:
+We can now compute the noise at thermal equilibrium ($k_B T >> |\mu_1 - \mu_2|=eV$). Since the temperature is much larger than $eV$ we can safely set $\mu_1 \approx \mu_2$ which implies that $f_1 \approx f_2 = f$. Substituting in the expression for $\mathcal{S}_{11}$, we get:
 
 <center>![Fermi at high temperature](images/fermi_highT.png)</center>
 

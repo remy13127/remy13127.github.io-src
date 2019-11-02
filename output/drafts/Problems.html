@@ -58,21 +58,26 @@
 									<div class="post-infos">
 										<ul class="tags">
 											<li><a class="button" href="category/physics.html">Physics</a></li>
-												<li><a class="button button-alt" href="tag/dynamical-systems.html">Dynamical systems</a></li>
+												<li><a class="button button-alt" href="tag/statistics.html">Statistics</a></li>
 
 										</ul>
 									</div>
 
 									<div class="pennant pennant-alt date">2019-12-10</div>
-									<h2>Bifurcations</h2>
+									<h2>Statistical Physics - Problem set</h2>
 									<p><br/></p>
-<h1>Saddle-node bifurcation</h1>
-<p>Consider the following dynamics:</p>
-<div class="math">$$ \dot{x} = f_\mu(x) = \mu + x^2$$</div>
-<p>At the fixed points, we have <span class="math">\(\dot{x}=0\)</span>, so:</p>
-<div class="math">$$ 0 = \mu + (x^*)^2$$</div>
-<p>So <span class="math">\(x^*_\pm = \pm \sqrt{-\mu}\)</span>, for <span class="math">\(\mu &lt; 0\)</span>. We can study the stability of each fixed point: <span class="math">\(\frac{\partial f}{\partial x} = 2 x^*\)</span>. For <span class="math">\(x^* = \sqrt{-\mu} &gt; 0\)</span>, the solution is unstable, whereas for <span class="math">\(x^* = -\sqrt{-\mu}\)</span>, the solution is stable. For <span class="math">\(\mu = 0\)</span>, both solutions annihilate each other. </p>
-<p><center><img alt="Saddle-node bifurcation" class="img-fluid" src="images/saddle_node_birfurcation.png" style="width: 640px; height: auto; max-width: 100%;"/></center></p>
+<h2>Statistics</h2>
+<p><strong>Problem</strong>: what are the chances that at least two people in your class have the same birthday?</p>
+<p>The easiest way to solve this problem is to look at the probability that "not two people in the class have the same birthday". On average, a year contains <span class="math">\(365\)</span> days, so the probability to have a birthday on a given day is <span class="math">\(\frac{1}{365}\)</span>. The number of students in the class is set to <span class="math">\(30\)</span>. If a student has his birthday on a particular day, the probability for another student not to have the same birthday as the first one is <span class="math">\(\frac{364}{365}\)</span>. For the next student, the probability that his birthday is different from the other two is <span class="math">\(\frac{363}{365}\)</span>, and so on...</p>
+<div class="math">$$ p(\overline{B}) = \underbrace{\frac{365}{365}\times \frac{364}{365}\times ... \times \frac{336}{365}}_{30 \ \textrm{elements}}$$</div>
+<div class="math">$$ p(\overline{B}) = \frac{1}{(365)^{30}} \times 365 \times 364 \times ... \times 336  = \frac{365!}{365^{30}(365 - 30)!} $$</div>
+<p>Numerically one obtains <span class="math">\(p(\overline{B}) = 0.294\)</span>. As a result the probability that at least two people in my class have the same birthday is <span class="math">\(p(B) = 1 - p(\overline{B}) = 1 - 0.294 = 70.6 \%\)</span>.</p>
+<hr/>
+<p><strong>Problem</strong>: a particle is moving in a one-dimensional line along discrete locations. What is the probability that the particle returns to the origin after <span class="math">\(N\)</span> steps? How does the probability behave for large <span class="math">\(N\)</span>? If <span class="math">\(p = 1/2\)</span>? </p>
+<p>Let's define <span class="math">\(p\)</span> as the probability of moving to the right and <span class="math">\(q\)</span> the probability of moving to the left. The condition <span class="math">\(p+q = 1\)</span> is necessary. Let's denote <span class="math">\(n_r\)</span> the number of steps taken to the right and <span class="math">\(n_l\)</span> the number of steps taken to the left. We have <span class="math">\(n_r + n_l = N\)</span> and <span class="math">\(n_r - n_l = x\)</span>, where <span class="math">\(N\)</span> is the total number of steps and <span class="math">\(x\)</span> some discrete position on the line. </p>
+<p>The number of steps <span class="math">\(N\)</span> has to be even in order to allow the particle to return to <span class="math">\(0\)</span>. Let's assume that the number of time steps is even, i.e. <span class="math">\(t = 2m\)</span>. Since we are interested in going back to <span class="math">\(x=0\)</span> after <span class="math">\(t=N\)</span> steps, we have <span class="math">\(n_l = n_r\)</span>. But <span class="math">\(n_r = \frac{N+x}{2} = \frac{N}{2} = n_l\)</span>. The binomial probability of moving by <span class="math">\(\frac{N}{2}\)</span> steps to the left in <span class="math">\(t=N\)</span> s is:</p>
+<div class="math">$$ p(x=0,t=N)=\begin{pmatrix}N \\ \frac{N}{2} \end{pmatrix}p^{\frac{N}{2}} q^{N - \frac{N}{2}} $$</div>
+<p>For large <span class="math">\(N=2m\)</span> we can use Stirling's approximation: <span class="math">\(m! \sim m^{m+1/2}e^{-m}\sqrt{2\pi}\)</span>. </p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -159,23 +164,18 @@
 									<ul class="dates">
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="Problems.html">Statistical Physics - Problem set</a></h3>
-											<p><p>A collection of statistics and statistical physics problems.</p></p>
-										</li>
-										<li>
-											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="bifurcations.html">Bifurcations</a></h3>
-											<p><p>Basics of bifurcation theory.</p></p>
-										</li>
-										<li>
-											<span class="date">déc. <strong>10</strong></span>
 											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
 											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
 										</li>
 										<li>
 											<span class="date">déc. <strong>10</strong></span>
-											<h3><a href="complex-network.html">Complex networks</a></h3>
-											<p><p>An investigation of complex system networks using the python package <code>networkx</code>.</p></p>
+											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="ornstein-uhlenbeck.html">Ornstein–Uhlenbeck process</a></h3>
+											<p><p>Properties of Ornstein-Uhlenbeck processes.</p></p>
 										</li>
 									</ul>
 								</section>

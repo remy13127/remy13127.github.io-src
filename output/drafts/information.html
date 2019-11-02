@@ -1,0 +1,317 @@
+
+<!DOCTYPE HTML>
+<!--
+	Dopetrope 2.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>Of physics and thoughts</title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8" />
+			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
+				<link rel="stylesheet" href="/theme/css/pygment.css" />
+			<noscript>
+				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
+				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
+			</noscript>
+	</head>
+	<body class="no-sidebar">
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Header -->
+								<section id="header">
+									
+									<!-- Logo -->
+									<h1><a href="/">Of physics and thoughts</a></h1>
+									
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+											</ul>
+										</nav>
+
+								</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="container">
+<div class="row">
+	<div class="12u">
+			<section>
+				<div>
+					<div class="row">
+						<div class="12u skel-cell-mainContent">
+							<!-- Content -->
+								<article class="box is-post">
+									<div class="post-infos">
+										<ul class="tags">
+											<li><a class="button" href="category/physics.html">Physics</a></li>
+												<li><a class="button button-alt" href="tag/information.html">Information</a></li>
+
+												<li><a class="button button-alt" href="tag/biophysics.html">Biophysics</a></li>
+
+										</ul>
+									</div>
+
+									<div class="pennant pennant-alt date">2019-12-10</div>
+									<h2>Information content in biological systems</h2>
+									<p><br/></p>
+<p>We will be interested in a simple model of <em>Drosophila</em> embryo development, the French-flag model. Each cell performs concentration measurements and infer their position from this, which will affect their differentiation. </p>
+<p><center><img alt="French-flag model" class="img-fluid" src="images/french_flag_model.png" style="width: 306px; height: auto; max-width: 100%;"/></center></p>
+<p>The entropy <span class="math">\(H\)</span> of a discrete random variable <span class="math">\(X\)</span> with the probability distribution function <span class="math">\(p(x) = p(X = x)\)</span> can be defined as:</p>
+<hr/>
+<h1>Information theory</h1>
+<div class="math">$$ H(X) = H[p(x)] = - \int_S p(x)\log_2 p(x) dx = -\langle \log_2 p(x) \rangle$$</div>
+<p><span class="math">\(S\)</span> is the domain on which <span class="math">\(p\)</span> is defined. The entropy is the average number of bits required to describe the outcome of <span class="math">\(X\)</span>. What probability distribution maximizes <span class="math">\(H(x)\)</span> for a prescribed <span class="math">\(\mu = \langle x \rangle_x\)</span> and variance <span class="math">\(\sigma^2 = \langle (x-\mu)^2 \rangle_x\)</span>? </p>
+<p>We will use a variational approach. Let's introduce <span class="math">\(\overline{H} = H(x) + \sum_{i=0}^M \lambda_i \int_S p(x) x^i dx\)</span> (<span class="math">\(M = 0,1,2\)</span>, respectively the normalization condition, constrained mean and constrained variance). We must solve <span class="math">\(\delta \overline{H} = 0\)</span>:</p>
+<div class="math">$$ \delta \overline{H} = \int_S dx \left[ -\log_2 e (\ln{p(x) + 1}) + \sum_{i=0}^M \lambda_i x^i \right] \delta p(x) = 0$$</div>
+<p>The solution is:</p>
+<div class="math">$$ p(x) = \exp\left[-1 + \frac{1}{\log_2 e} \sum_{i=0}^M \lambda_i x^i \right]$$</div>
+<table class="table-striped table">
+<thead>
+<tr>
+<th align="center"><span class="math">\(M\)</span></th>
+<th align="center"><span class="math">\(S\)</span></th>
+<th align="center"><span class="math">\(p(x)\)</span></th>
+<th align="center"><span class="math">\(H(X)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center"><span class="math">\([x_0,x_1]\)</span></td>
+<td align="center"><span class="math">\(\frac{1}{x_1 - x_0}\)</span></td>
+<td align="center"><span class="math">\(\log_2 (x_1 - x_0)\)</span></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center"><span class="math">\([0,\infty[\)</span></td>
+<td align="center"><span class="math">\(\frac{1}{\mu}e^{-x/\mu}\)</span></td>
+<td align="center"><span class="math">\(\log_2 e(1+\ln \mu)\)</span></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"><span class="math">\(\mathbb{R}\)</span></td>
+<td align="center"><span class="math">\(\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></td>
+<td align="center"><span class="math">\(\frac{1}{2} \log_2 (2\pi e \sigma^2)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>How do we know that this expression for <span class="math">\(p(x)\)</span> maximizes (instead of minimizing) the entropy? We will need Jensen's inequality. Say that we have a concave function <span class="math">\(f\)</span> such that <span class="math">\(f^{''}(x) \leq 0\)</span> everywhere. Let's consider a function <span class="math">\(g\)</span> such that:</p>
+<div class="math">$$ \langle g(x) \rangle_x = \int_S dx p(x) g(x)$$</div>
+<p>Jensen's inequality states that if <span class="math">\(X\)</span> is a random variable and <span class="math">\(f\)</span> a convex function, then <span class="math">\(f(\langle X \rangle) \leq \langle f(X) \rangle\)</span>. Assuming a function <span class="math">\(g(x)\)</span> as our random variable, we can write: </p>
+<div class="math">$$ f(\langle g(x) \rangle_x) \geq \langle f(g(x)) \rangle_x $$</div>
+<p>Here we use <span class="math">\(f = \log_2\)</span> and a probability distribution function <span class="math">\(q(x)\)</span>:</p>
+<div class="math">$$ \log_2 \int_S dx q(x) g(x) \geq \int_S dx Q(x) \log_2 g(x)$$</div>
+<p>Let's say that <span class="math">\(q\)</span> has the same average <span class="math">\(\mu = \langle x \rangle_{q(x)}\)</span> and variance <span class="math">\(\sigma^2 = \langle (x-\mu)^2 \rangle_{q(x)}\)</span>:</p>
+<div class="math">$$ H[q(x)] = -\int dx \log_2 \left[q(x) \frac{p(x)}{p(x)} \right]q(x) = \underbrace{\int_S dx q(x) \log_2 \frac{p(x)}{q(x)}}_{\leq \log_2 \int_S dx q(x) \frac{p(x)}{q(x)}} - \int_S dx q(x) \log_2 p(x)$$</div>
+<p>We can apply Jensen with <span class="math">\(g = p/q\)</span>:</p>
+<div class="math">$$ \int_S dx q(x) \log_2 p(x) = \int_S dx q(x) \left[-1 + \frac{1}{\log_2 e} \sum_{i=0}^M \lambda^i x^i \right] = -1 + \frac{1}{\log_2 e}[\lambda_0 + \lambda_1 \mu + \lambda_2 (\sigma^2 + \mu^2)] = \int_S dx p(x) \left[-1 + \frac{1}{\log_2 e} \sum_{i = 0}^M \lambda_i x^i = \int_S dx p(x) \log_2 p(x) \right]$$</div>
+<div class="math">$$ H[q(x)] \leq H[p(x)]$$</div>
+<p><strong>Joint entropy</strong> of two random variables: consider two random variables <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> which are not necessarily independent, with joint probability distribution function <span class="math">\(p(x,y)\)</span>:</p>
+<div class="math">$$ H(x,y) = - \int_{S_x} dx \int_{S_y} dy p(x,y) \log_2 p(x,y) = - \langle \log_2 p(x,y) \rangle_{x,y}$$</div>
+<p>Notice: in general, <span class="math">\(H(x,y) \neq H(x) + H(y)\)</span></p>
+<p>The conditional entropy of <span class="math">\(Y\)</span> given <span class="math">\(X\)</span> is defined by:</p>
+<div class="math">$$ H(Y|X) = - \int_{S_x} dx p(x) \int_{S_y} dy p(y|x) \log_2 p(y|x) = - \langle \log_2 p(y|x) \rangle_{x,y} $$</div>
+<p>This is the average number of bits required to describe the outcome <span class="math">\(Y\)</span> given that the other person (the reciever) already knows the outcome of <span class="math">\(X\)</span>. </p>
+<div class="math">$$ H(X,Y) = H(X) + H(Y|X) $$</div>
+<p><strong>Proof</strong>:</p>
+<div class="math">$$ H(X) + H(Y|X) = -\int_{S_x} dx \int_{S_y} p(x,y) \log_2 p(x) - \int_{S_x} dx \int_{S_y} dy p(x,y) \log_2 p(y|x) = H(X,Y)$$</div>
+<p>The mutual information between <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> is defined by:</p>
+<div class="math">$$ I(X,Y) = \int_{S_x} dx \int_{S_y} dy p(x,y) \log_2 \frac{p(x,y)}{p(x)p(y)}$$</div>
+<div class="math">$$ I(X,Y) = \langle \log_2 \frac{p(x,y)}{p(x) p(y)} \rangle_{x,y} = H(X) + H(Y) - H(X,Y)$$</div>
+<div class="math">$$ I(X,Y) = H(Y) - H(Y|X) = H(X) - H(X|Y)$$</div>
+<p>This holds because of the chain rule.</p>
+<hr/>
+<h1>From concentrations to positions</h1>
+<p>This is the correct measure for our biological problem: from measuring my set of protein concentrations <span class="math">\(\{g_i\}\)</span>, how much information can a cell gain about its own position (<span class="math">\(I(\{g_i\},X)\)</span>)? This could be quantified by approximating <span class="math">\(P(\{g_i\},X)\)</span> using statistics over many embryos. For <span class="math">\(N \geq 2\)</span>, this would require too many embryos. </p>
+<p><strong>Gaussian approximation</strong>: </p>
+<div class="math">$$ I(\{g_i\},X) = H(\{g_i\}) - H(\{g_i\}|X)$$</div>
+<p>Gaussian approximation for a single gene:</p>
+<div class="math">$$ p(g|x) = \frac{1}{\sqrt{2\pi\sigma^2_g}} e^{-\frac{(g-\overline{g})^2}{2\sigma_g^2}} $$</div>
+<p>where <span class="math">\(\overline{g}(x) = \langle g(x) \rangle\)</span> and <span class="math">\(\sigma_g^2 = \langle (g(x) - \overline{g}(x))^2 \rangle\)</span>.</p>
+<div class="math">$$ p(\{g_i\}|x) = (2\pi)^{-N/2} |C(x)|^{-1/2} \exp\left[\frac{1}{2}\sum_{i,j = 1}^N (g_i - \overline{g}_i (x))[C^{-1}(x)]_{i,j} (g_j - \overline{g_j}(x)) \right]$$</div>
+<p>where <span class="math">\(\overline{g}_i(x)\)</span> is defined as above and <span class="math">\(C_{ij} (x) = \langle g_i(x) g_j(x) - \overline{g}_i(x) \overline{g}_j(x) \rangle\)</span>, and <span class="math">\(|C(x)|\)</span> is its determinant and <span class="math">\(C^{-1}\)</span> its inverse. From this, one obtains:</p>
+<div class="math">$$ H(\{g_i\},X) = \frac{N}{2} \log_2(2\pi e) + \frac{1}{2} \langle \log_2 |C(x)| \rangle_x$$</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "true";
+
+    if (true) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+								</article>
+						</div>
+					</div>
+				</div>
+			</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<!-- Footer -->
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="8u">
+								<section>
+									<header>
+										<h2>Latest articles</h2>
+									</header>
+									<ul class="dates">
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
+											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="ornstein-uhlenbeck.html">Ornstein–Uhlenbeck process</a></h3>
+											<p><p>Properties of Ornstein-Uhlenbeck processes.</p></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+								<div class="4u">
+									<section>
+										<header>
+											<h2 style="display: flex;
+  align-items: center;">Good news, everyone! &emsp; <img src="https://findicons.com/files/icons/1316/futurama_vol_1/128/farnsworth.png" alt="Farnsworth" width="60px align="center" /></h2>
+										</header>
+											<img src="https://photorro.files.wordpress.com/2018/08/p1440336-01.jpeg?w=700&h=" class="image image-full" alt="" />
+										<p>
+										This website is a collection of notes from my various courses as a student in Physics at Aix-Marseille university.
+										</p>
+										<footer>
+										</footer>
+									</section>
+								</div>
+						</div>
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Blogroll</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="http://photorro.wordpress.com">Photorro</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Categories</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="/category/physics.html">Physics</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+							
+								<section>
+									<header>
+										<h2>Contact</h2>
+									</header>
+									<ul class="social">
+										<li class="linkedin"><a href="https://fr.linkedin.com/in/rémy-torro-607a50112/en" class="icon48 icon48-4">LinkedIn</a></li>
+
+
+										<li class="linkedin"><a href="https://www.researchgate.net/profile/Remy_Torro" class="icon48 icon48-3">ResearchGate</a></li>
+
+									</ul>
+									<ul class="contact">
+											<li>
+												<h3>Mail</h3>
+												<p><a href="mailto:remy13127@gmail.com">remy13127@gmail.com</a></p>
+											</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/jquery.dropotron.js"></script>
+		<script src="/theme/js/config.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-panels.min.js"></script>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+	</body>
+</html>
