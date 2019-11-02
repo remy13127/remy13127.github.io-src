@@ -83,3 +83,45 @@ Since $m/\lambda \approx 10^{-8} s$, we can neglect the exponential term and end
 $$ \langle x^2 \rangle = 2 \frac{k_B T}{\lambda} t  = 2 D t$$
 
 with $D = \frac{k_B T}{\lambda} = \frac{R T}{N_A}\frac{1}{6 \pi \mu a}$.
+
+<hr>
+
+#From a microscopic random walk to diffusion
+
+The microscopic irregular movements of particles may result in some macroscopic motion for the group (particle density, concentration) that we may think of as a *diffusion process*. We will start with a microscopic random process and eventually derive a deterministic model. Let's consider the one-dimensional random walk process. 
+
+A particle moves randomly back and forward along a line in fixed steps $\Delta x$ that are taken in a fixed time $\Delta t$. For an unbiased motion, it is equally probable for the particle to move to the left or to the right. After time $N\Delta t$, the particle must be somewhere between $-N\Delta x$ and $N\Delta x$, if we take the starting point to be $x=0$. 
+
+We want the probability $p(m,n)$ that a particle reaches a point $m$ space steps to the right ($x=m\Delta x$) after $n$ time steps (after a time $n\Delta t$). Let's call $a$ the number of steps to the right and $b$ the number of steps to the left. 
+
+$$ m = a-b, \qquad a+b = n \qquad \rightarrow \ a = \frac{n+m}{2}, \qquad b = n - a$$
+
+The number of possible paths allowing the particle to reach the point $x=m\Delta x$ is 
+
+$$ \frac{n!}{a!b!} = \frac{n!}{a!(n-a)!} = C^n_a$$
+
+The total number of possible $n$-step paths is $2^n$ and so the probability $p(m,n)$ is:
+
+$$ p(m,n) = \frac{n!}{a!(n-a)!}\frac{1}{2^n}$$ 
+
+If we let $n$ to be very large so that $n \pm m$ is also very large, we have asymptotically, 
+
+$$ n! \sim (2\pi n)^{1/2}n^n e^{-n}, \qquad n\rightarrow \infty$$
+
+which is Stirling's formula. We can apply this to the expression for $p(m,n)$ and derive the Gaussian probability distribution for the particle:
+
+$$ p(m,n) \sim \left[\frac{2}{\pi n}\right]^{1/2}\exp \left[\frac{-m^2}{2n} \right]$$
+
+Remark: $m$ and $n$ need not be very large for the approximation to be accurate. We can take $m\Delta x = x$ and $n \Delta t = t$. Since $\Delta x$ and $\Delta t$ must go to zero in the continuum limit, $m$ and $n$ will go to infinity in order to keep $x$ and $t$ finite. In this limit, the probability $p(m,n)$ diverges so instead one must consider $u = p/(2\Delta x)$
+
+$$ \frac{p(\frac{x}{\Delta x},\frac{t}{\Delta t})}{2 \Delta x} \sim \left(\frac{\Delta t}{2\pi t(\Delta x)^2} \right)^{1/2} \exp \left[-\frac{x^2}{2t}\frac{\Delta t}{(\Delta x)^2} \right]$$
+
+Assuming 
+
+$$ \lim_{\Delta x \rightarrow 0 \\ \Delta t \rightarrow 0} \frac{(\Delta x)^2}{2\Delta t} \rightarrow D$$
+
+We have
+
+$$u(x,t) =  \lim_{\Delta x \rightarrow 0 \\ \Delta t \rightarrow 0} \frac{p(\frac{x}{\Delta x},\frac{t}{\Delta t})}{2 \Delta x} = \frac{1}{\sqrt{4\pi D t}} \exp \left[-\frac{x^2}{4 D t} \right]$$
+
+where $D$ is the diffusion coefficient of the particles: it has dimension (length)$^2/$(time). It measures how efficiently the particles disperse from high to a low density. 

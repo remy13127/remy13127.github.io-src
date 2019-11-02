@@ -116,6 +116,27 @@
 <p>Since <span class="math">\(m/\lambda \approx 10^{-8} s\)</span>, we can neglect the exponential term and end up with:</p>
 <div class="math">$$ \langle x^2 \rangle = 2 \frac{k_B T}{\lambda} t  = 2 D t$$</div>
 <p>with <span class="math">\(D = \frac{k_B T}{\lambda} = \frac{R T}{N_A}\frac{1}{6 \pi \mu a}\)</span>.</p>
+<hr/>
+<h1>From a microscopic random walk to diffusion</h1>
+<p>The microscopic irregular movements of particles may result in some macroscopic motion for the group (particle density, concentration) that we may think of as a <em>diffusion process</em>. We will start with a microscopic random process and eventually derive a deterministic model. Let's consider the one-dimensional random walk process. </p>
+<p>A particle moves randomly back and forward along a line in fixed steps <span class="math">\(\Delta x\)</span> that are taken in a fixed time <span class="math">\(\Delta t\)</span>. For an unbiased motion, it is equally probable for the particle to move to the left or to the right. After time <span class="math">\(N\Delta t\)</span>, the particle must be somewhere between <span class="math">\(-N\Delta x\)</span> and <span class="math">\(N\Delta x\)</span>, if we take the starting point to be <span class="math">\(x=0\)</span>. </p>
+<p>We want the probability <span class="math">\(p(m,n)\)</span> that a particle reaches a point <span class="math">\(m\)</span> space steps to the right (<span class="math">\(x=m\Delta x\)</span>) after <span class="math">\(n\)</span> time steps (after a time <span class="math">\(n\Delta t\)</span>). Let's call <span class="math">\(a\)</span> the number of steps to the right and <span class="math">\(b\)</span> the number of steps to the left. </p>
+<div class="math">$$ m = a-b, \qquad a+b = n \qquad \rightarrow \ a = \frac{n+m}{2}, \qquad b = n - a$$</div>
+<p>The number of possible paths allowing the particle to reach the point <span class="math">\(x=m\Delta x\)</span> is </p>
+<div class="math">$$ \frac{n!}{a!b!} = \frac{n!}{a!(n-a)!} = C^n_a$$</div>
+<p>The total number of possible <span class="math">\(n\)</span>-step paths is <span class="math">\(2^n\)</span> and so the probability <span class="math">\(p(m,n)\)</span> is:</p>
+<div class="math">$$ p(m,n) = \frac{n!}{a!(n-a)!}\frac{1}{2^n}$$</div>
+<p>If we let <span class="math">\(n\)</span> to be very large so that <span class="math">\(n \pm m\)</span> is also very large, we have asymptotically, </p>
+<div class="math">$$ n! \sim (2\pi n)^{1/2}n^n e^{-n}, \qquad n\rightarrow \infty$$</div>
+<p>which is Stirling's formula. We can apply this to the expression for <span class="math">\(p(m,n)\)</span> and derive the Gaussian probability distribution for the particle:</p>
+<div class="math">$$ p(m,n) \sim \left[\frac{2}{\pi n}\right]^{1/2}\exp \left[\frac{-m^2}{2n} \right]$$</div>
+<p>Remark: <span class="math">\(m\)</span> and <span class="math">\(n\)</span> need not be very large for the approximation to be accurate. We can take <span class="math">\(m\Delta x = x\)</span> and <span class="math">\(n \Delta t = t\)</span>. Since <span class="math">\(\Delta x\)</span> and <span class="math">\(\Delta t\)</span> must go to zero in the continuum limit, <span class="math">\(m\)</span> and <span class="math">\(n\)</span> will go to infinity in order to keep <span class="math">\(x\)</span> and <span class="math">\(t\)</span> finite. In this limit, the probability <span class="math">\(p(m,n)\)</span> diverges so instead one must consider <span class="math">\(u = p/(2\Delta x)\)</span></p>
+<div class="math">$$ \frac{p(\frac{x}{\Delta x},\frac{t}{\Delta t})}{2 \Delta x} \sim \left(\frac{\Delta t}{2\pi t(\Delta x)^2} \right)^{1/2} \exp \left[-\frac{x^2}{2t}\frac{\Delta t}{(\Delta x)^2} \right]$$</div>
+<p>Assuming </p>
+<div class="math">$$ \lim_{\Delta x \rightarrow 0 \\ \Delta t \rightarrow 0} \frac{(\Delta x)^2}{2\Delta t} \rightarrow D$$</div>
+<p>We have</p>
+<div class="math">$$u(x,t) =  \lim_{\Delta x \rightarrow 0 \\ \Delta t \rightarrow 0} \frac{p(\frac{x}{\Delta x},\frac{t}{\Delta t})}{2 \Delta x} = \frac{1}{\sqrt{4\pi D t}} \exp \left[-\frac{x^2}{4 D t} \right]$$</div>
+<p>where <span class="math">\(D\)</span> is the diffusion coefficient of the particles: it has dimension (length)<span class="math">\(^2/\)</span>(time). It measures how efficiently the particles disperse from high to a low density. </p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%&#64;#$&#64;#')) {
     var align = "center",
         indent = "0em",
