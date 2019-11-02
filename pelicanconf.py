@@ -9,7 +9,7 @@ SITEURL = ''
 PATH = 'content'
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['latex','pelican-cite',"render_math",'better_figures_and_images','pelican_jsmath','bootstrapify']
-THEME = "/home/remy13127/Documents/ghpages/html5-dopetrope"
+THEME = "/home/remy13127/pelican-themes/html5-dopetrope"
 LINKS = (('Photorro','http://photorro.wordpress.com'),)
 
 TIMEZONE = 'Europe/Paris'
