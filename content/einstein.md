@@ -56,7 +56,7 @@ The mean quadratic displacement is $\sigma^2 = \langle x^2 \rangle = 2 D t$. As 
 
 # Langevin's derivation
 
-Langevin introduced a stochastic differential equation:
+Langevin introduced a stochastic differential equation ([@langevin]):
 
 $$ m \frac{d^2 x}{dt^2} = -\lambda \frac{dx}{dt} + \xi(t) $$
 
