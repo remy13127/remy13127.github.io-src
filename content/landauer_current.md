@@ -116,9 +116,9 @@ $$\langle I_m(t)I_n(t'') \rangle \propto \langle c_{p_1}^\dagger (k(E_1),t) c_{p
 
 We can apply Wick's theorem to the averaged term and obtain:
 
-$$\underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_2}(k(E_2)) \rangle \langle c_{p_3}^\dagger (k(E_3)) c_{p_4}(k(E_4)) \rangle}_{\propto \langle I_m \rangle \langle I_n \rangle \qquad \textrm{(reducible contrib.)}} + \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_4} (k(E_4)) \rangle \langle c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) \rangle}_{\textrm{(irreducible contrib.)}} = \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1)\delta(E_1 - E_2)\delta_{p_1 p_2} k(E_3) f_{p_3}(E_3) \delta(E_3 - E_4) \delta_{p_3 p_4} + \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1) \delta{E_1 - E_4} \delta_{p_1 p_4} k(E_2) (1 \mp f_{p_2}(E_2))\delta(E_2 - E_3) \delta_{p_2 p_3}$$
+$$\underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_2}(k(E_2)) \rangle \langle c_{p_3}^\dagger (k(E_3)) c_{p_4}(k(E_4)) \rangle}_{\propto \langle I_m \rangle \langle I_n \rangle \qquad \textrm{(reducible contrib.)}} + \underbrace{\langle c_{p_1}^\dagger (k(E_1)) c_{p_4} (k(E_4)) \rangle \langle c_{p_2} (k(E_2)) c_{p_3}^\dagger (k(E_3)) \rangle}_{\textrm{(irreducible contrib.)}} = \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1)\delta(E_1 - E_2)\delta_{p_1 p_2} k(E_3) f_{p_3}(E_3) \delta(E_3 - E_4) \delta_{p_3 p_4} + \frac{\hbar^4}{m^2} k(E_1) f_{p_1}(E_1) \delta(E_1 - E_4) \delta_{p_1 p_4} k(E_2) (1 \mp f_{p_2}(E_2))\delta(E_2 - E_3) \delta_{p_2 p_3}$$
 
-If we apply $E_1 = E_2$ and $E_3 = E_4$ to the time exponential we get zero for the first term of the sum, whereas with $E_1 = E_4$ and $E_2 = E_3$ we obtain $e^{\frac{i}{\hbar}(E_1 - E_2)(t - t'')}$. Eventually we can write:
+If we apply $E_1 = E_2$ and $E_3 = E_4$ in the argument of the time exponential we get $e^0 = 1$ for the first term of the sum, whereas with $E_1 = E_4$ and $E_2 = E_3$ we obtain $e^{\frac{i}{\hbar}(E_1 - E_2)(t - t'')}$. Eventually we can write:
 
 $$\langle I_m(t) I_n(t'') \rangle \propto \frac{\hbar^4}{m^2} \left[\underbrace{k(E_1) k(E_3) f_{p_1}(E_1) f_{p_3}(E_3) \delta_{p_1 p_2} \delta_{p_3 p_4} \delta(E_1 - E_2)\delta(E_3 - E_4)}_{\propto \langle I_m \rangle \langle I_n \rangle} + k(E_1) k(E_2) f_{p_1}(E_1) (1 \mp f_{p_2}(E_2)) \delta_{p_1 p_4} \delta_{p_2 p_3} \delta(E_1 - E_4) \delta(E_2 - E_3) e^{\frac{i}{\hbar} (E_1 - E_2)(t - t'')} \right] $$
 
