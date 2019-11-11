@@ -1,10 +1,9 @@
 Title: Josephson effect through a quantum dot
-Date: 2019-12-10 10:20
+Date: 2019-11-11 10:20
 Category: Physics
-Tags: Quantum Statistics
+Tags: Quantum Statistics, Superconductivity
 Slug: Superconductivity
-Author: Rémy Torro
-Status: 
+Author: Rémy Torro 
 Summary: Computations related to the Josephson effect through a quantum dot.
  
 <br>
