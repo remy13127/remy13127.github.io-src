@@ -243,16 +243,64 @@ We will start by expressing $M_{\omega_n}$ in matrix notation:
 
 $$M_{\omega_n} = \begin{pmatrix}-i\omega_n + \varepsilon & 0 \\ 0  & -i\omega_n -\varepsilon \end{pmatrix} - \frac{\Gamma / 2}{\sqrt{\Delta^2 -(i\omega)^2}}\begin{pmatrix}i\omega_n & -\Delta \cos{\phi/2} + i \gamma \Delta \sin{\phi/2} \\ -\Delta \cos{\phi/2} - i \gamma \Delta \sin{\phi/2} & i\omega_n \end{pmatrix} = \begin{pmatrix}\frac{(-i\omega_n + \varepsilon)\sqrt{\Delta^2 -(i\omega_n)^2} - \Gamma/2 i \omega_n}{\sqrt{\Delta^2 -(i\omega_n)^2}} & \frac{-\Gamma / 2 (-\Delta \cos{\phi/2} + i \gamma \Delta \sin{\phi/2})}{\sqrt{\Delta^2 -(i\omega_n)^2}} \\ \frac{-\Gamma / 2 (-\Delta \cos{\phi/2} - i \gamma \Delta \sin{\phi/2})}{\sqrt{\Delta^2 -(i\omega_n)^2}} & \frac{(-i\omega_n - \varepsilon)\sqrt{\Delta^2 -(i\omega_n)^2} - \Gamma / 2 i\omega_n}{\sqrt{\Delta^2 -(i\omega_n)^2}} \end{pmatrix} $$
 
-$$\det M_{\omega_n} = \underbrace{(-i\omega_n + \varepsilon)(-i\omega_n - \varepsilon)}_{(a+b)(a-b) = a^2 - b^2} - \frac{\Gamma / 2 i \omega_n \left[(-i\omega_n + \varepsilon) + (-i\omega_n - \varepsilon)\right]}{\sqrt{\Delta^2 -(i\omega_n)^2}} + \frac{(\Gamma / 2)^2 (i\omega)^2}{\Delta^2 -(i\omega)^2} - \frac{(\Gamma / 2)^2}{\Delta^2 -(i\omega_n)^2}\underbrace{(-\Delta \cos{\phi/2}+i\gamma\Delta\sin{\phi/2})(-\Delta \cos{\phi/2}-i\gamma \Delta \sin{\phi/2})}_{zz^* = |z|^2} \\ = (i\omega_n)^2 - \varepsilon^2 + \frac{(i\omega_n)^2 \Gamma}{\sqrt{\Delta^2 -(i\omega_n)^2}}+ \frac{(\Gamma / 2)^2 (i\omega)^2}{\Delta^2 -(i\omega)^2}- \frac{(\Gamma / 2)^2}{\Delta^2 -(i\omega_n)^2}\left[\Delta^2 \cos^2{\phi/2} + \gamma^2 \Delta^2 \sin^2{\phi/2} \right] \\ = - \varepsilon^2 + (i\omega_n)^2 \underbrace{\left[1 + \frac{\Gamma}{\sqrt{\Delta^2 -(i\omega_n)^2}}+ \frac{(\Gamma / 2)^2 }{\Delta^2 -(i\omega)^2}\right]}_{= \left[1 + (\Gamma/2)/(\sqrt{\Delta^2+(i\omega_n)^2})\right]^2} - \frac{(\Gamma / 2)^2}{\Delta^2 -(i\omega_n)^2}\left[\Delta^2 \cos^2{\phi/2} + \gamma^2 \Delta^2 \sin^2{\phi/2} \right] $$
+$$\det M_{\omega_n} = \underbrace{(-i\omega_n + \varepsilon)(-i\omega_n - \varepsilon)}_{(a+b)(a-b) = a^2 - b^2} - \frac{\Gamma / 2 i \omega_n \left[(-i\omega_n + \varepsilon) + (-i\omega_n - \varepsilon)\right]}{\sqrt{\Delta^2 -(i\omega_n)^2}} + \frac{(\Gamma / 2)^2 (i\omega)^2}{\Delta^2 -(i\omega)^2} - \frac{(\Gamma / 2)^2}{\Delta^2 -(i\omega_n)^2}\underbrace{(-\Delta \cos{\phi/2}+i\gamma\Delta\sin{\phi/2})(-\Delta \cos{\phi/2}-i\gamma \Delta \sin{\phi/2})}_{zz^* = |z|^2} \\ = (i\omega_n)^2 - \varepsilon^2 + \frac{(i\omega_n)^2 \Gamma}{\sqrt{\Delta^2 -(i\omega_n)^2}}+ \frac{(\Gamma / 2)^2 (i\omega)^2}{\Delta^2 -(i\omega)^2}- \frac{(\Gamma / 2)^2}{\Delta^2 -(i\omega_n)^2}\left[\Delta^2 \cos^2{\phi/2} + \gamma^2 \Delta^2 \sin^2{\phi/2} \right] \\ = - \varepsilon^2 + (i\omega_n)^2 \underbrace{\left[1 + \frac{\Gamma}{\sqrt{\Delta^2 -(i\omega_n)^2}}+ \frac{(\Gamma / 2)^2 }{\Delta^2 -(i\omega)^2}\right]}_{= \left[1 + (\Gamma/2)/(\sqrt{\Delta^2-(i\omega_n)^2})\right]^2} - \frac{(\Gamma / 2)^2}{\Delta^2 -(i\omega_n)^2}\left[\Delta^2 \cos^2{\phi/2} + \gamma^2 \Delta^2 \sin^2{\phi/2} \right] $$
 
-$$ \det M_{\omega_n} = (i\omega_n)^2 \left[1 + \frac{\Gamma/2}{\sqrt{\Delta^2+(i\omega_n)^2}}\right]^2 - \varepsilon^2 -  \frac{(\Gamma / 2)^2 \Delta^2}{\Delta^2 -(i\omega_n)^2}\left[\cos^2{\phi/2} + \gamma^2 \sin^2{\phi/2} \right]$$
+$$ \det M_{\omega_n} = (i\omega_n)^2 \left[1 + \frac{\Gamma/2}{\sqrt{\Delta^2-(i\omega_n)^2}}\right]^2 - \varepsilon^2 -  \frac{(\Gamma / 2)^2 \Delta^2}{\Delta^2 -(i\omega_n)^2}\left[\cos^2{\phi/2} + \gamma^2 \sin^2{\phi/2} \right]$$
 
 Eventually, the Josephson current can be written as:
 
-$$ J = -\frac{2}{\beta} \frac{\partial }{\partial \phi} \sum_{\omega_n} \ln \left\{(i\omega_n)^2 \left[1 + \frac{\Gamma/2}{\sqrt{\Delta^2+(i\omega_n)^2}}\right]^2 - \varepsilon^2 -  \frac{(\Gamma / 2)^2 \Delta^2}{\Delta^2 -(i\omega_n)^2}\left[\cos^2{\phi/2} + \gamma^2 \sin^2{\phi/2} \right]\right\}$$
+$$ J = -\frac{2}{\beta} \frac{\partial }{\partial \phi} \sum_{\omega_n} \ln \left\{(i\omega_n)^2 \left[1 + \frac{\Gamma/2}{\sqrt{\Delta^2-(i\omega_n)^2}}\right]^2 - \varepsilon^2 -  \frac{(\Gamma / 2)^2 \Delta^2}{\Delta^2 -(i\omega_n)^2}\left[\cos^2{\phi/2} + \gamma^2 \sin^2{\phi/2} \right]\right\}$$
+
 **5) Derive the equation for the Andreev levels, and find the approximate solution for $Z$**
 
+The Andreev levels are defined as the poles of the dot Green's function. Since the effective action in Matsubara representation reads: 
+
+$$ S_{\textrm{eff}} = \sum_{\omega_n} \bar{d}_{\omega_n} M_{\omega_n} d_{\omega_n}$$
+
+and $M^{-1}_{\omega_n} = G_{\textrm{dot}}$. Finding these poles is equivalent to finding the zeros of the determinant of $M_{\omega_n}$ for $z=i\omega$:
+
+$$ \det\left[z - \varepsilon \sigma_z + \frac{\Gamma /2}{\sqrt{\Delta^2 - z^2}}(z - \Delta \cos(\phi/2) \sigma_x - \gamma \Delta \sin(\phi/2)\sigma_y)\right] = 0$$
+
+But we computed this determinant before:
+
+$$z^2 \left[1 + \frac{\Gamma/2}{\sqrt{\Delta^2-z^2}}\right]^2 - \varepsilon^2 -  \frac{(\Gamma / 2)^2 \Delta^2}{\Delta^2 -z^2}\left[\cos^2{\phi/2} + \gamma^2 \sin^2{\phi/2} \right] = 0 $$
+
+
 *a) in the tunnel regime $\Gamma, \varepsilon << \Delta$ (quartic equation) (throwing away the solution which is not consisent with this assumption ($Z << \Delta$)*
+
+From $\Delta >> \Gamma$, we will assume that $\frac{\Gamma /2}{\sqrt{\Delta^2 - z^2}} = \frac{\Gamma/2}{\Delta\sqrt{1 - z^2/\Delta^2}} \rightarrow 0$ quickly. The equation that we must solve is now:
+
+$$ z^2 - \varepsilon^2 -  \frac{(\Gamma / 2)^2 \Delta^2}{\Delta^2 -z^2}\left[\cos^2{\phi/2} + \gamma^2 \sin^2{\phi/2} \right] = 0$$
+
+$$ (\Delta^2 - z^2) z^2 - (\Delta^2 - z^2)\varepsilon^2 - \frac{\Gamma^2}{4}\Delta^2\left[\cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right] = 0$$
+
+$$ z^4 - (\Delta^2 + \varepsilon^2)z^2 + \Delta^2 \left(\varepsilon^2 + \frac{\Gamma^2}{4}\left[\cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right]\right) = 0$$
+
+Let's introduce $X = z^2$:
+
+$$ X^2 - (\Delta^2 + \varepsilon^2)X + \Delta^2 \left(\varepsilon^2 + \frac{\Gamma^2}{4}\left[\cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right]\right) = 0$$
+
+$$ D = \Delta^4+\varepsilon^4 - \Delta^2 \left[2\varepsilon^2 + \Gamma^2 \left(\cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right)\right]$$
+
+where $D$ is the determinant of the polynomial, and is assumed to be positive.
+
+$$ X_\pm = z^2_\pm = \frac{\Delta^2 + \varepsilon^2}{2} \pm \frac{1}{2}\sqrt{\Delta^4+\varepsilon^4 - \Delta^2 \left[2\varepsilon^2 + \Gamma^2 \left(\cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right)\right]} \\ = \frac{\Delta^2 + \varepsilon^2}{2} \pm \frac{\Delta^2}{2}\sqrt{1+\frac{\varepsilon^4}{\Delta^4} - \frac{2\varepsilon^2}{\Delta^2} - \frac{\Gamma^2}{\Delta^2} \left( \cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right)} \sim \frac{\Delta^2 + \varepsilon^2}{2} \pm \frac{\Delta^2}{2} \left[1+\underbrace{\frac{\varepsilon^4}{2\Delta^4}}_{\rightarrow 0} - \frac{\varepsilon^2}{\Delta^2} - \frac{\Gamma^2}{2\Delta^2} \left( \cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right) \right] \\ = \frac{\Delta^2}{2} + \frac{\varepsilon^2}{2} \pm \frac{\Delta^2}{2} \mp \frac{\varepsilon^2}{2}\mp \frac{\Gamma^2}{4}\left( \cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right)$$
+
+Where we used $\sqrt{1 + x} \sim 1+x/2$ for $x \rightarrow 0$, and the $\varepsilon^4/\Delta^4$ term was considered small enough to be neglected. The $z_+$ solution can be written as:
+
+$$ z_+ = \pm \Delta\sqrt{1 - \frac{\Gamma^2}{4\Delta^2}\left( \cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right)}$$
+
+This solution $z_+ \sim \pm \Delta$ is not consistent with the original assumption that $|z|<<\Delta$, so we discard it. 
+
+$$ z_-^2 = \varepsilon^2 + \frac{\Gamma^2}{4}\left( \cos^2(\phi/2)+\gamma^2\sin^2(\phi/2)\right) \\ = \varepsilon^2 + \frac{\Gamma^2}{4}(1 - \sin^2(\phi/2)+\gamma^2 \sin(\phi/2)) \\ = \varepsilon^2 + \frac{\Gamma^2}{4} \left[1 + (\gamma^2 - 1) \sin^2(\phi/2) \right] \\ = \varepsilon^2 + \frac{\Gamma^2}{4} - \frac{\Gamma^2}{4}(1-\gamma^2)\sin^2(\phi/2) \\ = \left(\varepsilon^2+\frac{\Gamma^2}{4}\right)\left(1 - \frac{1-\gamma^2}{1+\frac{4 \varepsilon^2}{\Gamma^2}}\sin^2(\phi/2)\right)  $$
+
+As a result, we can write:
+
+$$ z_- = \pm \sqrt{\left(\varepsilon^2 + \frac{\Gamma^2}{4}\right)}\sqrt{1 - \frac{1 - \gamma^2}{1 + \left(\frac{2\varepsilon}{\Gamma}\right)^2}\sin^2(\phi/2)}$$
+
+$$ z_- = \pm \delta \sqrt{1-D\sin^2(\phi/2)}$$
+
+introducing $\delta = \sqrt{\left(\varepsilon^2 + \frac{\Gamma^2}{4}\right)}$ and $D = \frac{1 - \gamma^2}{1 + \left(\frac{2\varepsilon}{\Gamma}\right)^2}$. $D \leq 1$ plays the role of a transmission coefficient. The Andreev levels are far from the gap. 
 
 *b) in the high transparency regime $\Gamma >> \Delta$*
 
