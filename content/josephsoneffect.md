@@ -192,7 +192,7 @@ The Matsubara representation of the Green's function is then obtained as:
 
 $$ G(\tau) = \frac{1}{\beta} \sum_{\omega_n} e^{-i\omega_n \tau} G_{\omega_n}$$
 
-$$ G_{\omega_n} = \sum_k \left(-i\omega_n + \xi_k \sigma_z + \Delta \sigma_x  \right)^{-1} \\ = \sum_k \underbrace{\begin{pmatrix}-i\omega_n + \xi_k & \Delta \\ \Delta & -i\omega_n -\xi_k \end{pmatrix}}_{M}^{-1}$$
+$$ G_{\omega_n} = \sum_k \left(-i\omega_n + \xi_k \sigma_z + \Delta \sigma_x  \right)^{-1} \\ = \sum_k \underbrace{\begin{pmatrix}-i\omega_n + \xi_k & \Delta \\ \Delta & -i\omega_n -\xi_k \end{pmatrix}^{-1}}_{M}$$
 
 We can compute the inverse of this matrix, assuming that it is invertible *i.e.* $\det{M}\neq 0$. 
 

@@ -172,7 +172,7 @@ Z_S = \int \prod_{j,k}\prod_n d\bar{c}_n dc_n e^{-\sum_{m,n} \lambda_n \bar{c}_m
 <div class="math">$$ \delta(\tau) = \frac{1}{\beta} \sum_{\omega_n} e^{-i\omega_n \tau} \qquad \omega_n = \frac{2\pi}{\beta}\left(n+\frac{1}{2}\right) $$</div>
 <p>The Matsubara representation of the Green's function is then obtained as:</p>
 <div class="math">$$ G(\tau) = \frac{1}{\beta} \sum_{\omega_n} e^{-i\omega_n \tau} G_{\omega_n}$$</div>
-<div class="math">$$ G_{\omega_n} = \sum_k \left(-i\omega_n + \xi_k \sigma_z + \Delta \sigma_x  \right)^{-1} \\ = \sum_k \underbrace{\begin{pmatrix}-i\omega_n + \xi_k &amp; \Delta \\ \Delta &amp; -i\omega_n -\xi_k \end{pmatrix}}_{M}^{-1}$$</div>
+<div class="math">$$ G_{\omega_n} = \sum_k \left(-i\omega_n + \xi_k \sigma_z + \Delta \sigma_x  \right)^{-1} \\ = \sum_k \underbrace{\begin{pmatrix}-i\omega_n + \xi_k &amp; \Delta \\ \Delta &amp; -i\omega_n -\xi_k \end{pmatrix}^{-1}}_{M}$$</div>
 <p>We can compute the inverse of this matrix, assuming that it is invertible <em>i.e.</em> <span class="math">\(\det{M}\neq 0\)</span>. </p>
 <div class="math">$$ M^{-1} = \frac{1}{\det{M}} C^T$$</div>
 <p>where <span class="math">\(C^T\)</span> is the transpose of the cofactor matrix of <span class="math">\(M\)</span>. </p>
