@@ -304,4 +304,14 @@ introducing $\delta = \sqrt{\left(\varepsilon^2 + \frac{\Gamma^2}{4}\right)}$ an
 
 *b) in the high transparency regime $\Gamma >> \Delta$*
 
+In the high transparency regime, we can assume that $\Gamma >> \Delta$, such that $\frac{\Gamma/2}{\sqrt{\Delta^2 - z^2}}>> 1$, so we neglect the $1$:
 
+$$ z^2 \frac{(\Gamma/2)^2}{\Delta^2 - z^2} - \varepsilon^2 - \frac{(\Gamma/2)^2\Delta^2}{\Delta^2 - z^2}\left[\cos^2(\phi/2) + \gamma^2 \sin^2(\phi/2) \right] = 0$$
+
+$$ z^2 (\Gamma^2/4) - \varepsilon^2 (\Delta^2 - z^2) - (\Gamma^2/4)\Delta^2\left[\cos^2(\phi/2) + \gamma^2 \sin^2(\phi/2) \right] = 0$$
+
+$$ z^2 = \frac{\Delta^2 \left[\varepsilon^2 + (\Gamma^2/4) \left[\sin^2(\phi/2)(\gamma^2 - 1) +1\right]\right]}{(\Gamma^2/4)+\varepsilon^2} \\ = \Delta^2 \left[1 - \frac{(\Gamma^2/4)(1-\gamma^2)}{\varepsilon^2 + (\Gamma^2/4)}\sin^2(\phi/2)\right] \\ = \Delta^2 \left[1 - \frac{(1-\gamma^2)}{1 + \left(\frac{2 \varepsilon}{\Gamma}\right)^2}\sin^2(\phi/2)\right]$$
+
+$$ z = \pm \Delta \sqrt{1 - \frac{(1-\gamma^2)}{1 + \left(\frac{2 \varepsilon}{\Gamma}\right)^2}\sin^2(\phi/2)} \\ = \pm \Delta \sqrt{1 - D\sin^2(\phi/2)}$$
+
+This time, Andreev levels are close to the gap. 
