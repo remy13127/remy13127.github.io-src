@@ -1,0 +1,356 @@
+
+<!DOCTYPE HTML>
+<!--
+	Dopetrope 2.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>Of physics and thoughts</title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8" />
+			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
+				<link rel="stylesheet" href="/theme/css/pygment.css" />
+			<noscript>
+				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
+				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
+			</noscript>
+	</head>
+	<body class="no-sidebar">
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Header -->
+								<section id="header">
+									
+									<!-- Logo -->
+									<h1><a href="/">Of physics and thoughts</a></h1>
+									
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+											</ul>
+										</nav>
+
+								</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+				<div class="container">
+<div class="row">
+	<div class="12u">
+			<section>
+				<div>
+					<div class="row">
+						<div class="12u skel-cell-mainContent">
+							<!-- Content -->
+								<article class="box is-post">
+									<div class="post-infos">
+										<ul class="tags">
+											<li><a class="button" href="category/physics.html">Physics</a></li>
+												<li><a class="button button-alt" href="tag/quantum-statistics.html">Quantum statistics</a></li>
+
+												<li><a class="button button-alt" href="tag/superconductivity.html">Superconductivity</a></li>
+
+										</ul>
+									</div>
+
+									<div class="pennant pennant-alt date">2019-11-13</div>
+									<h2>Thermodynamic properties using the Bogoliubov Valatin method</h2>
+									<p><br/></p>
+<h2>Bogoliubov- Valatin (calculated steps of Ch 28 of Ketterson)</h2>
+<p>As discussed in the previous section, excited states are easily epxressed using the Bogoliubov-Valatin operators. We can also rewrite the reduced Hamiltonian of the system in terms of the Bogoliubov quasiparticle operators. In doing so, we generate two types of terms: those containing products of an equal number of creation <span class="math">\(\hat{\gamma}^\dagger_{k\sigma}\)</span> and destruction <span class="math">\(\hat{\gamma}_{k\sigma}\)</span> operators and those containing an unequal number. When taking thermally averaged quantum-expectation values of such products, only the first forms yield nonzero averages. </p>
+<p><strong>1) Write the full Hamiltonian in term of <span class="math">\(\gamma\)</span>, <span class="math">\(\gamma^\dagger\)</span>.</strong></p>
+<div class="math">$$ \hat{H}'_R = \hat{H}'_0 + \hat{H}_{IR} \\ = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}+\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})] + \sum_{k,k'} V_{k k'}[u_k v_k u_{k'}v_{k'}(1 - \gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}-\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})(1 - \gamma^\dagger_{k'\uparrow}\gamma_{k'\uparrow}-\gamma^\dagger_{-k'\downarrow}\gamma_{-k'\downarrow})+ \textrm{terms with unequal numbers of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$}$$</div>
+<p>where we had individually </p>
+<div class="math">$$ \hat{H}'_0 = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}+\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})] + \text{terms with unequal number of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$} $$</div>
+<p>and </p>
+<div class="math">$$ \hat{H}_{IR}' = \sum_{k,k'} V_{k k'}[u_k v_k u_{k'}v_{k'}(1 - \gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}-\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})(1 - \gamma^\dagger_{k'\uparrow}\gamma_{k'\uparrow}-\gamma^\dagger_{-k'\downarrow}\gamma_{-k'\downarrow})+ \textrm{terms with unequal numbers of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$}$$</div>
+<p><strong>2) Use Wick theorem to compute thermal averages.</strong></p>
+<p>Firstly, let's compute the thermal average of <span class="math">\(\hat{H}_0'\)</span>:</p>
+<div class="math">$$ \langle \hat{H}_0' \rangle = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\langle \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow}\rangle + \langle \gamma_{-k\downarrow}^\dagger \gamma_{-k'\downarrow}\rangle)]$$</div>
+<p>Since the fermion-quasiparticle excitations do not interact (in our mean-field-like theory), the averages are given by <span class="math">\(\langle \gamma^\dagger_{k\sigma}\gamma_{k\sigma} \rangle = f_{k\sigma}\)</span>. Let's assume that <span class="math">\(2 f_k = f_{k\uparrow}+f_{-k\downarrow}\)</span>. As a result:</p>
+<div class="math">$$ \langle \hat{H}_0' \rangle = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)2 f_k] = 2 \sum_k \xi_k [v_k^2 + (u_k^2 - v_k^2)f_k]$$</div>
+<p>Now we have to deal with the thermal average of <span class="math">\(\hat{H}_{IR}'\)</span>. The parentheses in equation ... can be developped as: <span class="math">\(I = 1 - \gamma_{k'\uparrow}^\dagger \gamma_{k'\uparrow} - \gamma_{-k'\downarrow}^\dagger \gamma_{-k'\downarrow} - \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow} + \gamma_{k\uparrow}^\dagger\gamma_{k\uparrow}\gamma_{k'\uparrow}^\dagger\gamma_{k'\uparrow} + \gamma_{k\uparrow}^\dagger\gamma_{k\uparrow}\gamma_{-k'\downarrow}^\dagger\gamma_{-k'\downarrow} - \gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow}+\gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow}\gamma_{k'\uparrow}^\dagger\gamma_{k'\uparrow}+\gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow}\gamma_{-k'\downarrow}^\dagger\gamma_{-k'\downarrow}\)</span></p>
+<p>The thermal average of couples of fermionic operators is computed using <span class="math">\(\langle \gamma^\dagger_{k\sigma}\gamma_{k\sigma} \rangle = f_{k\sigma}\)</span>. For quartets of fermionic operators, we can apply Wick's theorem. Let's compute the average for the first of these quartets:</p>
+<div class="math">$$\langle \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow}\gamma_{k'\uparrow}^\dagger\gamma_{k'\uparrow} \rangle = \langle  \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow} \rangle\langle \gamma_{k'\uparrow}^\dagger \gamma_{k'\uparrow} \rangle 
+- \langle \gamma_{k\uparrow}^\dagger\gamma_{k'\uparrow}^\dagger \rangle \langle \gamma_{k\uparrow}\gamma_{k'\uparrow}\rangle 
++ \langle \gamma_{k\uparrow}^\dagger \gamma_{k'\uparrow}\rangle \langle \gamma_{k\uparrow}\gamma_{k'\uparrow}^\dagger \rangle
+\\ = f_{k\uparrow}f_{k'\uparrow} - 0 + 0 $$</div>
+<p>We can proceed in the same fashion for each term and get:</p>
+<div class="math">$$\langle I \rangle = 1 -f_{k'\uparrow} -f_{-k'\downarrow} - f_{k\uparrow} - f_{k\downarrow} + f_{k\uparrow}f_{k'\uparrow} + f_{k\uparrow}f_{-k'\downarrow}+f_{-k\downarrow}f_{k'\uparrow}+f_{-k\downarrow}f_{-k'\downarrow}$$</div>
+<p>Assuming that <span class="math">\(f_k f_{k'} = \frac{1}{4}(f_{k\uparrow}+f_{-k\downarrow})(f_{k'\uparrow}f_{-k'\downarrow})\)</span>, we recognize that we have <span class="math">\(\langle I \rangle = 1 - 2f_{k'}-2f_k + 4f_kf_{k'}\)</span>.</p>
+<p>Eventually:</p>
+<div class="math">$$\langle \hat{H}_{IR}' \rangle = \sum_{k,k'} V_{kk'} u_k v_k u_{k'}v_{k'}(1-2f_k)(1-2f_{k'})$$</div>
+<p>Gathering all the terms, we can write:</p>
+<div class="math">$$\langle \hat{H}_R' \rangle = 2\sum_k \xi_k[v_k^2 + (u_k^2 - v_k^2)f_k] + \sum_{k,k'} V_{kk'}u_k v_k u_{k'}v_{k'}(1-2f_k)(1-2f_{k'})$$</div>
+<p><strong>3) Use microcanonical argument to find the entropy.</strong></p>
+<p>There can be no more than one particle in each quantum state. The number of possible ways of distributing <span class="math">\(N_j\)</span> identical particles among <span class="math">\(G_j\)</span> states with no more than one particle in each is the number of ways of selecting <span class="math">\(N_j\)</span> of the <span class="math">\(G_j\)</span> states:</p>
+<div class="math">$$ \Delta \Gamma_j = \frac{G_j !}{N_j!(G_j - N_j)!}$$</div>
+<p>If we take the logarithm of this quantity and apply Stirling's approximation, we can write the following ``microcanonical'' entropy:</p>
+<div class="math">$$S = \ln \prod_j \Delta \Gamma_j \\ = \sum_j \ln \frac{G_j !}{N_j!(G_j - N_j)!} = \sum_j \left\{G_j \ln G_j - N_j \ln N_j -(G_j - N_j)\ln(G_j - N_j)-G_j + N_j + (G_j - N_j)  \right\} \\ = \sum_j \left\{G_j \ln G_j - N_j \ln N_j -(G_j - N_j)\ln(G_j - N_j) \right\}$$</div>
+<p>Using the mean occupation numbers of the quantum states <span class="math">\(n_j = N_j / G_j\)</span>, we can rewrite the above expression as:</p>
+<div class="math">$$S = \sum_j \left\{G_j \ln G_j - G_j n_j \ln(G_j n_j) -(G_j - G_j n_j)\ln(G_j - G_j n_j) \right\} \\ = \sum_j G_j \left\{\ln G_j - n_j \ln(G_j n_j) -(1 - n_j)\ln[G_j(1-n_j)] \right\} \\ = \sum_j G_j \left\{\ln G_j - n_j \ln G_j - n_j \ln n_j -(1 - n_j)\ln G_j - (1 -n_j)\ln(1 - n_j) \right\} \\ = -\sum_j G_j \left\{n_j \ln n_j + (1 -n_j)\ln(1 - n_j) \right\} $$</div>
+<p>The distribution <span class="math">\(n_j\)</span> that maximises this entropy is the usual equilibrium Fermi-Dirac distribution <span class="math">\(n_j = f_j\)</span>. For electrons, we can set the degeneracy <span class="math">\(G_j = 2\)</span>. If we introduce <span class="math">\(k_B\)</span> to get the right units;</p>
+<div class="math">$$S = -2 k_B \sum_k \left\{f_k \ln f_k + (1 -f_k)\ln(1 - f_k) \right\} $$</div>
+<p>The Helmholtz free energy in the pairing approximation is given by</p>
+<div class="math">$$ F = \langle H_R \rangle - TS $$</div>
+<p>where the entropy for fermions is given by the usual expression from statistical mechanis </p>
+<div class="math">$$ S = -k_B \sum_{k,\sigma} [f_k \ln f_k + (1-f_k)\ln(1-f_k)] \\ = -2k_B \sum_k [f_k \ln f_k + (1-f_k)\ln(1-f_k)]$$</div>
+<p><strong>4) Find the gap self-consistent equation. For gap 28.12, solve with Cooper.</strong></p>
+<p>We can introduce <span class="math">\(u_k = \cos \theta_k\)</span> and <span class="math">\(v_k = \sin \theta_k\)</span> and minimize <span class="math">\(F\)</span> with respect to <span class="math">\(\theta_k\)</span> (<span class="math">\(\partial F / \partial \theta_k = 0\)</span>. Since the <span class="math">\(-TS\)</span> term in <span class="math">\(F\)</span> does not depend on <span class="math">\(\theta_k\)</span> we can directly perform:</p>
+<div class="math">$$\frac{\partial \langle H_R' \rangle }{\partial \theta_k} = 2\xi_k [2\cos \theta_k \sin \theta_k - 4 \cos \theta_k \sin \theta_k f_k] + 2 \underbrace{\sum_{k'} V_{kk'}(1-2 f_{k'})\cos \theta_{k'}\sin \theta_{k'}}_{-\Delta_k}(\cos^2 \theta_k - \sin^2 \theta_k)(1-2 f_k)  \\ = 4 \xi_k u_k v_k (1-2f_k) - 2 \Delta_k (u_k^2 - v_k^2)(1-2f_k) = 0$$</div>
+<p>where we introduced <span class="math">\(\Delta_k = -\sum_{k'} V_{kk'}u_{k'}v_{k'}(1 - 2f_{k'})\)</span>. Using the property <span class="math">\(u_k^2 + v_k^2 = 1\)</span>, we can write <span class="math">\(v_k^2 = 1-u_k^2\)</span> and substitute:</p>
+<div class="math">$$ 2\xi_k u \sqrt{1 - u^2} = \Delta_k (2 u^2 -1)$$</div>
+<div class="math">$$ 4 \xi_k^2 u^2 (1 - u^2) = \Delta_k^2 [4u^4 - 4u^2 +1]$$</div>
+<div class="math">$$ u^4 - u^2 + \frac{\Delta_k^2}{4(\xi_k^2 + \Delta_k^2)} = 0$$</div>
+<p>We can compute the discriminant <span class="math">\(\Delta\)</span>:</p>
+<div class="math">$$ \Delta = 1 - \frac{\Delta_k^2}{\xi_k^2 + \Delta_k^2} = \frac{\xi_k^2}{\xi_k^2 + \Delta_k^2}$$</div>
+<p>This gives us the following solutions for <span class="math">\(u^2\)</span>:</p>
+<div class="math">$$ u^2 = \frac{1}{2}\left(1 \pm \sqrt{\frac{\xi_k^2}{\xi_k^2 + \Delta_k^2}}\right) = \frac{1}{2}\left(1 \pm \frac{\xi_k}{\epsilon}\right)$$</div>
+<p>where we introduced <span class="math">\(\epsilon = \sqrt{\xi_k^2 + \Delta_k^2}\)</span>. If we substitute <span class="math">\(u_k^2 = 1 - v_k^2\)</span> we find:</p>
+<div class="math">$$ v_k^2 = \frac{1}{2}\left(1 \pm \frac{\xi_k}{\epsilon_k}\right)$$</div>
+<p>We can select the upper sign for <span class="math">\(u_k\)</span> and the lower sign for <span class="math">\(v_k\)</span> in order to satisfy <span class="math">\(u_k^2 + v_k^2 = 1\)</span>. </p>
+<p>Using <span class="math">\(f_{k'} = 1/(e^{\epsilon_{k'}/k_B T}+1)\)</span>, we can rewrite <span class="math">\((1-2f_{k'})\)</span> in <span class="math">\(\Delta_k\)</span> as:</p>
+<div class="math">$$ (1-2 f_{k'}) = 1 - \frac{2}{e^{\epsilon_{k'}/k_BT}+1} = \frac{e^{\epsilon_{k'}/k_B T}+1 - 2}{e^{\epsilon_{k'}/k_B T}+ 1} = \frac{e^{\epsilon_{k'}/k_B T}-1}{e^{\epsilon_{k'}/k_B T}+1} = \tanh \left(\frac{\epsilon_{k'}}{2 k_B T} \right)$$</div>
+<p>And as a result:</p>
+<div class="math">$$ \Delta_k = \sum_{k'} V_{kk'} u_{k'}v_{k'}\tanh \left(\frac{\epsilon_{k'}}{2 k_B T} \right)$$</div>
+<p>Using the expressions for <span class="math">\(u_k\)</span> and <span class="math">\(v_k\)</span> we may rewrite the gap equation as:</p>
+<div class="math">$$ \Delta_k = -\sum_{k'}V_{kk'} \sqrt{\frac{1}{2}\left(1+\frac{\xi_{k'}}{\epsilon_{k'}}\right)\frac{1}{2}\left(1-\frac{\xi_{k'}}{\epsilon_{k'}}\right)}(1 - 2 f_{k'}) \\ = -\sum_{k'}V_{kk'} \sqrt{\frac{1}{4}\left(1-\frac{\xi_{k'}^2}{\xi_{k'}^2 + \Delta_{k'}^2}\right)}(1 - 2 f_{k'}) \\ = -\sum_{k'}V_{kk'} \frac{1}{2}\frac{\Delta_{k'}}{\sqrt{\xi_k^2 + \Delta_k^2}}(1 - 2 f_{k'}) \\ = - \sum_{k'} V_{kk'}\frac{(1 - 2 f_{k'})}{2\epsilon_{k'}}\Delta_{k'} $$</div>
+<p><strong>5) Find the critical temperature.</strong></p>
+<p>If we consider the following gap function in the Cooper model:</p>
+<div class="math">$$V_{kk'}=\left\{
+                \begin{array}{ll}
+                  -V \quad \textrm{for} \ |\xi_k| \ \textrm{and} \ |\xi_{k'}|\leq \hbar \omega_{D} \\
+                  0 \quad \textrm{for} \ |\xi_k| \ \textrm{or} \ |\xi_{k'}| &gt; \hbar \omega_D 
+                \end{array}
+              \right.
+$$</div>
+<p>We can rewrite the last equation for <span class="math">\(\Delta_k\)</span> in integral form as:</p>
+<div class="math">$$\Delta \sim \mathcal{N}(0) V \Delta \int_{-\hbar \omega_D}^{\hbar \omega_D} d\xi \frac{1 - 2 f[\epsilon]}{2\epsilon}$$</div>
+<div class="math">$$ 1 = \mathcal{N}(0) V \int_{-\hbar \omega_D }^{\hbar \omega_D} d\xi \frac{1 - 2 f[\sqrt{\xi^2 + \Delta^2(T)}]}{2\sqrt{\xi^2 + \Delta^2(T)}}$$</div>
+<p>The critical temperature <span class="math">\(T_c\)</span> corresponds to <span class="math">\(\Delta(T_c) = 0\)</span>:</p>
+<div class="math">$$ 1 = \mathcal{N}(0) V \int_{-\hbar \omega_D }^{\hbar \omega_D} d\xi \frac{1 - 2 f[\xi,T_c]}{2\xi} = \mathcal{N}(0) V \int_{-\hbar\omega_D}^{\hbar \omega_D} \frac{d\xi}{2\xi} \tanh\left(\frac{\xi}{2k_B T_c}\right) = \mathcal{N}(0) V \int_0^{\hbar \omega_D} \frac{d\xi}{\xi} \tanh\left(\frac{\xi}{2k_B T_c}\right) $$</div>
+<p>where I split the integral because the integrand <span class="math">\(\tanh(\xi)/\xi\)</span> was even. Since:</p>
+<div class="math">$$ \lim_{\xi \rightarrow \infty} \tanh\left(\frac{\xi}{2k_B T}\right) = 1$$</div>
+<p>and the integral has the asymptotic form <span class="math">\(\ln (\hbar \omega_D/k_B T_c) + C\)</span>; a numerical computation yields <span class="math">\(C = \ln 1.14\)</span>.</p>
+<p><strong>6) Compute the Free energy.</strong></p>
+<p>We can express the entropy in a more convenient form as:</p>
+<div class="math">$$ - TS = \sum_k \left[\varepsilon_k (1 - 2 f_k) - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right) \right]$$</div>
+<p><strong>Proof</strong>: let's develop this expression using <span class="math">\(\cosh x = \frac{e^x + e^{-x}}{2}\)</span>:</p>
+<div class="math">$$ - TS = \sum_k \varepsilon_k (1 - 2 f_k) - 2 k_B T \ln [e^{\frac{\varepsilon_k}{2 k_B T}}+e^{-\frac{\varepsilon_k}{2 k_B T}}]$$</div>
+<p>The logarithm can be rewritten as: <span class="math">\(\ln [e^{-\frac{\varepsilon_k}{2 k_B T}}(1+e^{\frac{\varepsilon_k}{k_B T}})] = -\frac{\varepsilon_k}{2 k_B T} - \ln f_k\)</span>. As a result:</p>
+<div class="math">$$ -TS = \sum_k \left[\varepsilon_k (1 - 2 f_k) + \varepsilon_k + 2 k_B T \ln f_k \right]$$</div>
+<p>We will now try to derive this expression starting from equation ... that we derived in question 3. </p>
+<div class="math">$$ - TS = 2 k_B T \sum_k \left\{f_k \ln f_k + (1 - f_k)\ln(1 - f_k) \right\} \\ = 2k_B T \sum_k \left\{\frac{\varepsilon_k}{k_B T} + \ln f_k - \frac{\varepsilon_k}{k_B T}f_k \right\} \\ = \sum_k \left[2 \varepsilon_k + 2 k_B T \ln f_k - 2 \varepsilon_k f_k \right] \\ = \sum_k \left[\varepsilon_k (1 - 2 f_k) + \varepsilon_k + 2 k_B T \ln f_k \right]$$</div>
+<p>Both expressions are thus equivalent. Now, we would like to compute <span class="math">\(\langle \hat{H}_{IR} \rangle\)</span>. We already computed it in question 1. We want to show that it can be written as:</p>
+<div class="math">$$ \langle \hat{H}_{IR} \rangle = - \sum_k \frac{\Delta_k^2}{2\varepsilon_k}(1 - 2 f_k)$$</div>
+<p>Starting from equation ... and substituting the expressions for <span class="math">\(u_k\)</span> and <span class="math">\(v_k\)</span> derived in ... :</p>
+<div class="math">$$ \langle \hat{H}_{IR} \rangle = \sum_{k,k'} V_{k,k'} u_k v_k u_{k'}v_{k'}(1 - 2 f_k)(1-2 f_{k'}) \\ = -\sum_k \Delta_k u_k v_k (1-2 f_k) \\ = -\sum_{k} \Delta_k (1 - 2 f_k)\frac{1}{2}\underbrace{\sqrt{1 - \frac{\xi_k^2}{\varepsilon_k^2}}}_{\Delta_k / \varepsilon_k} \\ = -\sum_k \frac{\Delta_k^2}{2\varepsilon_k}(1 - 2 f_k) \\ = -\frac{\Delta^2(T)}{V}$$</div>
+<p>where in the last line we introduced a new notation following Ketterson. In the same way, we can compute <span class="math">\(\langle \hat{H}_0'\rangle\)</span>:</p>
+<div class="math">$$ \langle \hat{H}_0' \rangle = 2 \sum_k \xi_k \left[v_k^2 + (u_k^2 - v_k^2)f_k \right] \\ = 2\sum_k \left[\xi_k v_k^2 + \frac{\xi_k^2}{\varepsilon_k}f_k \right] \\ = 2 \sum_k \left[\xi_k v_k^2 + \left(\varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k}\right) f_k\right]$$</div>
+<p>Indeed: <span class="math">\(\varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k} = \frac{\varepsilon_k^2 - \Delta_k^2}{\varepsilon_k} = \frac{\xi_k^2}{\varepsilon_k}\)</span>.The energy <span class="math">\(E' = \langle \hat{H}_R' \rangle = \langle \hat{H}_0' \rangle + \langle \hat{H}_{IR}' \rangle\)</span> can be written as:</p>
+<div class="math">$$E' = 2 \sum_k \left[\xi_k v_k^2 + f_k \varepsilon_k - \frac{\Delta^2}{2 \varepsilon_k} \right] - \frac{\Delta^2}{V} $$</div>
+<p>Eventually, one can write the free energy as:</p>
+<div class="math">$$ F = E' - TS \\ = 2 \sum_k \left[\xi_k v_k^2 + f_k \varepsilon_k - \frac{\Delta^2}{2\varepsilon_k} \right] - \frac{\Delta^2}{V} + \sum_k \left[\varepsilon_k (1 - 2 f_k) - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right) \right] \\ = \sum_k \left[2\xi_k v_k^2 - \frac{\Delta^2}{\varepsilon_k} + \varepsilon_k - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right)\right]-\frac{\Delta^2(T)}{V}$$</div>
+<p>This is the Free energy of the system.</p>
+<p><strong>7) Find the low temperature behavior of specific heat (! <span class="math">\(\varepsilon_k\)</span> in Ketterson is <span class="math">\(E_k\)</span> in my notes.</strong></p>
+<p>The specific heat is defined as:</p>
+<div class="math">$$ C = T \frac{d S}{d T}$$</div>
+<p>Using expression ... for the entropy, and since only <span class="math">\(f_k\)</span> depends on <span class="math">\(T\)</span>, we can perform the derivative:</p>
+<div class="math">$$ \frac{dS}{dT} = -2 k_B \sum_k \left[\frac{\partial f_k}{\partial T} \ln f_k + \frac{\partial f_k}{\partial T} - \frac{\partial f_k}{\partial T} \ln(1 - f_k) - \frac{\partial f_k}{\partial T} \right] \\ = - 2 k_B \sum_k \left[\ln f_k - \ln(1 - f_k) \right]\frac{\partial f_k}{\partial T}$$</div>
+<p>As a result:</p>
+<div class="math">$$ C = T \frac{dS}{dT} \\ = -2 k_B T \sum_k \left[\ln f_k - \ln(1-f_k) \right]\frac{\partial f_k}{\partial T}$$</div>
+<p>Notice that <span class="math">\(\ln f_k - \ln(1-f_k) = -\ln(1+e^{\varepsilon_k/k_B T}) - \ln \left(\frac{e^{\varepsilon_k/k_B T}}{e^{\varepsilon_k/k_B T}+1} \right) = -\frac{\varepsilon_k}{k_B T}\)</span>. Thus, we can write:</p>
+<div class="math">$$C = 2 k_B T \sum_k \frac{\varepsilon_k}{k_B T} \frac{d}{dT}\left(\frac{1}{e^{\varepsilon_k/k_B T}+1}\right) $$</div>
+<p>Now, assuming that <span class="math">\(\varepsilon_k = \varepsilon_k(T)\)</span> <em>via</em> <span class="math">\(\Delta(T)\)</span>, we can develop <span class="math">\(\partial f_k / \partial T\)</span>:</p>
+<div class="math">$$ \frac{\partial f_k}{\partial T} = \frac{d}{dT} \left(\frac{1}{e^{\varepsilon_k/k_B T}+1}\right) \\ = \frac{-\frac{d}{dT}[e^{\varepsilon(T)/k_B T}]}{(e^{\varepsilon_k(T)/k_B T}+1)^2} \\ 
+= \frac{e^{\varepsilon_k/k_BT}\left(\frac{\varepsilon_k}{k_B T^2} - \frac{1}{k_B T}\frac{\partial \varepsilon_k(T)}{\partial T}\right)}{(e^{\varepsilon_k(T)/k_B T}+1)^2} $$</div>
+<p>Since <span class="math">\(\varepsilon_k = \sqrt{\Delta_k^2 + \xi_k^2}\)</span>, we can easily deduce that <span class="math">\(\partial \varepsilon_k / \partial T = \frac{\Delta_k(T)}{\varepsilon_k}\frac{d\Delta}{dT}\)</span>. Thus we can write:</p>
+<div class="math">$$\frac{\partial f_k}{\partial T} = \frac{e^{\varepsilon_k/k_BT}\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta_k(T)}{k_B T \varepsilon_k}\frac{d\Delta_k}{dT}\right)}{(e^{\varepsilon_k(T)/k_B T}+1)^2} \\ = f_k(1-f_k)\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta_k(T)}{k_B T \varepsilon_k}\frac{d\Delta_k}{dT}\right)$$</div>
+<div class="math">$$ C = 2 k_B T \sum_k \frac{\varepsilon_k}{k_B T} f_k(1-f_k)\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta_k(T)}{k_B T \varepsilon_k}\frac{d\Delta_k}{dT}\right) \\ = 2 \sum_k \left(\frac{\varepsilon_k^2}{k_B T^2} - \frac{\Delta_k(T)}{k_B T}\frac{d\Delta_k}{dT}\right)f_k(1-f_k) \\ = \frac{2}{k_B T^2}\sum_k \left(\varepsilon_k^2 - T \Delta_k \frac{d\Delta_k}{dT}\right)f_k(1-f_k) \\ = \frac{2}{k_B T^2} \mathcal{N}(0)\int_0^\infty d\xi f(\varepsilon) [1-f(\varepsilon)]\left(\varepsilon^2 - T \Delta \frac{d\Delta}{dT}\right)$$</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "true";
+
+    if (true) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+								</article>
+						</div>
+					</div>
+				</div>
+			</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<!-- Footer -->
+					<section id="footer" class="container">
+						<div class="row">
+							<div class="8u">
+								<section>
+									<header>
+										<h2>Latest articles</h2>
+									</header>
+									<ul class="dates">
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="brownian-motion.html">Brownian motion</a></h3>
+											<p><p>Einstein's and Langevin's respective derivations of the Brownian motion.</p></p>
+										</li>
+										<li>
+											<span class="date">déc. <strong>10</strong></span>
+											<h3><a href="ornstein-uhlenbeck.html">Ornstein–Uhlenbeck process</a></h3>
+											<p><p>Properties of Ornstein-Uhlenbeck processes.</p></p>
+										</li>
+										<li>
+											<span class="date">nov. <strong>11</strong></span>
+											<h3><a href="Superconductivity.html">Josephson effect through a quantum dot</a></h3>
+											<p><p>Computations related to the Josephson effect through a quantum dot.</p></p>
+										</li>
+										<li>
+											<span class="date">nov. <strong>04</strong></span>
+											<h3><a href="landauer-transport.html">Landauer transport</a></h3>
+											<p><p>Landauer-Büttiker formalism for electronic transport in multiterminal devices.</p></p>
+										</li>
+									</ul>
+								</section>
+							</div>
+								<div class="4u">
+									<section>
+										<header>
+											<h2 style="display: flex;
+  align-items: center;">Good news, everyone! &emsp; <img src="https://findicons.com/files/icons/1316/futurama_vol_1/128/farnsworth.png" alt="Farnsworth" width="60px align="center" /></h2>
+										</header>
+											<img src="https://photorro.files.wordpress.com/2018/08/p1440336-01.jpeg?w=700&h=" class="image image-full" alt="" />
+										<p>
+										This website is a collection of notes from my various courses as a student in Physics at Aix-Marseille university.
+										</p>
+										<footer>
+										</footer>
+									</section>
+								</div>
+						</div>
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Blogroll</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="http://photorro.wordpress.com">Photorro</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<header>
+										<h2>Categories</h2>
+									</header>
+									<ul class="divided">
+											<li><a href="/category/physics.html">Physics</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="4u">
+							
+								<section>
+									<header>
+										<h2>Contact</h2>
+									</header>
+									<ul class="social">
+										<li class="linkedin"><a href="https://fr.linkedin.com/in/rémy-torro-607a50112/en" class="icon48 icon48-4">LinkedIn</a></li>
+
+
+										<li class="linkedin"><a href="https://www.researchgate.net/profile/Remy_Torro" class="icon48 icon48-3">ResearchGate</a></li>
+
+									</ul>
+									<ul class="contact">
+											<li>
+												<h3>Mail</h3>
+												<p><a href="mailto:remy13127@gmail.com">remy13127@gmail.com</a></p>
+											</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+			</div>
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/jquery.dropotron.js"></script>
+		<script src="/theme/js/config.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-panels.min.js"></script>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
+	</body>
+</html>
