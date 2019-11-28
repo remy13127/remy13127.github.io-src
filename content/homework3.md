@@ -1,7 +1,7 @@
 Title: Thermodynamic properties using the Bogoliubov Valatin method
-Date: 2019-11-13 11:20
+Date: 2019-11-28 11:20
 Category: Physics
-Tags: Quantum Statistics, superconductivity
+Tags: Quantum physics, Superconductivity
 Slug: homework
 Author: Rémy Torro
 Summary: Derivation of thermodynamic quantities in the Bogoliubov Valatin formalism.
