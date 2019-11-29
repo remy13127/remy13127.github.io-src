@@ -88,10 +88,10 @@ In 1947, Bogoliubov introduced a new linear transformation to diagonalize the qu
 + \langle \gamma_{k\uparrow}^\dagger \gamma_{k'\uparrow}\rangle \langle \gamma_{k\uparrow}\gamma_{k'\uparrow}^\dagger \rangle
 \\ = f_{k\uparrow}f_{k'\uparrow} - 0 + 0 $$</div>
 <p>We can proceed in the same fashion for each term and get:</p>
-<div class="math">$$\langle I \rangle = 1 -f_{k'\uparrow} -f_{-k'\downarrow} - f_{k\uparrow} - f_{k\downarrow} + f_{k\uparrow}f_{k'\uparrow} + f_{k\uparrow}f_{-k'\downarrow}+f_{-k\downarrow}f_{k'\uparrow}+f_{-k\downarrow}f_{-k'\downarrow}$$</div>
+<div class="math">$$\langle I \rangle = 1 -f_{k'\uparrow} -f_{-k'\downarrow} - f_{k\uparrow} - f_{-k\downarrow} + f_{k\uparrow}f_{k'\uparrow} + f_{k\uparrow}f_{-k'\downarrow}+f_{-k\downarrow}f_{k'\uparrow}+f_{-k\downarrow}f_{-k'\downarrow}$$</div>
 <p>Assuming that <span class="math">\(f_k f_{k'} = \frac{1}{4}(f_{k\uparrow}+f_{-k\downarrow})(f_{k'\uparrow}f_{-k'\downarrow})\)</span>, we recognize that we have <span class="math">\(\langle I \rangle = 1 - 2f_{k'}-2f_k + 4f_kf_{k'}\)</span>.</p>
 <p>Eventually:</p>
-<div class="math">$$\langle \hat{H}_{IR}' \rangle = \sum_{k,k'} V_{kk'} u_k v_k u_{k'}v_{k'}(1-2f_k)(1-2f_{k'})$$</div>
+<div class="math">$$\langle \hat{H}_{\textrm{IR}}' \rangle = \sum_{k,k'} V_{kk'} u_k v_k u_{k'}v_{k'}(1-2f_k)(1-2f_{k'})$$</div>
 <p>Gathering all the terms, we can write:</p>
 <div class="math">$$\langle \hat{H}_R' \rangle = 2\sum_k \xi_k[v_k^2 + (u_k^2 - v_k^2)f_k] + \sum_{k,k'} V_{kk'}u_k v_k u_{k'}v_{k'}(1-2f_k)(1-2f_{k'})$$</div>
 <p><strong>3) Use microcanonical argument to find the entropy.</strong></p>
@@ -110,8 +110,8 @@ In 1947, Bogoliubov introduced a new linear transformation to diagonalize the qu
 <div class="math">$$ 2\xi_k u \sqrt{1 - u^2} = \Delta_k (2 u^2 -1)$$</div>
 <div class="math">$$ 4 \xi_k^2 u^2 (1 - u^2) = \Delta_k^2 [4u^4 - 4u^2 +1]$$</div>
 <div class="math">$$ u^4 - u^2 + \frac{\Delta_k^2}{4(\xi_k^2 + \Delta_k^2)} = 0$$</div>
-<p>We can compute the discriminant <span class="math">\(\Delta\)</span>:</p>
-<div class="math">$$ \Delta = 1 - \frac{\Delta_k^2}{\xi_k^2 + \Delta_k^2} = \frac{\xi_k^2}{\xi_k^2 + \Delta_k^2}$$</div>
+<p>We can compute the discriminant <span class="math">\(\delta\)</span>:</p>
+<div class="math">$$ \delta = 1 - \frac{\Delta_k^2}{\xi_k^2 + \Delta_k^2} = \frac{\xi_k^2}{\xi_k^2 + \Delta_k^2}$$</div>
 <p>This gives us the following solutions for <span class="math">\(u^2\)</span>:</p>
 <div class="math">$$ u^2 = \frac{1}{2}\left(1 \pm \sqrt{\frac{\xi_k^2}{\xi_k^2 + \Delta_k^2}}\right) = \frac{1}{2}\left(1 \pm \frac{\xi_k}{\varepsilon_k}\right)$$</div>
 <p>where we introduced the energy <span class="math">\(\varepsilon_k = \sqrt{\xi_k^2 + \Delta_k^2}\)</span>, which is the energy required to add an electron to the system in a state <span class="math">\(k\)</span>. If we substitute <span class="math">\(u_k^2 = 1 - v_k^2\)</span> we find:</p>
@@ -143,10 +143,10 @@ $$</div>
 <p>and the integral has the asymptotic form <span class="math">\(\ln (\hbar \omega_D/k_B T_c) + C\)</span>; a numerical computation yields <span class="math">\(C = \ln 1.14\)</span>.</p>
 <p><strong>6) Compute the Free energy.</strong></p>
 <p>We can express the entropy in a more convenient form as:</p>
-<div class="math">$$ - TS = \sum_k \left[\varepsilon_k (1 - 2 f_k) - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right) \right]$$</div>
+<div class="math">$$- TS = \sum_k \left[\varepsilon_k (1 - 2 f_k) - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right) \right]$$</div>
 <p><strong>Proof</strong>: let's develop this expression using <span class="math">\(\cosh x = \frac{e^x + e^{-x}}{2}\)</span>:</p>
-<div class="math">$$ - TS = \sum_k \varepsilon_k (1 - 2 f_k) - 2 k_B T \ln [e^{\frac{\varepsilon_k}{2 k_B T}}+e^{-\frac{\varepsilon_k}{2 k_B T}}]$$</div>
-<p>The logarithm can be rewritten as: <span class="math">\(\ln [e^{-\frac{\varepsilon_k}{2 k_B T}}(1+e^{\frac{\varepsilon_k}{k_B T}})] = -\frac{\varepsilon_k}{2 k_B T} - \ln f_k\)</span>. As a result:</p>
+<div class="math">$$ - TS = \sum_k \varepsilon_k (1 - 2 f_k) - 2 k_B T \ln [e^{\varepsilon_k/2 k_B T}+e^{-\varepsilon_k/2 k_B T}]$$</div>
+<p>The logarithm can be rewritten as: <span class="math">\(\ln [e^{-\varepsilon_k/2 k_B T}(1+e^{\varepsilon_k/k_B T})] = -\frac{\varepsilon_k}{2 k_B T} - \ln f_k\)</span>. As a result:</p>
 <div class="math">$$ -TS = \sum_k \left[\varepsilon_k (1 - 2 f_k) + \varepsilon_k + 2 k_B T \ln f_k \right]$$</div>
 <p>We will now try to derive this expression starting from equation ... that we derived in question 3. </p>
 <div class="math">$$ - TS = 2 k_B T \sum_k \left\{f_k \ln f_k + (1 - f_k)\ln(1 - f_k) \right\} \\ = 2k_B T \sum_k \left\{\frac{\varepsilon_k}{k_B T} + \ln f_k - \frac{\varepsilon_k}{k_B T}f_k \right\} \\ = \sum_k \left[2 \varepsilon_k + 2 k_B T \ln f_k - 2 \varepsilon_k f_k \right] \\ = \sum_k \left[\varepsilon_k (1 - 2 f_k) + \varepsilon_k + 2 k_B T \ln f_k \right]$$</div>
@@ -155,7 +155,7 @@ $$</div>
 <p>Starting from equation ... and substituting the expressions for <span class="math">\(u_k\)</span> and <span class="math">\(v_k\)</span> derived in ... :</p>
 <div class="math">$$ \langle \hat{H}_{\textrm{IR}} \rangle = \sum_{k,k'} V_{k,k'} u_k v_k u_{k'}v_{k'}(1 - 2 f_k)(1-2 f_{k'}) \\ = -\sum_k \Delta_k u_k v_k (1-2 f_k) \\ = -\sum_{k} \Delta_k (1 - 2 f_k)\frac{1}{2}\underbrace{\sqrt{1 - \frac{\xi_k^2}{\varepsilon_k^2}}}_{\Delta_k / \varepsilon_k} \\ = -\sum_k \frac{\Delta_k^2}{2\varepsilon_k}(1 - 2 f_k) \\ = -\frac{\Delta^2(T)}{V}$$</div>
 <p>where in the last line we introduced a new notation following Ketterson. In the same way, we can compute <span class="math">\(\langle \hat{H}_0'\rangle\)</span>:</p>
-<div class="math">$$ \langle \hat{H}_0' \rangle = 2 \sum_k \xi_k \left[v_k^2 + (u_k^2 - v_k^2)f_k \right] \\ = 2\sum_k \left[\xi_k v_k^2 + \frac{\xi_k^2}{\varepsilon_k}f_k \right] \\ = 2 \sum_k \left[\xi_k v_k^2 + \left(\varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k}\right) f_k\right]$$</div>
+<div class="math">$$ \langle \hat{H}_0' \rangle = 2 \sum_k \xi_k \left[v_k^2 + (u_k^2 - v_k^2)f_k \right] = 2\sum_k \left[\xi_k v_k^2 + \frac{\xi_k^2}{\varepsilon_k}f_k \right] = 2 \sum_k \left[\xi_k v_k^2 + \left(\varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k}\right) f_k\right]$$</div>
 <p>Indeed: <span class="math">\(\varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k} = \frac{\varepsilon_k^2 - \Delta_k^2}{\varepsilon_k} = \frac{\xi_k^2}{\varepsilon_k}\)</span>.The energy <span class="math">\(E' = \langle \hat{H}_R' \rangle = \langle \hat{H}_0' \rangle + \langle \hat{H}_{\textrm{IR}} \rangle\)</span> can be written as:</p>
 <div class="math">$$E' = 2 \sum_k \left[\xi_k v_k^2 + f_k \varepsilon_k - \frac{\Delta^2}{2 \varepsilon_k} \right] - \frac{\Delta^2}{V} $$</div>
 <p>Eventually, one can write the free energy as:</p>
@@ -165,16 +165,16 @@ $$</div>
 <p>The specific heat is defined as:</p>
 <div class="math">$$ C = T \frac{d S}{d T}$$</div>
 <p>Using expression ... for the entropy, and since only <span class="math">\(f_k\)</span> depends on <span class="math">\(T\)</span>, we can perform the derivative:</p>
-<div class="math">$$ \frac{dS}{dT} = -2 k_B \sum_k \left[\frac{\partial f_k}{\partial T} \ln f_k + \frac{\partial f_k}{\partial T} - \frac{\partial f_k}{\partial T} \ln(1 - f_k) - \frac{\partial f_k}{\partial T} \right] \\ = - 2 k_B \sum_k \left[\ln f_k - \ln(1 - f_k) \right]\frac{\partial f_k}{\partial T}$$</div>
+<div class="math">$$ \frac{dS}{dT} = -2 k_B \sum_k \left[\frac{\partial f_k}{\partial T} \ln f_k + \frac{\partial f_k}{\partial T} - \frac{\partial f_k}{\partial T} \ln(1 - f_k) - \frac{\partial f_k}{\partial T} \right] = - 2 k_B \sum_k \left[\ln f_k - \ln(1 - f_k) \right]\frac{\partial f_k}{\partial T}$$</div>
 <p>As a result:</p>
-<div class="math">$$ C = T \frac{dS}{dT} \\ = -2 k_B T \sum_k \left[\ln f_k - \ln(1-f_k) \right]\frac{\partial f_k}{\partial T}$$</div>
+<div class="math">$$ C = T \frac{dS}{dT} = -2 k_B T \sum_k \left[\ln f_k - \ln(1-f_k) \right]\frac{\partial f_k}{\partial T}$$</div>
 <p>Notice that <span class="math">\(\ln f_k - \ln(1-f_k) = -\ln(1+e^{\varepsilon_k/k_B T}) - \ln \left(\frac{e^{\varepsilon_k/k_B T}}{e^{\varepsilon_k/k_B T}+1} \right) = -\frac{\varepsilon_k}{k_B T}\)</span>. Thus, we can write:</p>
 <div class="math">$$C = 2 k_B T \sum_k \frac{\varepsilon_k}{k_B T} \frac{d}{dT}\left(\frac{1}{e^{\varepsilon_k/k_B T}+1}\right) $$</div>
 <p>Now, assuming that <span class="math">\(\varepsilon_k = \varepsilon_k(T)\)</span> <em>via</em> <span class="math">\(\Delta(T)\)</span>, we can develop <span class="math">\(\partial f_k / \partial T\)</span>:</p>
-<div class="math">$$ \frac{\partial f_k}{\partial T} = \frac{d}{dT} \left(\frac{1}{e^{\varepsilon_k/k_B T}+1}\right) \\ = \frac{-\frac{d}{dT}[e^{\varepsilon(T)/k_B T}]}{(e^{\varepsilon_k(T)/k_B T}+1)^2} \\ 
+<div class="math">$$ \frac{\partial f_k}{\partial T} = \frac{d}{dT} \left(\frac{1}{e^{\varepsilon_k/k_B T}+1}\right) = \frac{-\frac{d}{dT}[e^{\varepsilon(T)/k_B T}]}{(e^{\varepsilon_k(T)/k_B T}+1)^2}
 = \frac{e^{\varepsilon_k/k_BT}\left(\frac{\varepsilon_k}{k_B T^2} - \frac{1}{k_B T}\frac{\partial \varepsilon_k(T)}{\partial T}\right)}{(e^{\varepsilon_k(T)/k_B T}+1)^2} $$</div>
 <p>Since <span class="math">\(\varepsilon_k = \sqrt{\Delta^2 + \xi_k^2}\)</span>, we can easily deduce that <span class="math">\(\partial \varepsilon_k / \partial T = \frac{\Delta(T)}{\varepsilon_k}\frac{d\Delta}{dT}\)</span>. Thus we can write:</p>
-<div class="math">$$\frac{\partial f_k}{\partial T} = \frac{e^{\varepsilon_k/k_BT}\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta(T)}{k_B T \varepsilon_k}\frac{d\Delta}{dT}\right)}{(e^{\varepsilon_k(T)/k_B T}+1)^2} \\ = f_k(1-f_k)\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta(T)}{k_B T \varepsilon_k}\frac{d\Delta}{dT}\right)$$</div>
+<div class="math">$$\frac{\partial f_k}{\partial T} = \frac{e^{\varepsilon_k/k_BT}\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta(T)}{k_B T \varepsilon_k}\frac{d\Delta}{dT}\right)}{(e^{\varepsilon_k(T)/k_B T}+1)^2} = f_k(1-f_k)\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta(T)}{k_B T \varepsilon_k}\frac{d\Delta}{dT}\right)$$</div>
 <div class="math">$$ C = 2 k_B T \sum_k \frac{\varepsilon_k}{k_B T} f_k(1-f_k)\left(\frac{\varepsilon_k}{k_B T^2} - \frac{\Delta(T)}{k_B T \varepsilon_k}\frac{d\Delta}{dT}\right) \\ = 2 \sum_k \left(\frac{\varepsilon_k^2}{k_B T^2} - \frac{\Delta(T)}{k_B T}\frac{d\Delta}{dT}\right)f_k(1-f_k) \\ = \frac{2}{k_B T^2}\sum_k \left(\varepsilon_k^2 - T \Delta \frac{d\Delta}{dT}\right)f_k(1-f_k) \\ = \frac{2}{k_B T^2} \mathcal{N}(0)\int_0^\infty d\xi f(\varepsilon) [1-f(\varepsilon)]\left(\varepsilon^2 - T \Delta \frac{d\Delta}{dT}\right)$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%&#64;#$&#64;#')) {
     var align = "center",
