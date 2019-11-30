@@ -28,7 +28,7 @@ $$y_{s}(t)=A_{s}\cos{(2\pi f_{s} t)}$$
 
 where $A_{s}$ and $f_{s}$ are respectively the amplitude and frequency of the oil bath. The acceleration can be defined as $\gamma_s=(2\pi f)^{2}A_s$. The Ohnesorge number associated with our experimental setup is smaller than one, so the deformations of the droplet cannot be neglected ([@gilet_dynamics_2008]).
 
-$$\textrm{Oh} = \nu/\sqrt{\rho\sigma R} \\ \approx 0.0331 \times \sqrt{980\times 0.O25 \times 0.001} \\ = 0.2 $$
+$$\textrm{Oh} = \nu/\sqrt{\rho\sigma R} \\ \approx 0.0331 \times \sqrt{980\times 0.025 \times 0.001} \\ = 0.2 $$
 
 with respectively $\nu$, $\rho$ and $\sigma$ the viscosity, density, surface tension of the fluid and $R$ the radius of the droplet. The droplet’s bouncing can be modelled by a differential equation describing the vertical displacement of the center of mass of the droplet $y$. In the frame of the vibrating bath, the droplet feels an apparent gravity $m(\gamma_s \cos(2\pi f_s t)-g)$ ($m$ is the mass of the droplet and $g=9.81$ m.s$^{-2}$ the gravitational field). The surrounding air exerts a force $F$ on the droplet. This force can be neglected except when there is a thin layer of air between the droplet and the bath surface. One can write Newton’s second law applied to the droplet as:
 
