@@ -11,25 +11,34 @@ In 1947, Bogoliubov introduced a new linear transformation to diagonalize the qu
 
 **1) Write the full Hamiltonian in term of $\gamma$, $\gamma^\dagger$.**
 
-The reduced Hamiltonian of the system can be rewritten in terms of the Bogoliubov quasiparticle operators. In doing so, we generate two types of terms: those containing products of an equal number of creation $\hat{\gamma}^\dagger_{k\sigma}$ and destruction $\hat{\gamma}_{k\sigma}$ operators and those containing an unequal number. When taking thermally averaged quantum-expectation values of such products, only the first forms yield nonzero averages. 
+The part of the interaction Hamiltonian which contributes to superconductivity, *i.e.* the attractive part leading to the formation of pairs with opposite momenta and opposite spins, can be written as:
 
-$$ \hat{H}'_R = \hat{H}'_0 + \hat{H}_{\textrm{IR}} \\ = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}+\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})] + \sum_{k,k'} V_{k k'}[u_k v_k u_{k'}v_{k'}(1 - \gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}-\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})(1 - \gamma^\dagger_{k'\uparrow}\gamma_{k'\uparrow}-\gamma^\dagger_{-k'\downarrow}\gamma_{-k'\downarrow})+ \textrm{terms with unequal numbers of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$}$$
+$$ \hat{H}_{R}' = \hat{H}_{0}' + \hat{H}_{\textrm{IR}}$$
 
-where we had individually 
+$$ \hat{H}_0' = \sum_{k\sigma} \xi_k c_{k\sigma}^\dagger c_{k\sigma}  = \sum_k \xi_k [c_{k\uparrow}^\dagger c_{k\uparrow} + c_{-k\downarrow}^\dagger c_{-k\downarrow}]$$
 
-$$ \hat{H}'_0 = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}+\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})] + \text{terms with unequal number of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$} $$
+$$ \hat{H}_{\textrm{IR}} = \sum_{k,k'} V_{kk'} c_{k'\uparrow}^\dagger c_{-k'\downarrow}^\dagger c_{-k\downarrow} c_{k\uparrow}$$
 
-and 
+We will use the Bogoliubov-Valatin transformation which can be written as follow:
 
-$$ \hat{H}_{\textrm{IR}} = \sum_{k,k'} V_{k k'}[u_k v_k u_{k'}v_{k'}(1 - \gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}-\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})(1 - \gamma^\dagger_{k'\uparrow}\gamma_{k'\uparrow}-\gamma^\dagger_{-k'\downarrow}\gamma_{-k'\downarrow})+ \textrm{terms with unequal numbers of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$}$$
+$$\begin{pmatrix}c_{k\uparrow}^\dagger \\ c_{-k\downarrow}\end{pmatrix} = \begin{pmatrix}u_k & v_k \\ -v_k & u_k \end{pmatrix}\begin{pmatrix}\gamma_{k\uparrow}^\dagger \\ \gamma_{-k\downarrow}\end{pmatrix}$$ 
 
+In the following, we will assume that $u_k$ and $v_k$ are real coefficients. The reduced Hamiltonian of the system can be rewritten in terms of the Bogoliubov quasiparticle operators. In doing so, we generate two types of terms: those containing products of an equal number of creation $\gamma^\dagger_{k\sigma}$ and destruction $\gamma_{k\sigma}$ operators and those containing an unequal number. When taking thermally averaged quantum-expectation values of such products, only the first forms yield nonzero averages. 
+
+$$ \hat{H}_0' - (\textrm{terms with unequal numbers of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$})  = \sum_k \xi_k \left[(u_k \gamma_{k\uparrow}^\dagger+v_k\gamma_{-k\downarrow})(u_k \gamma_{k\uparrow}+v_k\gamma_{-k\downarrow}^\dagger) + (u_k\gamma_{-k\downarrow}^\dagger - v_k \gamma_{k\uparrow})(u_k \gamma_{-k\downarrow}-v_k\gamma_{k\uparrow}^\dagger) \right] \\ = \sum_k \xi_k \left[u_k^2 \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow} + v_k^2 \gamma_{-k\downarrow}\gamma_{-k\downarrow}^\dagger + u_k^2\gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow} + v_k^2\gamma_{k\uparrow}\gamma_{k\uparrow}^\dagger \right] \\ = \sum_k \xi_k \left[u_k^2 (\gamma_{k\uparrow}^\dagger \gamma_{k\uparrow}+\gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow}) + v_k^2(1 - \gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow}) + v_k^2(1 - \gamma_{k\uparrow}^\dagger\gamma_{k\uparrow})\right] \\ = \sum_k \xi_k \left[2 v_k^2 + (u_k^2 - v_k^2)(\gamma_{k\uparrow}^\dagger\gamma_{k\uparrow}+\gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow})\right]$$
+
+$$ \hat{H}_{\textrm{IR}} - (\textrm{terms with unequal numbers of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$}) = \sum_{k,k'} V_{kk'} (u_{k'}\gamma_{k'\uparrow}^\dagger + v_{k'}\gamma_{-k'\downarrow})(u_{k'}\gamma^\dagger_{-k'\downarrow}-v_{k'}\gamma_{k'\uparrow})(u_k\gamma_{-k\downarrow}-v_k\gamma_{k\uparrow}^\dagger)(u_k\gamma_{k\uparrow}+v_k\gamma_{-k\downarrow}^\dagger) \\ = \sum_{k,k'} V_{kk'} u_{k'}v_{k'}u_k v_k \left[-\gamma_{k'\uparrow}^\dagger \gamma_{k'\uparrow}\gamma_{-k\downarrow}\gamma_{-k\downarrow}^\dagger + \gamma_{k'\uparrow}^\dagger\gamma_{k'\uparrow}\gamma_{k\uparrow}^\dagger\gamma_{k\uparrow} + \gamma_{-k'\downarrow}\gamma_{-k'\downarrow}^\dagger \gamma_{-k\downarrow}\gamma_{-k\downarrow}^\dagger - \gamma_{-k'\downarrow}\gamma_{-k'\downarrow}^\dagger \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow} \right]
+\\ = \sum_{k,k'}V_{kk'} u_{k'}v_{k'}u_k v_k \left[-\gamma_{k'\uparrow}^\dagger\gamma_{k'\uparrow}(1-\gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow}) + \gamma_{k'\uparrow}^\dagger \gamma_{k'\uparrow} \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow} + (1-\gamma_{-k'\downarrow}^\dagger\gamma_{-k'\downarrow})(1 - \gamma_{-k\downarrow}^\dagger \gamma_{-k\downarrow}) - (1-\gamma_{-k'\downarrow}^\dagger\gamma_{-k'\downarrow})\gamma_{k\uparrow}^\dagger\gamma_{k\uparrow}  \right] \\ = \sum_{k,k'}V_{kk'} u_k v_k u_{k'}v_{k'} (1 - \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow} - \gamma_{-k\downarrow}^\dagger\gamma_{-k\downarrow})(1 - \gamma_{k'\uparrow}^\dagger \gamma_{k'\uparrow}-\gamma_{-k'\downarrow}^\dagger \gamma_{-k'\downarrow})$$
+
+
+$$ \hat{H}'_R = \hat{H}'_0 + \hat{H}_{\textrm{IR}} \\ = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}+\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})] + \sum_{k,k'} V_{k k'} u_k v_k u_{k'}v_{k'}(1 - \gamma^\dagger_{k\uparrow}\gamma_{k\uparrow}-\gamma^\dagger_{-k\downarrow}\gamma_{-k\downarrow})(1 - \gamma^\dagger_{k'\uparrow}\gamma_{k'\uparrow}-\gamma^\dagger_{-k'\downarrow}\gamma_{-k'\downarrow})+ \textrm{terms with unequal numbers of $\gamma^\dagger_{k\sigma}$ and $\gamma_{k\sigma}$}$$
 
 
 **2) Use Wick theorem to compute thermal averages.**
 
 Firstly, let's compute the thermal average of $\hat{H}_0'$:
 
-$$ \langle \hat{H}_0' \rangle = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\langle \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow}\rangle + \langle \gamma_{-k\downarrow}^\dagger \gamma_{-k'\downarrow}\rangle)]$$
+$$\langle \hat{H}_0' \rangle = \sum_k \xi_k [2 v_k^2 + (u_k^2 - v_k^2)(\langle \gamma_{k\uparrow}^\dagger \gamma_{k\uparrow}\rangle + \langle \gamma_{-k\downarrow}^\dagger \gamma_{-k'\downarrow}\rangle)]$$
 
 Since the fermion-quasiparticle excitations do not interact (in our mean-field-like theory), the averages are given by $\langle \gamma^\dagger_{k\sigma}\gamma_{k\sigma} \rangle = f_{k\sigma}$. Let's assume that $2 f_k = f_{k\uparrow}+f_{-k\downarrow}$. As a result:
 
@@ -183,11 +192,11 @@ $$ \langle \hat{H}_0' \rangle = 2 \sum_k \xi_k \left[v_k^2 + (u_k^2 - v_k^2)f_k 
 
 Indeed: $\varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k} = \frac{\varepsilon_k^2 - \Delta_k^2}{\varepsilon_k} = \frac{\xi_k^2}{\varepsilon_k}$.The energy $E' = \langle \hat{H}_R' \rangle = \langle \hat{H}_0' \rangle + \langle \hat{H}_{\textrm{IR}} \rangle$ can be written as:
 
-$$E' = 2 \sum_k \left[\xi_k v_k^2 + f_k \varepsilon_k - \frac{\Delta^2}{2 \varepsilon_k} \right] - \frac{\Delta^2}{V} $$ 
+$$E' = 2 \sum_k \left[\xi_k v_k^2 + f_k \varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k} f_k \right] + \frac{\Delta^2(T)}{V} \\ = \sum_k \left[2\xi_k v_k^2 + 2f_k \varepsilon_k - 2 \frac{\Delta_k^2}{\varepsilon_k} f_k -\frac{\Delta_k^2}{\varepsilon_k}(1-2 f_k)\right] - \frac{\Delta^2(T)}{V} \\ = \sum_k \left[2\xi_k v_k^2 + 2f_k \varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k}\right] - \frac{\Delta^2(T)}{V}$$ 
  
 Eventually, one can write the free energy as:
 
-$$ F = E' - TS \\ = 2 \sum_k \left[\xi_k v_k^2 + f_k \varepsilon_k - \frac{\Delta^2}{2\varepsilon_k} \right] - \frac{\Delta^2}{V} + \sum_k \left[\varepsilon_k (1 - 2 f_k) - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right) \right] \\ = \sum_k \left[2\xi_k v_k^2 - \frac{\Delta^2}{\varepsilon_k} + \varepsilon_k - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right)\right]-\frac{\Delta^2(T)}{V}$$
+$$ F = E' - TS \\ = \sum_k \left[2\xi_k v_k^2 + 2f_k \varepsilon_k - \frac{\Delta_k^2}{\varepsilon_k} \right] - \frac{\Delta^2(T)}{V} + \sum_k \left[\varepsilon_k (1 - 2 f_k) - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right) \right] \\ = \sum_k \left[2\xi_k v_k^2 - \frac{\Delta_k^2}{\varepsilon_k} + \varepsilon_k - 2 k_B T \ln \left(2 \cosh \frac{\varepsilon_k}{2 k_B T}\right)\right]-\frac{\Delta^2(T)}{V}$$
 
 This is the Free energy of the system.
 
