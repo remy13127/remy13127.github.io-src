@@ -67,7 +67,15 @@ twisted Faraday patterns appeared. We recorded this transition at 400 frames per
 *$\Gamma − \Omega$ plane for a set of 95 droplets randomly generated. The regime of a droplet is determined qualitatively. Droplets not moving horizontally (fixed) are easily identified. It is slightly more difficult to discriminate between a ‘walker’ and a ‘drifter’; the drifter has a quasi-uniform motion in a single direction, unlike the walker, whose motion is quasi-random. The region in this plane for which walkers can be found is $(\Gamma, \Omega) = (1 − 2.4, 0.45 − 2.2)$.*
 
 The above figure was made by analyzing 95 droplets and extracting
-from the associated videos their radius $R_0=D/2$, $\gamma_s$ and $f_s$. Two dimensionless parameters could be constructed from the many variables of our experiment[@molacek_drops_2013; @molacek_drops_2013-1]; firstly a vibration number: $$\Omega = \frac{\omega}{\omega_D}=2\pi f_s\sqrt{\frac{\rho R_0^3}{\sigma}}$$ where $\omega=2\pi f_s$ is the bath angular frequency and $\omega_D=\sqrt{\sigma/(\rho R_0^3)}$ is a characteristic drop oscillation frequency. And secondly a peak non-dimensional bath acceleration: $$\Gamma = \frac{\gamma_s}{g}$$ where $g=9.81$ m.s$^{-2}$ is the gravitational acceleration.
+from the associated videos their radius $R_0=D/2$, $\gamma_s$ and $f_s$. Two dimensionless parameters could be constructed from the many variables of our experiment; firstly a vibration number: 
+
+$$\Omega = \frac{\omega}{\omega_D}=2\pi f_s\sqrt{\frac{\rho R_0^3}{\sigma}}$$ 
+
+where $\omega=2\pi f_s$ is the bath angular frequency and $\omega_D=\sqrt{\sigma/(\rho R_0^3)}$ is a characteristic drop oscillation frequency. And secondly a peak non-dimensional bath acceleration: 
+
+$$\Gamma = \frac{\gamma_s}{g}$$ 
+
+where $g=9.81$ m.s$^{-2}$ is the gravitational acceleration.
 
 This couple of parameters $(\Gamma,\Omega)$ was computed for each of the droplets and plotted on a $\Gamma - \Omega$ plane. Each droplet was qualitatively labelled as either a ‘walker’, a ‘drifter’ or a fixed droplet. Intermediary behaviors exist but are very hard to identify with unaided eyes.
 
