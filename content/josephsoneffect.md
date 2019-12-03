@@ -146,23 +146,23 @@ $$\begin{align}S = \int d\tau \left\{\sum_{jk} \left[\bar{\psi}_{jk} M_k \psi_{j
 
 $$ S = \int d\tau \left\{\sum_{jk} \left[\bar{\psi}_{jk} M_k \psi_{jk} - \int d\tau' \bar{d}(\tau) T_{jk}^\dagger G_k(\tau - \tau')T_{jk}d(\tau')  \right] + \bar{d}(\tau) N d(\tau)   \right\}$$
 
-Now that the crossed terms $(\psi_{jk},d)$ have been cancelled, we would like to perform the integration of $Z$ on the superconducting degrees of freedon $(\bar{\psi},\psi)$. 
+Now that the crossed terms $(\psi_{jk},d)$ have been cancelled out, we would like to perform the integration of $Z$ on the superconducting degrees of freedon $(\bar{\psi},\psi)$. 
 
 $$Z_S = \int \mathcal{D}(\bar{\psi}\psi)\mathcal{D}(\bar{d}d)e^{-\int d\tau \sum_{jk} \bar{\psi}_{jk}M_k\psi_{jk}}$$
 
-$M_k$ is some Hermitian differential operator with orthonormal eigenstates $\chi_{kn}$ and eigenvalues $\lambda_{kn}$:
+Replacing $\sum_{jk} \bar{\psi}_{jk}M_k\psi_{jk}$ with $\bar{\psi}M\psi$, $M$ is some Hermitian differential operator with orthonormal eigenstates $\chi_{n}$ and eigenvalues $\lambda_{n}$:
 
-$$ M_k \chi_{kn} = \lambda_{kn}\chi_{kn}$$
+$$ M \chi_{n} = \lambda_{n}\chi_{n}$$
 
 We can expand $\psi$ and $\bar{\psi}$ in terms of these eigenstates:
 
 $$ \psi(\tau) = \sum_n c_n \chi_{n}(\tau) \qquad \bar{\psi}(\tau) = \sum_n \bar{c}_n \chi^\dagger_n(\tau)$$
 
 $$
-Z_S = \int \prod_{j,k}\prod_n d\bar{c}_n dc_n e^{-\sum_{m,n} \lambda_n \bar{c}_m c_n \int d\tau \chi_m^\dagger(\tau)\chi_n(\tau)}
-\\ = \int \prod_{j,k,n} d\bar{c}_n dc_n e^{-\sum_n \lambda_n \bar{c}_n c_n}
-\\ = \int \prod_{j,k,n} d\bar{c}_n dc_n \prod_n (1 - \lambda_n \bar{c}_n c_n)
-\\ = \prod_{j,k,n} \lambda_n = \det M $$
+Z_S = \int \prod_n d\bar{c}_n dc_n e^{-\sum_{m,n} \lambda_n \bar{c}_m c_n \int d\tau \chi_m^\dagger(\tau)\chi_n(\tau)}
+\\ = \int \prod_{n} d\bar{c}_n dc_n e^{-\sum_n \lambda_n \bar{c}_n c_n}
+\\ = \int \prod_{n} d\bar{c}_n dc_n \prod_n (1 - \lambda_n \bar{c}_n c_n)
+\\ = \prod_{n} \lambda_n = \det M $$
 
 We are left with:
 

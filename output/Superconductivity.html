@@ -147,17 +147,17 @@ $$</div>
 <div class="math">$$\begin{align}\int d\tau \sum_{jk} \left[(\bar{\psi}_{jk}(\tau) + \bar{\psi}_{jk}^c)T_{jk}d(\tau) + d^\dagger(\tau)(\psi_{jk}(\tau) + \psi_{jk}^c(\tau)) \right] \\ = \int d\tau \sum_{jk} \left[\bar{\psi}_{jk}(\tau)T_{jk}d(\tau) + \bar{\psi}_{jk}^c(\tau) T_{jk} d(\tau) + d^\dagger(\tau)T_{jk}^\dagger \psi_{jk}(\tau) + d^\dagger(\tau)T_{jk}^\dagger \psi_{jk}^c(\tau)  \right] \\ = \int d\tau \sum_{jk} \left[\bar{\psi}_{jk}(\tau)T_{jk}d(\tau) - \int d\tau' \bar{d}(\tau')T_{jk}^\dagger G_k^*(\tau-\tau')T_{jk}d(\tau) + \bar{d}(\tau)T_{jk}^\dagger \psi_{jk}(\tau) - \int d\tau' \bar{d}(\tau) T_{jk}^\dagger G_k(\tau - \tau')T_{jk}d(\tau')  \right]\end{align}$$</div>
 <div class="math">$$\begin{align}S = \int d\tau \left\{\sum_{jk} \left[\bar{\psi}_{jk} M_k \psi_{jk} - \bar{\psi}_{jk}(\tau) T_{jk} d(\tau) - \bar{d}(\tau) T_{jk}^\dagger \psi_{jk}(\tau) \\ + \int d\tau' \bar{d}(\tau') T_{jk}^\dagger G^*_k(\tau - \tau') T_{jk} d(\tau) + \bar{\psi}_{jk}(\tau)T_{jk}d(\tau) \\ - \int d\tau' \bar{d}(\tau')T_{jk}^\dagger G_k^*(\tau-\tau')T_{jk}d(\tau) + \bar{d}(\tau)T_{jk}^\dagger \psi_{jk}(\tau) \\ - \int d\tau' \bar{d}(\tau) T_{jk}^\dagger G_k(\tau - \tau')T_{jk}d(\tau')  \right] + \bar{d}(\tau) N d(\tau)   \right\}\end{align} $$</div>
 <div class="math">$$ S = \int d\tau \left\{\sum_{jk} \left[\bar{\psi}_{jk} M_k \psi_{jk} - \int d\tau' \bar{d}(\tau) T_{jk}^\dagger G_k(\tau - \tau')T_{jk}d(\tau')  \right] + \bar{d}(\tau) N d(\tau)   \right\}$$</div>
-<p>Now that the crossed terms <span class="math">\((\psi_{jk},d)\)</span> have been cancelled, we would like to perform the integration of <span class="math">\(Z\)</span> on the superconducting degrees of freedon <span class="math">\((\bar{\psi},\psi)\)</span>. </p>
+<p>Now that the crossed terms <span class="math">\((\psi_{jk},d)\)</span> have been cancelled out, we would like to perform the integration of <span class="math">\(Z\)</span> on the superconducting degrees of freedon <span class="math">\((\bar{\psi},\psi)\)</span>. </p>
 <div class="math">$$Z_S = \int \mathcal{D}(\bar{\psi}\psi)\mathcal{D}(\bar{d}d)e^{-\int d\tau \sum_{jk} \bar{\psi}_{jk}M_k\psi_{jk}}$$</div>
-<p><span class="math">\(M_k\)</span> is some Hermitian differential operator with orthonormal eigenstates <span class="math">\(\chi_{kn}\)</span> and eigenvalues <span class="math">\(\lambda_{kn}\)</span>:</p>
-<div class="math">$$ M_k \chi_{kn} = \lambda_{kn}\chi_{kn}$$</div>
+<p>Replacing <span class="math">\(\sum_{jk} \bar{\psi}_{jk}M_k\psi_{jk}\)</span> with <span class="math">\(\bar{\psi}M\psi\)</span>, <span class="math">\(M\)</span> is some Hermitian differential operator with orthonormal eigenstates <span class="math">\(\chi_{n}\)</span> and eigenvalues <span class="math">\(\lambda_{n}\)</span>:</p>
+<div class="math">$$ M \chi_{n} = \lambda_{n}\chi_{n}$$</div>
 <p>We can expand <span class="math">\(\psi\)</span> and <span class="math">\(\bar{\psi}\)</span> in terms of these eigenstates:</p>
 <div class="math">$$ \psi(\tau) = \sum_n c_n \chi_{n}(\tau) \qquad \bar{\psi}(\tau) = \sum_n \bar{c}_n \chi^\dagger_n(\tau)$$</div>
 <div class="math">$$
-Z_S = \int \prod_{j,k}\prod_n d\bar{c}_n dc_n e^{-\sum_{m,n} \lambda_n \bar{c}_m c_n \int d\tau \chi_m^\dagger(\tau)\chi_n(\tau)}
-\\ = \int \prod_{j,k,n} d\bar{c}_n dc_n e^{-\sum_n \lambda_n \bar{c}_n c_n}
-\\ = \int \prod_{j,k,n} d\bar{c}_n dc_n \prod_n (1 - \lambda_n \bar{c}_n c_n)
-\\ = \prod_{j,k,n} \lambda_n = \det M $$</div>
+Z_S = \int \prod_n d\bar{c}_n dc_n e^{-\sum_{m,n} \lambda_n \bar{c}_m c_n \int d\tau \chi_m^\dagger(\tau)\chi_n(\tau)}
+\\ = \int \prod_{n} d\bar{c}_n dc_n e^{-\sum_n \lambda_n \bar{c}_n c_n}
+\\ = \int \prod_{n} d\bar{c}_n dc_n \prod_n (1 - \lambda_n \bar{c}_n c_n)
+\\ = \prod_{n} \lambda_n = \det M $$</div>
 <p>We are left with:</p>
 <div class="math">$$Z = Z_S \int \mathcal{D}(\bar{d}d)e^{-\int d\tau \bar{d}(\tau)N d(\tau) + \int d\tau \int d\tau' \bar{d}(\tau)\sum_{jk}T_{jk}^\dagger G_k(\tau - \tau') T_{jk} d(\tau')}$$</div>
 <p>We can introduce <span class="math">\(\sum (\tau - \tau') = \sum_{jk} T_{jk}^\dagger G_k(\tau - \tau') T_{jk}\)</span>, the self energy due to the leads. </p>
